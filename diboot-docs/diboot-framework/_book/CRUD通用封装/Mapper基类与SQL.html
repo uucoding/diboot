@@ -1,0 +1,858 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Mapper基类与SQL · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../MVC通用封装.html" />
+    
+    
+    <link rel="prev" href="Service基类.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../开始使用.html">
+            
+                <a href="../开始使用.html">
+            
+                    
+                    开始使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../开始使用/搭建环境.html">
+            
+                <a href="../开始使用/搭建环境.html">
+            
+                    
+                    搭建环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../开始使用/使用framework.html">
+            
+                <a href="../开始使用/使用framework.html">
+            
+                    
+                    使用diboot-framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../CRUD通用封装.html">
+            
+                <a href="../CRUD通用封装.html">
+            
+                    
+                    CRUD通用封装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="Model基类.html">
+            
+                <a href="Model基类.html">
+            
+                    
+                    Model基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="Service基类.html">
+            
+                <a href="Service基类.html">
+            
+                    
+                    Service基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="Mapper基类与SQL.html">
+            
+                <a href="Mapper基类与SQL.html">
+            
+                    
+                    Mapper基类与SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../MVC通用封装.html">
+            
+                <a href="../MVC通用封装.html">
+            
+                    
+                    MVC通用封装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../MVC通用封装/Controller基类.html">
+            
+                <a href="../MVC通用封装/Controller基类.html">
+            
+                    
+                    Controller基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../MVC通用封装/CrudController基类.html">
+            
+                <a href="../MVC通用封装/CrudController基类.html">
+            
+                    
+                    CrudController基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../MVC通用封装/CrudRestController基类.html">
+            
+                <a href="../MVC通用封装/CrudRestController基类.html">
+            
+                    
+                    CrudRestController基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../认证与安全.html">
+            
+                <a href="../认证与安全.html">
+            
+                    
+                    认证与安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../认证与安全/jwt授权.html">
+            
+                <a href="../认证与安全/jwt授权.html">
+            
+                    
+                    JWT认证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../认证与安全/CSRF防护.html">
+            
+                <a href="../认证与安全/CSRF防护.html">
+            
+                    
+                    CSRF防护
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../认证与安全/XSS防护.html">
+            
+                <a href="../认证与安全/XSS防护.html">
+            
+                    
+                    XSS防护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../系统参数配置.html">
+            
+                <a href="../系统参数配置.html">
+            
+                    
+                    系统参数配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../系统参数配置/配置文件.html">
+            
+                <a href="../系统参数配置/配置文件.html">
+            
+                    
+                    参数配置在文件中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../系统参数配置/数据库表.html">
+            
+                <a href="../系统参数配置/数据库表.html">
+            
+                    
+                    参数配置在数据库表中
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../系统日志记录.html">
+            
+                <a href="../系统日志记录.html">
+            
+                    
+                    系统日志记录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../系统日志记录/操作日志.html">
+            
+                <a href="../系统日志记录/操作日志.html">
+            
+                    
+                    操作日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../系统日志记录/跟踪日志.html">
+            
+                <a href="../系统日志记录/跟踪日志.html">
+            
+                    
+                    跟踪日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../常用工具类.html">
+            
+                <a href="../常用工具类.html">
+            
+                    
+                    常用工具类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../常用工具类/D.html">
+            
+                <a href="../常用工具类/D.html">
+            
+                    
+                    日期时间类D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../常用工具类/S.html">
+            
+                <a href="../常用工具类/S.html">
+            
+                    
+                    字符串类S
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../常用工具类/V.html">
+            
+                <a href="../常用工具类/V.html">
+            
+                    
+                    数据校验类V
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../常用工具类/BeanUtils.html">
+            
+                <a href="../常用工具类/BeanUtils.html">
+            
+                    
+                    Bean工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../常用工具类/JSON.html">
+            
+                <a href="../常用工具类/JSON.html">
+            
+                    
+                    Json工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../常用工具类/Encryptor.html">
+            
+                <a href="../常用工具类/Encryptor.html">
+            
+                    
+                    加解密类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../常用工具类/IdGenerator.html">
+            
+                <a href="../常用工具类/IdGenerator.html">
+            
+                    
+                    ID生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../常用工具类/Query.html">
+            
+                <a href="../常用工具类/Query.html">
+            
+                    
+                    条件构造器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../通用基础模型.html">
+            
+                <a href="../通用基础模型.html">
+            
+                    
+                    通用基础模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../通用基础模型/用户角色权限.html">
+            
+                <a href="../通用基础模型/用户角色权限.html">
+            
+                    
+                    用户角色权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../通用基础模型/元数据.html">
+            
+                <a href="../通用基础模型/元数据.html">
+            
+                    
+                    元数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../通用基础模型/文件.html">
+            
+                <a href="../通用基础模型/文件.html">
+            
+                    
+                    文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Mapper基类与SQL</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#mapper&#x57FA;&#x7C7B;&#x4E0E;sql"><b>1. </b>Mapper&#x57FA;&#x7C7B;&#x4E0E;SQL</a></li><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;mapper&#x7C7B;"><b>1.1. </b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Mapper&#x7C7B;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;mapperxml&#x6587;&#x4EF6;"><b>1.2. </b>&#x521B;&#x5EFA;Mapper.xml&#x6587;&#x4EF6;</a></li></ul></ul></div><a href="#mapper&#x57FA;&#x7C7B;&#x4E0E;sql" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="mapper&#x57FA;&#x7C7B;&#x4E0E;sql"><a name="mapper&#x57FA;&#x7C7B;&#x4E0E;sql" class="anchor-navigation-ex-anchor" href="#mapper&#x57FA;&#x7C7B;&#x4E0E;sql"><i class="fa fa-link" aria-hidden="true"></i></a>1. Mapper&#x57FA;&#x7C7B;&#x4E0E;SQL</h1>
+<h2 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;mapper&#x7C7B;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;mapper&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;mapper&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;Mapper&#x7C7B;</h2>
+<p>&#x5728;&#x9879;&#x76EE;service/mapper&#x5305;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x521B;&#x5EFA;Mapper&#x63A5;&#x53E3;&#x7C7B;&#xFF0C;&#x5E76;&#x7EE7;&#x627F;&#x81EA;BaseMapper&#x63A5;&#x53E3;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MetadataMapper</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseMapper</span></span>{
+
+}
+</code></pre>
+<h2 id="&#x521B;&#x5EFA;mapperxml&#x6587;&#x4EF6;"><a name="&#x521B;&#x5EFA;mapperxml&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;mapperxml&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x521B;&#x5EFA;Mapper.xml&#x6587;&#x4EF6;</h2>
+<p>&#x5728;&#x540C;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x540C;&#x540D;Mapper.xml&#x6587;&#x4EF6;&#xFF0C;&#x5982;MetadataMapper.xml&#x3002;
+Mapper.xml&#x7684;Mybatis&#x5B9E;&#x73B0;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-xml">    <span class="hljs-comment">&lt;!-- &#x901A;&#x7528;CRUD: begin --&gt;</span>
+    <span class="hljs-comment">&lt;!-- &#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x5217;&#x76F8;&#x5173;&#x7684;&#x52A8;&#x6001;SQL --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">sql</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;columns&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">trim</span> <span class="hljs-attr">suffixOverrides</span>=<span class="hljs-string">&quot;,&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;f == null or f.id != null&quot;</span>&gt;</span>self.id,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;f == null or f.type != null&quot;</span>&gt;</span>self.type,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;f == null or f.itemName != null&quot;</span>&gt;</span>self.item_name,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;f == null or f.itemValue != null&quot;</span>&gt;</span>self.item_value,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+            ...
+        <span class="hljs-tag">&lt;/<span class="hljs-name">trim</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">sql</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x52A8;&#x6001;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x6784;&#x5EFA;SQL --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">sql</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;conditions&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;c.id != null&quot;</span>&gt;</span>AND self.id=#{c.id}<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;c.type != null&quot;</span>&gt;</span>AND self.type=#{c.type}<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;c.itemValue != null&quot;</span>&gt;</span>AND self.item_value=#{c.itemValue}<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;c.itemName != null&quot;</span>&gt;</span>AND self.item_name=#{c.itemName}<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+        AND self.active=1
+    <span class="hljs-tag">&lt;/<span class="hljs-name">sql</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x66F4;&#x65B0;&#x6307;&#x5B9A;&#x5217;&#x7684;&#x52A8;&#x6001;SQL --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">sql</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;setValues&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">set</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;f == null or f.type != null&quot;</span>&gt;</span>type=#{m.type},<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;f == null or f.itemName != null&quot;</span>&gt;</span>item_name=#{m.itemName},<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;f == null or f.itemValue != null&quot;</span>&gt;</span>item_value=#{m.itemValue},<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">set</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">sql</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x521B;&#x5EFA;&#x8BB0;&#x5F55;SQL --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">insert</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;create&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;com.diboot.framework.model.Metadata&quot;</span> <span class="hljs-attr">useGeneratedKeys</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">keyProperty</span>=<span class="hljs-string">&quot;id&quot;</span>&gt;</span>
+        INSERT INTO metadata(
+            parent_id, type, item_name, item_value
+        )
+        VALUES(
+            #{parentId}, #{type}, #{itemName}, #{itemValue}
+        )
+    <span class="hljs-tag">&lt;/<span class="hljs-name">insert</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x6279;&#x91CF;&#x521B;&#x5EFA;&#x8BB0;&#x5F55;SQL --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">insert</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;batchCreate&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;java.util.List&quot;</span> <span class="hljs-attr">useGeneratedKeys</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">keyProperty</span>=<span class="hljs-string">&quot;id&quot;</span>&gt;</span>
+        INSERT INTO metadata(
+            parent_id, type, item_name, item_value
+        )
+        VALUES
+        <span class="hljs-tag">&lt;<span class="hljs-name">foreach</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;list&quot;</span> <span class="hljs-attr">item</span>=<span class="hljs-string">&quot;m&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;,&quot;</span>&gt;</span>
+            (#{m.parentId}, #{m.type}, #{m.itemName}, #{m.itemValue}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">insert</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x66F4;&#x65B0;&#x8BB0;&#x5F55;SQL --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">update</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;update&quot;</span>&gt;</span>
+        UPDATE metadata
+        <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">refid</span>=<span class="hljs-string">&quot;setValues&quot;</span> /&gt;</span>
+        WHERE id=#{m.id, jdbcType=BIGINT}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">update</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x5220;&#x9664;&#x8BB0;&#x5F55;SQL --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">update</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;delete&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;Long&quot;</span>&gt;</span>
+        UPDATE metadata SET active=0 WHERE id=#{id, jdbcType=BIGINT}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">update</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x67E5;&#x8BE2;&#x4E00;&#x6761;&#x8BB0;&#x5F55; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;get&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;Long&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.diboot.framework.model.Metadata&quot;</span>&gt;</span>
+        SELECT self.*
+        FROM metadata self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x67E5;&#x8BE2;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x8BB0;&#x5F55;&#x603B;&#x6570; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;getListCount&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;Map&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;Integer&quot;</span>&gt;</span>
+        SELECT count(self.id)
+        FROM metadata self
+        <span class="hljs-tag">&lt;<span class="hljs-name">where</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">refid</span>=<span class="hljs-string">&quot;conditions&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">where</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x67E5;&#x8BE2;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x8BB0;&#x5F55; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;getList&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.diboot.framework.model.Metadata&quot;</span>&gt;</span>
+        SELECT self.*
+        FROM metadata self
+        <span class="hljs-tag">&lt;<span class="hljs-name">where</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">refid</span>=<span class="hljs-string">&quot;conditions&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">where</span>&gt;</span>
+        ORDER BY self.id DESC
+        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;c.COUNT != null&quot;</span>&gt;</span>
+            LIMIT <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;c.OFFSET != null&quot;</span>&gt;</span>#{c.OFFSET}, <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>#{c.COUNT}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x67E5;&#x8BE2;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x8FD4;&#x56DE;Map --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;getMapList&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;java.util.Map&quot;</span>&gt;</span>
+        SELECT <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">refid</span>=<span class="hljs-string">&quot;columns&quot;</span> /&gt;</span>
+        FROM metadata self
+        <span class="hljs-tag">&lt;<span class="hljs-name">where</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">refid</span>=<span class="hljs-string">&quot;conditions&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">where</span>&gt;</span>
+        ORDER BY self.id DESC
+        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;c.COUNT != null&quot;</span>&gt;</span>
+            LIMIT <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;c.OFFSET != null&quot;</span>&gt;</span>#{c.OFFSET}, <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>#{c.COUNT}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x901A;&#x7528;CRUD: end --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;SQL: begin --&gt;</span>
+        <span class="hljs-comment">&lt;!-- &#x901A;&#x7528;SQL&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x7684;&#x81EA;&#x5B9A;&#x4E49;SQL... --&gt;</span>
+    <span class="hljs-comment">&lt;!-- &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;SQL: end --&gt;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x60A8;&#x542F;&#x7528;&#x4E86;diboot&#x5F00;&#x53D1;&#x52A9;&#x7406;&#xFF0C;Mapper&#x53CA;Mapper.xml&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x8DDF;&#x6570;&#x636E;&#x5E93;&#x8868;&#x4FDD;&#x6301;&#x540C;&#x6B65;&#x66F4;&#x65B0;&#xFF0C;&#x65E0;&#x9700;&#x624B;&#x5199;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="Service基类.html" class="navigation navigation-prev " aria-label="Previous page: Service基类">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../MVC通用封装.html" class="navigation navigation-next " aria-label="Next page: MVC通用封装">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mapper基类与SQL","level":"1.3.3","depth":2,"next":{"title":"MVC通用封装","level":"1.4","depth":1,"path":"MVC通用封装.md","ref":"MVC通用封装.md","articles":[{"title":"Controller基类","level":"1.4.1","depth":2,"path":"MVC通用封装/Controller基类.md","ref":"MVC通用封装/Controller基类.md","articles":[]},{"title":"CrudController基类","level":"1.4.2","depth":2,"path":"MVC通用封装/CrudController基类.md","ref":"MVC通用封装/CrudController基类.md","articles":[]},{"title":"CrudRestController基类","level":"1.4.3","depth":2,"path":"MVC通用封装/CrudRestController基类.md","ref":"MVC通用封装/CrudRestController基类.md","articles":[]}]},"previous":{"title":"Service基类","level":"1.3.2","depth":2,"path":"CRUD通用封装/Service基类.md","ref":"CRUD通用封装/Service基类.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-sharing","sharing-plus","anchor-navigation-ex","theme-vuejs-2","livereload"],"pluginsConfig":{"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"isShowTocTitleIcon":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"sharing":{"qq":true,"all":["weibo","qq","linkedin","qzone","douban"],"douban":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CRUD通用封装/Mapper基类与SQL.md","mtime":"2018-10-14T02:43:52.501Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-15T06:36:06.783Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

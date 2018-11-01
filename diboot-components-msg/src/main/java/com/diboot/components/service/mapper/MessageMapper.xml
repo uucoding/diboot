@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.components.service.mapper.MessageMapper">
+
+    <!-- 通用CRUD: begin  -->
+    <!-- 指定Select需要返回的列 -->
+    <sql id="columns">
+        <trim suffixOverrides=",">
+            <if test="f == null or f.id != null">self.id,</if>
+            <if test="f == null or f.type != null">self.type,</if>
+            <if test="f == null or f.msgType != null">self.msg_type,</if>
+            <if test="f == null or f.tmplId != null">self.tmpl_id,</if>
+            <if test="f == null or f.businessType != null">self.business_type,</if>
+            <if test="f == null or f.businessId != null">self.business_id,</if>
+            <if test="f == null or f.sender != null">self.sender,</if>
+            <if test="f == null or f.receiver != null">self.receiver,</if>
+            <if test="f == null or f.title != null">self.title,</if>
+            <if test="f == null or f.content != null">self.content,</if>
+            <if test="f == null or f.url != null">self.url,</if>
+            <if test="f == null or f.status != null">self.status,</if>
+            <if test="f == null or f.scheduleTime != null">self.schedule_time,</if>
+            <if test="f == null or f.response != null">self.response,</if>
+            <if test="f == null or f.extdata != null">self.extdata,</if>
+            <if test="f == null or f.active != null">self.active,</if>
+        </trim>
+    </sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.id != null">self.id=#{c.id}</if>
+        <if test="c.type != null"> AND self.type=#{c.type}</if>
+        <if test="c.msgType != null"> AND self.msg_type=#{c.msgType}</if>
+        <if test="c.tmplId != null"> AND self.tmpl_id=#{c.tmplId}</if>
+        <if test="c.businessType != null"> AND self.business_type=#{c.businessType}</if>
+        <if test="c.businessId != null"> AND self.business_id=#{c.businessId}</if>
+        <if test="c.sender != null"> AND self.sender=#{c.sender}</if>
+        <if test="c.receiver != null"> AND self.receiver=#{c.receiver}</if>
+        <if test="c.title != null"> AND self.title like CONCAT('%',#{c.title},'%')</if>
+        <if test="c.status != null"> AND self.status=#{c.status}</if>
+        <if test="c.scheduleTime != null"> AND date(self.schedule_time)=#{c.scheduleTime}</if>
+        <if test="c.response != null"> AND self.response=#{c.response}</if>
+        <if test="c.system != null"> AND tmpl.system=#{c.system}</if>
+        <if test="c.updateTime != null"> AND date(self.update_time)=#{c.updateTime}</if>
+        <if test="c.createBy != null"> AND self.create_by=#{c.createBy}</if>
+        <if test="c.createTime != null"> AND date(self.create_time)=#{c.createTime}</if>
+         AND  self.active=1
+
+        <if test="c.scheduleTime_GTE != null"> AND self.schedule_time >= #{c.scheduleTime_GTE}</if>
+        <if test="c.scheduleTime_LTE != null"> AND self.schedule_time &lt;= #{c.scheduleTime_LTE}</if>
+        <if test="c.createTime_GTE != null"> AND self.create_time >= #{c.createTime_GTE}</if>
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+        <set>
+            <if test="f == null or f.id != null">id=#{m.id},</if>
+            <if test="f == null or f.type != null">type=#{m.type},</if>
+            <if test="f == null or f.msgType != null">msg_type=#{m.msgType},</if>
+            <if test="f == null or f.tmplId != null">tmpl_id=#{m.tmplId},</if>
+            <if test="f == null or f.businessType != null">business_type=#{m.businessType},</if>
+            <if test="f == null or f.businessId != null">business_id=#{m.businessId},</if>
+            <if test="f == null or f.sender != null">sender=#{m.sender},</if>
+            <if test="f == null or f.receiver != null">receiver=#{m.receiver},</if>
+            <if test="f == null or f.title != null">title=#{m.title},</if>
+            <if test="f == null or f.content != null">content=#{m.content},</if>
+            <if test="f == null or f.url != null">url=#{m.url},</if>
+            <if test="f == null or f.status != null">status=#{m.status},</if>
+            <if test="f == null or f.scheduleTime != null">schedule_time=#{m.scheduleTime},</if>
+            <if test="f == null or f.response != null">response=#{m.response},</if>
+            <if test="f == null or f.extdata != null">extdata=#{m.extdata},</if>
+            <if test="f == null or f.active != null">active=#{m.active},</if>
+        </set>
+    </sql>
+
+    <!-- 添加记录 -->
+    <insert id="create" parameterType="com.diboot.components.model.Message" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO message(
+		     type, msg_type, tmpl_id, business_type, business_id, sender, receiver, title, content, url, status, schedule_time, response, extdata, active, create_by
+        )
+        VALUES(
+		     #{type}, #{msgType}, #{tmplId}, #{businessType}, #{businessId}, #{sender}, #{receiver}, #{title}, #{content}, #{url}, #{status}, #{scheduleTime}, #{response}, #{extdata}, #{active}, #{createBy}
+        )
+    </insert>
+
+    <!-- 更新记录 -->
+    <update id="update" parameterType="com.diboot.components.model.Message">
+        UPDATE message
+        <include refid="setValues" />
+        WHERE id=#{m.id, jdbcType=BIGINT}
+    </update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="Object">
+		UPDATE message SET active=0 WHERE id=#{id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="Object" resultType="com.diboot.components.model.Message">
+        SELECT self.*
+        FROM message self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+        SELECT count(self.id)
+        FROM  message self
+        <if test="c.system != null">
+        LEFT JOIN message_tmpl tmpl ON self.tmpl_id=tmpl.id
+        </if>
+        <where>
+            <include refid="conditions" />
+        </where>
+    </select>
+
+    <!-- 查询符合条件的记录 -->
+    <select id="getList" resultType="com.diboot.components.model.Message">
+        SELECT self.*
+        FROM message self
+        <if test="c.system != null">
+            LEFT JOIN message_tmpl tmpl ON self.tmpl_id=tmpl.id
+        </if>
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+
+    <!-- 查询符合条件的记录，返回Map -->
+    <select id="getMapList" resultType="java.util.Map">
+        SELECT <include refid="columns" />
+        FROM message self
+        <if test="c.system != null">
+            LEFT JOIN message_tmpl tmpl ON self.tmpl_id=tmpl.id
+        </if>
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.col_index ASC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+    <!-- 通用CRUD: end -->
+
+    <!-- 扩展SQL -->
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="findVerifyCode" parameterType="Map" resultType="Integer">
+        SELECT count(self.id)
+        FROM  message self
+        <where>
+            <include refid="conditions" />
+        </where>
+    </select>
+
+</mapper>

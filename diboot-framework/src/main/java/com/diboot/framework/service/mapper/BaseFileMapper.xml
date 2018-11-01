@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.framework.service.mapper.BaseFileMapper">
+
+	<!-- 通用CRUD: begin  -->
+	<!-- 指定Select需要返回的列 -->
+	<sql id="columns">
+		<trim suffixOverrides=",">
+			<if test="f == null or f.uuid != null">self.uuid,</if>
+			<if test="f == null or f.name != null">self.name,</if>
+			<if test="f == null or f.relObjType != null">self.rel_obj_type,</if>
+			<if test="f == null or f.relObjId != null">self.rel_obj_id,</if>
+			<if test="f == null or f.createBy != null">self.create_by,</if>
+			<if test="f == null or f.createTime != null">self.create_time,</if>
+		</trim>
+	</sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.uuid != null">self.uuid=#{c.uuid}</if>
+		<if test="c.name != null">AND self.name like CONCAT('%',#{c.name},'%')</if>
+		<if test="c.relObjType != null">AND self.rel_obj_type=#{c.relObjType}</if>
+		<if test="c.relObjId != null">AND self.rel_obj_id=#{c.relObjId}</if>
+		<if test="c.createBy != null">AND self.create_by=#{c.createBy}</if>
+		<if test="c.createTime != null">AND date(self.create_time)=#{c.createTime}</if>
+		AND self.active=1
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+        <set>
+            <if test="f == null or f.name != null">name=#{m.name},</if>
+            <if test="f == null or f.link != null">link=#{m.link},</if>
+            <if test="f == null or f.path != null">path=#{m.path},</if>
+			<if test="f == null or f.status != null">status=#{m.status},</if>
+			<if test="f == null or f.dataCount != null">data_count=#{m.dataCount},</if>
+			<if test="f == null or f.extdata != null">extdata=#{m.extdata},</if>
+			<if test="f == null or f.active != null">active=#{m.active},</if>
+        </set>
+    </sql>
+
+    <!-- 添加记录 -->
+	<insert id="create" parameterType="com.diboot.framework.model.BaseFile" useGeneratedKeys="true" keyProperty="uuid">
+        INSERT INTO file(
+            uuid, rel_obj_type, rel_obj_id, name, link, path, file_type, data_count, size, extdata, comment, active, create_by
+		)
+		VALUES(
+			#{uuid}, #{relObjType}, #{relObjId}, #{name}, #{link}, #{path}, #{fileType}, #{dataCount}, #{size}, #{extdata}, #{comment}, #{active}, #{createBy}
+		)
+	</insert>
+
+    <!-- 更新记录 -->
+	<update id="update" parameterType="String">
+		UPDATE file
+        <include refid="setValues" />
+		WHERE uuid=#{m.uuid, jdbcType=VARCHAR}
+	</update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="String">
+		UPDATE file SET active=0 WHERE uuid=#{uuid, jdbcType=VARCHAR}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="String" resultType="com.diboot.framework.model.BaseFile">
+        SELECT self.*
+        FROM file self
+        WHERE self.uuid=#{uuid, jdbcType=VARCHAR}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+		SELECT count(self.uuid)
+	    FROM file self
+	    <where>
+            <include refid="conditions" />
+	    </where>
+	</select>
+
+    <!-- 查询符合条件的记录 -->
+	<select id="getList" resultType="com.diboot.framework.model.BaseFile">
+		SELECT self.*
+	    FROM file self
+	    <where>
+	    	<include refid="conditions" />
+	    </where>
+		ORDER BY self.create_time DESC
+		<if test="c.COUNT != null">
+			LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+		</if>
+	</select>
+
+	<!-- 查询符合条件的记录，返回Map -->
+	<select id="getMapList" resultType="java.util.Map">
+		SELECT <include refid="columns" />
+		FROM file self
+		<where>
+			<include refid="conditions" />
+		</where>
+		ORDER BY self.create_time DESC
+		<if test="c.COUNT != null">
+			LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+		</if>
+	</select>
+
+	<!-- 批量创建 -->
+	<insert id="batchCreate" parameterType="java.util.List">
+		INSERT INTO file(
+		uuid, rel_obj_type, rel_obj_id, name, link, path, file_type, data_count, size, extdata, comment, active, create_by
+		)
+		VALUES
+		<foreach collection="list" item="m" separator=",">
+			(#{m.uuid}, #{m.relObjType}, #{m.relObjId}, #{m.name}, #{m.link}, #{m.path}, #{m.fileType}, #{m.dataCount}, #{m.size}, #{m.extdata}, #{m.comment}, #{m.active}, #{m.createBy})
+		</foreach>
+	</insert>
+
+	<!-- 通用CRUD: end -->
+	
+	<!-- 扩展SQL: -->
+
+</mapper>

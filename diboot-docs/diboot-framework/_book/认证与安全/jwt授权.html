@@ -1,0 +1,1066 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JWT认证 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="CSRF防护.html" />
+    
+    
+    <link rel="prev" href="../认证与安全.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../开始使用.html">
+            
+                <a href="../开始使用.html">
+            
+                    
+                    开始使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../开始使用/搭建环境.html">
+            
+                <a href="../开始使用/搭建环境.html">
+            
+                    
+                    搭建环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../开始使用/使用framework.html">
+            
+                <a href="../开始使用/使用framework.html">
+            
+                    
+                    使用diboot-framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../CRUD通用封装.html">
+            
+                <a href="../CRUD通用封装.html">
+            
+                    
+                    CRUD通用封装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../CRUD通用封装/Model基类.html">
+            
+                <a href="../CRUD通用封装/Model基类.html">
+            
+                    
+                    Model基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../CRUD通用封装/Service基类.html">
+            
+                <a href="../CRUD通用封装/Service基类.html">
+            
+                    
+                    Service基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../CRUD通用封装/Mapper基类与SQL.html">
+            
+                <a href="../CRUD通用封装/Mapper基类与SQL.html">
+            
+                    
+                    Mapper基类与SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../MVC通用封装.html">
+            
+                <a href="../MVC通用封装.html">
+            
+                    
+                    MVC通用封装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../MVC通用封装/Controller基类.html">
+            
+                <a href="../MVC通用封装/Controller基类.html">
+            
+                    
+                    Controller基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../MVC通用封装/CrudController基类.html">
+            
+                <a href="../MVC通用封装/CrudController基类.html">
+            
+                    
+                    CrudController基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../MVC通用封装/CrudRestController基类.html">
+            
+                <a href="../MVC通用封装/CrudRestController基类.html">
+            
+                    
+                    CrudRestController基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../认证与安全.html">
+            
+                <a href="../认证与安全.html">
+            
+                    
+                    认证与安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="jwt授权.html">
+            
+                <a href="jwt授权.html">
+            
+                    
+                    JWT认证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="CSRF防护.html">
+            
+                <a href="CSRF防护.html">
+            
+                    
+                    CSRF防护
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="XSS防护.html">
+            
+                <a href="XSS防护.html">
+            
+                    
+                    XSS防护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../系统参数配置.html">
+            
+                <a href="../系统参数配置.html">
+            
+                    
+                    系统参数配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../系统参数配置/配置文件.html">
+            
+                <a href="../系统参数配置/配置文件.html">
+            
+                    
+                    参数配置在文件中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../系统参数配置/数据库表.html">
+            
+                <a href="../系统参数配置/数据库表.html">
+            
+                    
+                    参数配置在数据库表中
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../系统日志记录.html">
+            
+                <a href="../系统日志记录.html">
+            
+                    
+                    系统日志记录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../系统日志记录/操作日志.html">
+            
+                <a href="../系统日志记录/操作日志.html">
+            
+                    
+                    操作日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../系统日志记录/跟踪日志.html">
+            
+                <a href="../系统日志记录/跟踪日志.html">
+            
+                    
+                    跟踪日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../常用工具类.html">
+            
+                <a href="../常用工具类.html">
+            
+                    
+                    常用工具类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../常用工具类/D.html">
+            
+                <a href="../常用工具类/D.html">
+            
+                    
+                    日期时间类D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../常用工具类/S.html">
+            
+                <a href="../常用工具类/S.html">
+            
+                    
+                    字符串类S
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../常用工具类/V.html">
+            
+                <a href="../常用工具类/V.html">
+            
+                    
+                    数据校验类V
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../常用工具类/BeanUtils.html">
+            
+                <a href="../常用工具类/BeanUtils.html">
+            
+                    
+                    Bean工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../常用工具类/JSON.html">
+            
+                <a href="../常用工具类/JSON.html">
+            
+                    
+                    Json工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../常用工具类/Encryptor.html">
+            
+                <a href="../常用工具类/Encryptor.html">
+            
+                    
+                    加解密类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../常用工具类/IdGenerator.html">
+            
+                <a href="../常用工具类/IdGenerator.html">
+            
+                    
+                    ID生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../常用工具类/Query.html">
+            
+                <a href="../常用工具类/Query.html">
+            
+                    
+                    条件构造器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../通用基础模型.html">
+            
+                <a href="../通用基础模型.html">
+            
+                    
+                    通用基础模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../通用基础模型/用户角色权限.html">
+            
+                <a href="../通用基础模型/用户角色权限.html">
+            
+                    
+                    用户角色权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../通用基础模型/元数据.html">
+            
+                <a href="../通用基础模型/元数据.html">
+            
+                    
+                    元数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../通用基础模型/文件.html">
+            
+                <a href="../通用基础模型/文件.html">
+            
+                    
+                    文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >JWT认证</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#token&#x767B;&#x5F55;&#x6388;&#x6743;"><b>1. </b>token&#x767B;&#x5F55;&#x6388;&#x6743;</a></li><ul><li><span class="title-icon "></span><a href="#shiro&#x76F8;&#x5173;&#x914D;&#x7F6E;"><b>1.1. </b>Shiro&#x76F8;&#x5173;&#x914D;&#x7F6E;</a></li><ul><li><span class="title-icon "></span><a href="#&#x521D;&#x59CB;&#x5316;shirofilter"><b>1.1.1. </b>&#x521D;&#x59CB;&#x5316;shiroFilter</a></li><li><span class="title-icon "></span><a href="#&#x6269;&#x5C55;basejwtauthorizingrealm"><b>1.1.2. </b>&#x6269;&#x5C55;BaseJwtAuthorizingRealm</a></li></ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;baseuser&#x7C7B;&#x4EE5;&#x53CA;baseauthuser&#x7C7B;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;"><b>1.2. </b>&#x4F7F;&#x7528;BaseUser&#x7C7B;&#x4EE5;&#x53CA;BaseAuthUser&#x7C7B;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;</a></li><ul><li><span class="title-icon "></span><a href="#baseuser"><b>1.2.1. </b>BaseUser</a></li><li><span class="title-icon "></span><a href="#baseauthuser"><b>1.2.2. </b>BaseAuthUser</a></li></ul><li><span class="title-icon "></span><a href="#&#x6388;&#x6743;&#x6838;&#x5FC3;&#x7C7B;"><b>1.3. </b>&#x6388;&#x6743;&#x6838;&#x5FC3;&#x7C7B;</a></li><ul><li><span class="title-icon "></span><a href="#basejwtauthenticationtoken"><b>1.3.1. </b>BaseJwtAuthenticationToken</a></li><li><span class="title-icon "></span><a href="#basejwtauthorizingrealm"><b>1.3.2. </b>BaseJwtAuthorizingRealm</a></li></ul><li><span class="title-icon "></span><a href="#&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x767B;&#x5F55;"><b>1.4. </b>&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x767B;&#x5F55;</a></li><li><span class="title-icon "></span><a href="#&#x7535;&#x8BDD;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;"><b>1.5. </b>&#x7535;&#x8BDD;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;</a></li><li><span class="title-icon "></span><a href="#&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x4F7F;&#x7528;oauth&#x6388;&#x6743;&#x767B;&#x5F55;"><b>1.6. </b>&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x4F7F;&#x7528;oAuth&#x6388;&#x6743;&#x767B;&#x5F55;</a></li><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;wechat&#x6216;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x6388;&#x6743;"><b>1.7. </b>&#x4F7F;&#x7528;wechat&#x6216;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x6388;&#x6743;</a></li></ul></ul></div><a href="#token&#x767B;&#x5F55;&#x6388;&#x6743;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="token&#x767B;&#x5F55;&#x6388;&#x6743;"><a name="token&#x767B;&#x5F55;&#x6388;&#x6743;" class="anchor-navigation-ex-anchor" href="#token&#x767B;&#x5F55;&#x6388;&#x6743;"><i class="fa fa-link" aria-hidden="true"></i></a>1. token&#x767B;&#x5F55;&#x6388;&#x6743;</h1>
+<p>diboot-framework&#x9ED8;&#x8BA4;&#x662F;&#x7528;Shrio&#x8FDB;&#x884C;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#xFF0C;&#x5305;&#x62EC;&#x767B;&#x9646;&#x548C;&#x6743;&#x9650;&#x8BA4;&#x8BC1;</p>
+<h2 id="shiro&#x76F8;&#x5173;&#x914D;&#x7F6E;"><a name="shiro&#x76F8;&#x5173;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#shiro&#x76F8;&#x5173;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Shiro&#x76F8;&#x5173;&#x914D;&#x7F6E;</h2>
+<h3 id="&#x521D;&#x59CB;&#x5316;shirofilter"><a name="&#x521D;&#x59CB;&#x5316;shirofilter" class="anchor-navigation-ex-anchor" href="#&#x521D;&#x59CB;&#x5316;shirofilter"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x521D;&#x59CB;&#x5316;shiroFilter</h3>
+<ul>
+<li>&#x65B0;&#x5EFA;ShiroConfiguration&#x7C7B;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;@Configuration&#x6CE8;&#x89E3;</li>
+<li>&#x6DFB;&#x52A0;&#x76F8;&#x5173;&#x7684;Bean</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShiroConfiguration</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Logger logger = LoggerFactory.getLogger(ShiroConfiguration.class);
+
+    <span class="hljs-comment">/**
+     * Shiro&#x7684;Web&#x8FC7;&#x6EE4;&#x5668;Factory: shiroFilter
+     */</span>
+    <span class="hljs-meta">@Bean</span>(name = <span class="hljs-string">&quot;shiroFilter&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ShiroFilterFactoryBean <span class="hljs-title">shiroFilterFactoryBean</span><span class="hljs-params">(SecurityManager securityManager)</span> </span>{
+        ShiroFilterFactoryBean shiroFilterFactoryBean = <span class="hljs-keyword">new</span> ShiroFilterFactoryBean();
+        <span class="hljs-comment">//Shiro securityManager</span>
+        shiroFilterFactoryBean.setSecurityManager(securityManager);
+        <span class="hljs-comment">//&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x672A;&#x5BF9;&#x5176;&#x6388;&#x6743;&#x7684;&#x8D44;&#x6E90;&#x65F6;&#x7684;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#x9875;&#x9762;</span>
+        shiroFilterFactoryBean.setUnauthorizedUrl(<span class="hljs-string">&quot;/403&quot;</span>);
+
+        <span class="hljs-comment">//&#x5B9A;&#x4E49;shiro&#x8FC7;&#x6EE4;&#x94FE; Map&#x7ED3;&#x6784;</span>
+        Map&lt;String, String&gt; filterChainDefinitionMap = <span class="hljs-keyword">new</span> LinkedHashMap&lt;String, String&gt;();
+        <span class="hljs-comment">// &lt;!-- &#x8FC7;&#x6EE4;&#x94FE;&#x5B9A;&#x4E49;&#xFF0C;&#x4ECE;&#x4E0A;&#x5411;&#x4E0B;&#x987A;&#x5E8F;&#x6267;&#x884C;&#xFF0C;&#x4E00;&#x822C;&#x5C06; /**&#x653E;&#x5728;&#x6700;&#x4E3A;&#x4E0B;&#x8FB9; --&gt;</span>
+        filterChainDefinitionMap.put(<span class="hljs-string">&quot;/favicon.ico&quot;</span>, <span class="hljs-string">&quot;anon&quot;</span>);
+        filterChainDefinitionMap.put(<span class="hljs-string">&quot;/error&quot;</span>, <span class="hljs-string">&quot;anon&quot;</span>);
+        filterChainDefinitionMap.put(<span class="hljs-string">&quot;/css/**&quot;</span>, <span class="hljs-string">&quot;anon&quot;</span>);
+        filterChainDefinitionMap.put(<span class="hljs-string">&quot;/img/**&quot;</span>, <span class="hljs-string">&quot;anon&quot;</span>);
+        filterChainDefinitionMap.put(<span class="hljs-string">&quot;/js/**&quot;</span>, <span class="hljs-string">&quot;anon&quot;</span>);
+
+        <span class="hljs-comment">// &#x914D;&#x7F6E;&#x9000;&#x51FA;&#x8FC7;&#x6EE4;&#x5668;,&#x5176;&#x4E2D;&#x7684;&#x5177;&#x4F53;&#x7684;&#x9000;&#x51FA;&#x4EE3;&#x7801;Shiro&#x5DF2;&#x7ECF;&#x66FF;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E86;</span>
+        filterChainDefinitionMap.put(<span class="hljs-string">&quot;/logout&quot;</span>, <span class="hljs-string">&quot;logout&quot;</span>);
+        filterChainDefinitionMap.put(<span class="hljs-string">&quot;/**&quot;</span>, <span class="hljs-string">&quot;jwt&quot;</span>);
+
+        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
+        <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;</span>
+        Map&lt;String, Filter&gt; filters = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+        filters.put(<span class="hljs-string">&quot;anon&quot;</span>, <span class="hljs-keyword">new</span> AnonymousFilter());
+        filters.put(<span class="hljs-string">&quot;jwt&quot;</span>, <span class="hljs-keyword">new</span> BaseJwtAuthenticationFilter());
+        shiroFilterFactoryBean.setFilters(filters);
+        <span class="hljs-keyword">return</span> shiroFilterFactoryBean;
+    }
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> AuthorizingRealm <span class="hljs-title">authorizingRealm</span><span class="hljs-params">()</span></span>{
+        WxMemberJwtAuthorizingRealm jwtRealm = <span class="hljs-keyword">new</span> WxMemberJwtAuthorizingRealm();
+        <span class="hljs-keyword">return</span> jwtRealm;
+    }
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> EhCacheManager <span class="hljs-title">cacheManager</span><span class="hljs-params">()</span></span>{
+        System.setProperty(<span class="hljs-string">&quot;net.sf.ehcache.skipUpdateCheck&quot;</span>, <span class="hljs-string">&quot;true&quot;</span>);
+        EhCacheManager cacheManager = <span class="hljs-keyword">new</span> EhCacheManager();
+        <span class="hljs-comment">//cacheManager.setCacheManagerConfigFile(&quot;classpath:ehcache.xml&quot;);</span>
+        <span class="hljs-keyword">return</span> cacheManager;
+    }
+
+    <span class="hljs-comment">/**
+     * Shiro SecurityManager
+     */</span>
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> SecurityManager <span class="hljs-title">securityManager</span><span class="hljs-params">()</span> </span>{
+        DefaultWebSecurityManager securityManager = <span class="hljs-keyword">new</span> DefaultWebSecurityManager();
+        securityManager.setRealm(authorizingRealm());
+        securityManager.setCacheManager(cacheManager());
+        securityManager.setRememberMeManager(<span class="hljs-keyword">null</span>);
+        <span class="hljs-keyword">return</span> securityManager;
+    }
+
+    <span class="hljs-comment">/**
+     * Shiro&#x751F;&#x547D;&#x5468;&#x671F;&#x5904;&#x7406;&#x5668;
+     */</span>
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> LifecycleBeanPostProcessor <span class="hljs-title">lifecycleBeanPostProcessor</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> LifecycleBeanPostProcessor();
+    }
+
+    <span class="hljs-comment">/**
+     * &#x5F00;&#x542F;Shiro&#x7684;&#x6CE8;&#x89E3;(&#x5982; <span class="hljs-doctag">@RequiresRoles</span>, <span class="hljs-doctag">@RequiresPermissions</span>)
+     */</span>
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-meta">@DependsOn</span>({<span class="hljs-string">&quot;lifecycleBeanPostProcessor&quot;</span>})
+    <span class="hljs-function"><span class="hljs-keyword">public</span> DefaultAdvisorAutoProxyCreator <span class="hljs-title">advisorAutoProxyCreator</span><span class="hljs-params">()</span> </span>{
+        DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator = <span class="hljs-keyword">new</span> DefaultAdvisorAutoProxyCreator();
+        advisorAutoProxyCreator.setProxyTargetClass(<span class="hljs-keyword">true</span>);
+        <span class="hljs-keyword">return</span> advisorAutoProxyCreator;
+    }
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> AuthorizationAttributeSourceAdvisor <span class="hljs-title">authorizationAttributeSourceAdvisor</span><span class="hljs-params">(SecurityManager securityManager)</span> </span>{
+        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = <span class="hljs-keyword">new</span> AuthorizationAttributeSourceAdvisor();
+        authorizationAttributeSourceAdvisor.setSecurityManager(securityManager);
+        <span class="hljs-keyword">return</span> authorizationAttributeSourceAdvisor;
+    }
+}
+</code></pre>
+<h3 id="&#x6269;&#x5C55;basejwtauthorizingrealm"><a name="&#x6269;&#x5C55;basejwtauthorizingrealm" class="anchor-navigation-ex-anchor" href="#&#x6269;&#x5C55;basejwtauthorizingrealm"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. &#x6269;&#x5C55;BaseJwtAuthorizingRealm</h3>
+<ul>
+<li>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4E86;&#x6269;&#x5C55;&#x540E;&#x7684;BaseJwtAuthorizingRealm&#x5B50;&#x7C7B;&#xFF0C;&#x5219;&#x5728;&#x4E0B;&#x9762;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6DFB;&#x52A0;&#x6269;&#x5C55;&#x540E;&#x7684;&#x5B50;&#x7C7B;&#x5230;&#x8BE5;bean&#x4E2D;&#x3002;</li>
+</ul>
+<pre><code>@Bean
+public AuthorizingRealm authorizingRealm(){
+    WxMemberJwtAuthorizingRealm jwtRealm = new WxMemberJwtAuthorizingRealm();
+    return jwtRealm;
+}
+</code></pre><h2 id="&#x4F7F;&#x7528;baseuser&#x7C7B;&#x4EE5;&#x53CA;baseauthuser&#x7C7B;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;"><a name="&#x4F7F;&#x7528;baseuser&#x7C7B;&#x4EE5;&#x53CA;baseauthuser&#x7C7B;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;baseuser&#x7C7B;&#x4EE5;&#x53CA;baseauthuser&#x7C7B;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x4F7F;&#x7528;BaseUser&#x7C7B;&#x4EE5;&#x53CA;BaseAuthUser&#x7C7B;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;</h2>
+<h3 id="baseuser"><a name="baseuser" class="anchor-navigation-ex-anchor" href="#baseuser"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. BaseUser</h3>
+<ul>
+<li>BaseUser&#x662F;&#x7528;&#x6237;&#x7C7B;&#x7684;&#x57FA;&#x7840;&#x7C7B;&#xFF0C;&#x7EE7;&#x627F;&#x81EA;BaseModel&#x7C7B;&#xFF0C;&#x5728;&#x9ED8;&#x8BA4;&#x7684;&#x8BA4;&#x8BC1;&#x6D41;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;username&#xFF0C;&#x4EE5;&#x53CA;&#x975E;openid&#x7684;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x6821;&#x9A8C;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x8BE5;&#x7C7B;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#xFF0C;BaseHelper.getCurrentUser()&#x4E5F;&#x5C06;&#x8FD4;&#x56DE;BaseUser&#x5B9E;&#x4F53;&#x3002;</li>
+<li>BaseUser&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x5176;&#x4ED6;&#x7C7B;&#x7EE7;&#x627F;&#x81EA;&#x8BE5;&#x7C7B;&#xFF0C;&#x4FE1;&#x606F;&#x5B58;&#x50A8;&#x5728;&#x5176;&#x4ED6;&#x5B50;&#x7C7B;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x8868;&#x4E2D;</li>
+</ul>
+<h3 id="baseauthuser"><a name="baseauthuser" class="anchor-navigation-ex-anchor" href="#baseauthuser"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. BaseAuthUser</h3>
+<ul>
+<li>BaseAuthUser&#x662F;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7684;&#x57FA;&#x7840;&#x7C7B;&#xFF0C;&#x7EE7;&#x627F;&#x81EA;BaseUser&#x7C7B;&#xFF0C;&#x5728;&#x4F7F;&#x7528;openid&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x8BE5;&#x7C7B;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;BaseHelper.getCurrentUser()&#x5C06;&#x8FD4;&#x56DE;BaseAuthUser&#x5B9E;&#x4F53;&#x3002;</li>
+<li>BaseAuthUser&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x7528;&#x6237;&#x7684;&#x7EDF;&#x4E00;&#x8BA4;&#x8BC1;&#xFF0C;&#x5E76;&#x4E14;&#x5B58;&#x5728;&#x5355;&#x72EC;&#x7684;auth_user&#x8868;&#x4E2D;&#xFF0C;&#x5F53;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x65B0;&#x5EFA;&#x6216;&#x66F4;&#x65B0;&#x65F6;&#x5019;&#xFF0C;&#x4E5F;&#x65B0;&#x5EFA;&#x6216;&#x66F4;&#x65B0;auth_user&#x8868;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x3002;</li>
+<li>&#x6BD4;&#x5982;&#x4E00;&#x5957;&#x7CFB;&#x7EDF;&#x4E2D;&#x5177;&#x6709;&#x597D;&#x51E0;&#x79CD;&#x7528;&#x6237;&#xFF0C;&#x5E76;&#x4E14;&#x5206;&#x522B;&#x5B58;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x8868;&#x4E2D;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x5C06;&#x90A3;&#x51E0;&#x79CD;&#x7528;&#x6237;&#x7684;&#x4FE1;&#x606F;&#x7EDF;&#x4E00;&#x540C;&#x6B65;&#x5230;auth_user&#x8868;&#x4E2D;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x90FD;&#x662F;&#x7528;auth_user&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x6388;&#x6743;&#x7B49;&#x7B49;&#x3002;</li>
+</ul>
+<h2 id="&#x6388;&#x6743;&#x6838;&#x5FC3;&#x7C7B;"><a name="&#x6388;&#x6743;&#x6838;&#x5FC3;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x6388;&#x6743;&#x6838;&#x5FC3;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x6388;&#x6743;&#x6838;&#x5FC3;&#x7C7B;</h2>
+<h3 id="basejwtauthenticationtoken"><a name="basejwtauthenticationtoken" class="anchor-navigation-ex-anchor" href="#basejwtauthenticationtoken"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. BaseJwtAuthenticationToken</h3>
+<ul>
+<li>BaseJwtAuthenticationToken(HttpServletRequest request), &#x53EA;&#x4F20;&#x5165;request&#x53C2;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x7528;username&#x548C;password&#x8FDB;&#x884C;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x6388;&#x6743;&#xFF0C;&#x9ED8;&#x8BA4;&#x6709;&#x6548;&#x65F6;&#x95F4;&#x662F;120&#x5206;&#x949F;&#x3002;</li>
+<li>BaseJwtAuthenticationToken(HttpServletRequest request, long expiresInMinutes), &#x4F20;&#x5165;request&#x548C;expiresInMinutes&#x53C2;&#x6570;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x662F;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x53C2;&#x6570;&#xFF0C;&#x4EE5;&#x5206;&#x949F;&#x6570;&#x8BA1;&#x7B97;&#x3002;&#x9ED8;&#x8BA4;&#x4E5F;&#x4EE5;username&#x548C;password&#x8FDB;&#x884C;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x6388;&#x6743;&#x3002;</li>
+<li>BaseJwtAuthenticationToken(HttpServletRequest request, String fetchUserByField, String username, boolean preliminaryVerified), &#x53EF;&#x7528;&#x4E8E;&#x5FAE;&#x4FE1;&#x767B;&#x5F55;&#x6388;&#x6743;&#xFF0C;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x6388;&#x6743;&#x7B49;&#x3002;<ul>
+<li>fetchUserByField&#xFF0C; &#x7528;&#x4E8E;&#x6388;&#x6743;&#x7684;&#x5B57;&#x6BB5;&#x53C2;&#x6570;</li>
+<li>username&#xFF0C; &#x7528;&#x4E8E;&#x6388;&#x6743;&#x7684;&#x5B57;&#x6BB5;&#x503C;</li>
+<li>preliminaryVerified&#xFF0C; &#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x767B;&#x5F55;&#x9A8C;&#x8BC1;</li>
+</ul>
+</li>
+<li>BaseJwtAuthenticationToken(HttpServletRequest request, String fetchUserByField, String username, boolean preliminaryVerified, long expiresInMinutes)&#xFF0C; &#x76F8;&#x6BD4;&#x4E0A;&#x9762;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x591A;&#x4F20;&#x5165;&#x4E86;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x76F8;&#x540C;&#x3002;</li>
+</ul>
+<h3 id="basejwtauthorizingrealm"><a name="basejwtauthorizingrealm" class="anchor-navigation-ex-anchor" href="#basejwtauthorizingrealm"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. BaseJwtAuthorizingRealm</h3>
+<ul>
+<li>&#x8BE5;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x767B;&#x5F55;&#xFF0C;&#x8D4B;&#x4E88;&#x89D2;&#x8272;&#x6743;&#x9650;&#xFF0C;&#x9274;&#x6743;&#x7B49;&#x529F;&#x80FD;&#x3002;</li>
+<li>&#x9ED8;&#x8BA4;&#x5728;user&#x8868;&#x548C;auth_user&#x8868;&#x4E2D;&#x67E5;&#x8BE2;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x6388;&#x6743;&#x767B;&#x5F55;&#x3002;</li>
+<li><p>&#x6269;&#x5C55;</p>
+<ul>
+<li>&#x65B0;&#x5EFA;&#x5B50;&#x7C7B;&#x7EE7;&#x627F;&#x8BE5;&#x7C7B;&#xFF0C;&#x5E76;&#x91CD;&#x5199;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#x3002;</li>
+<li><p>&#x66F4;&#x6539;&#x8D4B;&#x4E88;&#x89D2;&#x8272;&#x6743;&#x9650;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x91CD;&#x5199;grantPermission&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">grantPermission</span><span class="hljs-params">(SimpleAuthorizationInfo authorizationInfo, BaseUser user)</span> </span>{
+  <span class="hljs-keyword">if</span> (V.notEmpty(user.getRoleList())) {
+      Set&lt;String&gt; roles = <span class="hljs-keyword">new</span> HashSet(Arrays.asList(user.getRoleList()));
+      authorizationInfo.setRoles(roles);
+      authorizationInfo.addStringPermissions(roles);
+  }
+}
+</code></pre>
+</li>
+<li><p>&#x66F4;&#x6539;&#x767B;&#x5F55;&#x65B9;&#x6CD5;&#xFF0C;&#x91CD;&#x5199;doGetAuthenticationInfo&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> AuthenticationInfo <span class="hljs-title">doGetAuthenticationInfo</span><span class="hljs-params">(AuthenticationToken token)</span> <span class="hljs-keyword">throws</span> AuthenticationException </span>{
+  BaseJwtAuthenticationToken jwt = (BaseJwtAuthenticationToken) token;
+  <span class="hljs-comment">//&#x6839;&#x636E;&#x7528;&#x6237;&#x540D;&#x53BB;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x627E;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x662F;&#x5426;&#x5B58;&#x5728;</span>
+  String username = (String) jwt.getPrincipal();
+  <span class="hljs-keyword">if</span>(V.isEmpty(username)){
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> AuthenticationException(<span class="hljs-string">&quot;&#x65E0;&#x6548;&#x7684;Token !&quot;</span>);
+  }
+  BaseUser user = <span class="hljs-keyword">null</span>;
+  <span class="hljs-comment">//&#x6839;&#x636E;&#x7528;&#x6237;&#x540D;&#x53BB;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x627E;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x662F;&#x5426;&#x5B58;&#x5728;</span>
+
+  <span class="hljs-comment">// &#x5BF9;&#x8BE5;&#x7528;&#x6237;&#x7684;&#x6821;&#x9A8C;</span>
+
+  <span class="hljs-comment">// &#x662F;&#x5426;&#x5DF2;&#x521D;&#x6B65;&#x9A8C;&#x8BC1;&#x8FC7;</span>
+  <span class="hljs-keyword">boolean</span> isAuthed = jwt.isPreliminaryVerified();
+
+  <span class="hljs-keyword">if</span>(!isAuthed &amp;&amp; V.notEmpty(secret)){
+      <span class="hljs-comment">// &#x5BC6;&#x94A5;&#x662F;&#x5426;&#x5339;&#x914D;</span>
+      isAuthed = Encryptor.encryptPassword(secret, user.getSalt()).equals(user.getPassword());
+  }
+
+  <span class="hljs-comment">// &#x5982;&#x679C;&#x9A8C;&#x8BC1;&#x4E0D;&#x901A;&#x8FC7;&#xFF0C;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x5982;&#x679C;&#x901A;&#x8FC7;&#xFF0C;&#x8FD4;&#x56DE;SimpleAuthenticationInfo&#x5B9E;&#x4F8B;</span>
+  <span class="hljs-keyword">if</span>(!isAuthed){
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> AuthenticationException(AUTH_EXCEPTION_MSG);
+  }
+}
+</code></pre>
+</li>
+<li><p>&#x66F4;&#x6539;&#x9274;&#x6743;&#x6D41;&#x7A0B;&#xFF0C;&#x91CD;&#x5199;doGetAuthorizationInfo&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> AuthorizationInfo <span class="hljs-title">doGetAuthorizationInfo</span><span class="hljs-params">(PrincipalCollection principals)</span> </span>{
+  SimpleAuthorizationInfo info = <span class="hljs-keyword">new</span> SimpleAuthorizationInfo();
+  BaseUser user = (BaseUser) principals.getPrimaryPrincipal();
+  <span class="hljs-comment">// &#x6388;&#x6743;</span>
+  grantPermission(info, user);
+  <span class="hljs-keyword">return</span> info;
+}
+</code></pre>
+</li>
+<li><p>&#x4F7F;&#x7528;BaseAuthUser&#x8FDB;&#x884C;&#x6388;&#x6743;&#x65F6;&#xFF0C;&#x5728;&#x5B50;&#x7C7B;&#x4E2D;&#x91CD;&#x5199;attachUserModel&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5177;&#x4F53;&#x7684;&#x7528;&#x6237;&#x5B9E;&#x4F53;&#xFF0C;&#x6DFB;&#x52A0;&#x5230;BaseAuthUser&#x4E2D;&#xFF0C;&#x5C06;&#x5177;&#x4F53;&#x7684;&#x7528;&#x6237;&#x5B9E;&#x4F53;&#xFF0C;&#x6DFB;&#x52A0;&#x5230;BaseAuthUser&#x7684;userModel&#x5C5E;&#x6027;&#x4E2D;&#x3002;&#x6DFB;&#x52A0;&#x8BE5;&#x5C5E;&#x6027;&#x540E;&#xFF0C;&#x5373;&#x53EF;&#x4F7F;&#x7528;BaseHelper.getCurrentUser().getUserModel()&#x83B7;&#x53D6;&#x5230;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x5B9E;&#x4F53;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attachUserModel</span><span class="hljs-params">(BaseAuthUser authUser)</span></span>{
+  <span class="hljs-keyword">if</span> (WxMember.class.getSimpleName().equalsIgnoreCase(authUser.getUserType())){
+      WxMember wxMember = wxMemberService.getModel(authUser.getUserId());
+      <span class="hljs-keyword">if</span> (wxMember != <span class="hljs-keyword">null</span>){
+          authUser.setUserModel(wxMember);
+      }
+  }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x767B;&#x5F55;"><a name="&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x767B;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x767B;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x767B;&#x5F55;</h2>
+<ul>
+<li>&#x6309;&#x7167;&#x76F8;&#x5173;&#x4E1A;&#x52A1;&#x6D41;&#x7A0B;&#x5B8C;&#x6210;&#x76F8;&#x5173;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x548C;&#x5BC6;&#x7801;&#x7B49;&#x7684;&#x9A8C;&#x8BC1;</li>
+<li>&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x9A8C;&#x8BC1;&#x901A;&#x8FC7;&#x540E;&#xFF0C;&#x5F00;&#x59CB;&#x751F;&#x6210;token&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java">String username = request.getParameter(<span class="hljs-string">&quot;username&quot;</span>);
+BaseJwtAuthenticationToken authToken = <span class="hljs-keyword">new</span> BaseJwtAuthenticationToken(request, BaseUser.F.username, username, <span class="hljs-keyword">true</span>);
+<span class="hljs-comment">//&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7684;Subject</span>
+Subject subject = SecurityUtils.getSubject();
+String errorMsg = <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">try</span> {
+    subject.login(authToken);
+    <span class="hljs-comment">//&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x767B;&#x5F55;&#x6210;&#x529F;</span>
+    <span class="hljs-keyword">if</span>(subject.isAuthenticated()){
+        logger.debug(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + username + <span class="hljs-string">&quot;]&#x7533;&#x8BF7;token&#x6210;&#x529F;&#xFF01;authtoken=&quot;</span>+authToken.getCredentials());
+        String token = (String)authToken.getCredentials();
+        <span class="hljs-comment">// &#x8DF3;&#x8F6C;&#x5230;&#x9996;&#x9875;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> JsonResult(token, <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x6210;&#x529F;&quot;</span>);
+    }
+}
+<span class="hljs-keyword">catch</span>(UnknownAccountException uae){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x9519;&#x8BEF;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + username + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;: &#x672A;&#x77E5;&#x8D26;&#x6237;!&quot;</span>, uae);
+}
+<span class="hljs-keyword">catch</span>(IncorrectCredentialsException ice){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x9519;&#x8BEF;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + username + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;: &#x9519;&#x8BEF;&#x7684;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;!&quot;</span>, ice);
+}
+<span class="hljs-keyword">catch</span>(LockedAccountException lae){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x8D26;&#x53F7;&#x5DF2;&#x88AB;&#x9501;&#x5B9A;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + username + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;: &#x8D26;&#x53F7;&#x5DF2;&#x9501;&#x5B9A;!&quot;</span>, lae);
+}
+<span class="hljs-keyword">catch</span>(ExcessiveAttemptsException eae){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x5C1D;&#x8BD5;&#x6B21;&#x6570;&#x8FC7;&#x591A;&#xFF0C;&#x8D26;&#x53F7;&#x5DF2;&#x88AB;&#x9501;&#x5B9A;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + username + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;: &#x5931;&#x8D25;&#x5C1D;&#x8BD5;&#x6B21;&#x6570;&#x8FC7;&#x591A;!&quot;</span>, eae);
+}
+<span class="hljs-keyword">catch</span>(AuthenticationException ae){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x9519;&#x8BEF;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + username + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;: &#x9519;&#x8BEF;&#x7684;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;!&quot;</span>, ae);
+}
+</code></pre>
+<h2 id="&#x7535;&#x8BDD;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;"><a name="&#x7535;&#x8BDD;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x7535;&#x8BDD;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x7535;&#x8BDD;&#x9A8C;&#x8BC1;&#x7801;&#x767B;&#x5F55;</h2>
+<pre><code class="lang-java">String phone = request.getParameter(<span class="hljs-string">&quot;phone&quot;</span>);
+BaseJwtAuthenticationToken authToken = <span class="hljs-keyword">new</span> BaseJwtAuthenticationToken(request, BaseUser.F.phone, phone, <span class="hljs-keyword">true</span>);
+<span class="hljs-comment">//&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7684;Subject</span>
+Subject subject = SecurityUtils.getSubject();
+String errorMsg = <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">try</span> {
+    subject.login(authToken);
+    <span class="hljs-comment">//&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x767B;&#x5F55;&#x6210;&#x529F;</span>
+    <span class="hljs-keyword">if</span>(subject.isAuthenticated()){
+        logger.debug(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + phone + <span class="hljs-string">&quot;]&#x7533;&#x8BF7;token&#x6210;&#x529F;&#xFF01;authtoken=&quot;</span>+authToken.getCredentials());
+        String token = (String)authToken.getCredentials();
+        <span class="hljs-comment">// &#x8DF3;&#x8F6C;&#x5230;&#x9996;&#x9875;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> JsonResult(token, <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x6210;&#x529F;&quot;</span>);
+    }
+}
+<span class="hljs-keyword">catch</span>(UnknownAccountException uae){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x9519;&#x8BEF;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + phone + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;: &#x672A;&#x77E5;&#x8D26;&#x6237;!&quot;</span>, uae);
+}
+<span class="hljs-keyword">catch</span>(IncorrectCredentialsException ice){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x9519;&#x8BEF;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + phone + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;: &#x9519;&#x8BEF;&#x7684;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;!&quot;</span>, ice);
+}
+<span class="hljs-keyword">catch</span>(LockedAccountException lae){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x8D26;&#x53F7;&#x5DF2;&#x88AB;&#x9501;&#x5B9A;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + phone + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;: &#x8D26;&#x53F7;&#x5DF2;&#x9501;&#x5B9A;!&quot;</span>, lae);
+}
+<span class="hljs-keyword">catch</span>(ExcessiveAttemptsException eae){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x5C1D;&#x8BD5;&#x6B21;&#x6570;&#x8FC7;&#x591A;&#xFF0C;&#x8D26;&#x53F7;&#x5DF2;&#x88AB;&#x9501;&#x5B9A;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + phone + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;: &#x5931;&#x8D25;&#x5C1D;&#x8BD5;&#x6B21;&#x6570;&#x8FC7;&#x591A;!&quot;</span>, eae);
+}
+<span class="hljs-keyword">catch</span>(AuthenticationException ae){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x9519;&#x8BEF;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;&#x7528;&#x6237;[&quot;</span> + phone + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;: &#x9519;&#x8BEF;&#x7684;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;!&quot;</span>, ae);
+}
+</code></pre>
+<h2 id="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x4F7F;&#x7528;oauth&#x6388;&#x6743;&#x767B;&#x5F55;"><a name="&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x4F7F;&#x7528;oauth&#x6388;&#x6743;&#x767B;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x4F7F;&#x7528;oauth&#x6388;&#x6743;&#x767B;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x4F7F;&#x7528;oAuth&#x6388;&#x6743;&#x767B;&#x5F55;</h2>
+<ul>
+<li>&#x5F53;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x76F8;&#x5173;&#x56DE;&#x8C03;&#x5730;&#x5740;&#xFF0C;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x76EE;&#x6807;&#x5730;&#x5740;&#x540E;&#xFF0C;&#x83B7;&#x53D6;&#x5230;code&#xFF0C;&#x901A;&#x8FC7;&#x76F8;&#x5173;&#x63A5;&#x53E3;&#x4F7F;&#x7528;code&#x83B7;&#x53D6;&#x5230;&#x76F8;&#x5BF9;&#x5E94;&#x7684;openid</li>
+<li>&#x5F53;&#x5B8C;&#x6210;openid&#x76F8;&#x5173;&#x7684;&#x6821;&#x9A8C;&#x540E;&#xFF0C;&#x5229;&#x7528;openid&#x6765;&#x8FDB;&#x884C;token&#x7684;&#x83B7;&#x53D6;&#x548C;&#x8BA4;&#x8BC1;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java">String code = request.getParameter(<span class="hljs-string">&quot;code&quot;</span>);
+String state = request.getParameter(<span class="hljs-string">&quot;state&quot;</span>);
+
+String openid = ....;   <span class="hljs-comment">// &#x8C03;&#x7528;&#x5FAE;&#x4FE1;&#x76F8;&#x5173;&#x63A5;&#x53E3;&#xFF0C;&#x83B7;&#x53D6;code&#x5BF9;&#x5E94;&#x7684;openid</span>
+<span class="hljs-comment">// &#x8BBE;&#x7F6E;token</span>
+BaseJwtAuthenticationToken authToken = <span class="hljs-keyword">new</span> BaseJwtAuthenticationToken(request, BaseAuthUser.F.openid, openid, <span class="hljs-keyword">true</span>);
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7684;Subject</span>
+Subject subject = SecurityUtils.getSubject();
+String token = <span class="hljs-keyword">null</span>;
+String errorMsg = <span class="hljs-keyword">null</span>;
+
+<span class="hljs-keyword">try</span> {
+    subject.login(authToken);
+    <span class="hljs-comment">//&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x767B;&#x5F55;&#x6210;&#x529F;</span>
+    <span class="hljs-keyword">if</span>(subject.isAuthenticated()){
+        token = (String)authToken.getCredentials();
+        logger.debug(<span class="hljs-string">&quot;openid[&quot;</span> + openid + <span class="hljs-string">&quot;]&#x7533;&#x8BF7;token&#x6210;&#x529F;&#xFF01;authtoken=&quot;</span>+token);
+    }
+}
+<span class="hljs-keyword">catch</span>(Exception uae){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;: &#x5FAE;&#x4FE1;&#x767B;&#x5F55;&#x5931;&#x8D25;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;openid[&quot;</span> + openid + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;!&quot;</span>, uae);
+}
+</code></pre>
+<h2 id="&#x4F7F;&#x7528;wechat&#x6216;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x6388;&#x6743;"><a name="&#x4F7F;&#x7528;wechat&#x6216;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x6388;&#x6743;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;wechat&#x6216;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x6388;&#x6743;"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. &#x4F7F;&#x7528;wechat&#x6216;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x6388;&#x6743;</h2>
+<ul>
+<li>&#x5F53;&#x4F7F;&#x7528;wechat&#x6216;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#x6388;&#x6743;&#x65F6;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x66F4;&#x6539;&#x521B;&#x5EFA;BaseJwtAuthenticationToken&#x5B9E;&#x4F8B;&#x65F6;&#x4F20;&#x5165;&#x7684;&#x76F8;&#x5173;&#x53C2;&#x6570;&#x4EE5;&#x53CA;&#x6355;&#x83B7;&#x76F8;&#x5173;&#x5F02;&#x5E38;&#x5373;&#x53EF;&#x3002;&#x4F8B;&#x5982;&#x5229;&#x7528;wechat&#x5B57;&#x6BB5;&#x7684;&#x6388;&#x6743;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java">String wechat = ...;         <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5230;wechat</span>
+BaseJwtAuthenticationToken authToken = <span class="hljs-keyword">new</span> BaseJwtAuthenticationToken(request, BaseUser.F.wechat, wechat, <span class="hljs-keyword">true</span>);
+<span class="hljs-keyword">try</span> {
+    subject.login(authToken);
+    <span class="hljs-comment">//&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x767B;&#x5F55;&#x6210;&#x529F;</span>
+    <span class="hljs-keyword">if</span>(subject.isAuthenticated()){
+        token = (String)authToken.getCredentials();
+        logger.debug(<span class="hljs-string">&quot;wechat[&quot;</span> + wechat + <span class="hljs-string">&quot;]&#x7533;&#x8BF7;token&#x6210;&#x529F;&#xFF01;authtoken=&quot;</span>+token);
+    }
+}
+<span class="hljs-keyword">catch</span>(Exception uae){
+    errorMsg = <span class="hljs-string">&quot;&#x767B;&#x5F55;&#x5931;&#x8D25;!&quot;</span>;
+    logger.warn(<span class="hljs-string">&quot;wechat[&quot;</span> + wechat + <span class="hljs-string">&quot;]&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x5931;&#x8D25;!&quot;</span>, uae);
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="../认证与安全.html" class="navigation navigation-prev " aria-label="Previous page: 认证与安全">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="CSRF防护.html" class="navigation navigation-next " aria-label="Next page: CSRF防护">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JWT认证","level":"1.5.1","depth":2,"next":{"title":"CSRF防护","level":"1.5.2","depth":2,"path":"认证与安全/CSRF防护.md","ref":"认证与安全/CSRF防护.md","articles":[]},"previous":{"title":"认证与安全","level":"1.5","depth":1,"path":"认证与安全.md","ref":"认证与安全.md","articles":[{"title":"JWT认证","level":"1.5.1","depth":2,"path":"认证与安全/jwt授权.md","ref":"认证与安全/jwt授权.md","articles":[]},{"title":"CSRF防护","level":"1.5.2","depth":2,"path":"认证与安全/CSRF防护.md","ref":"认证与安全/CSRF防护.md","articles":[]},{"title":"XSS防护","level":"1.5.3","depth":2,"path":"认证与安全/XSS防护.md","ref":"认证与安全/XSS防护.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-sharing","sharing-plus","anchor-navigation-ex","theme-vuejs-2","livereload"],"pluginsConfig":{"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"isShowTocTitleIcon":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"sharing":{"qq":true,"all":["weibo","qq","linkedin","qzone","douban"],"douban":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"认证与安全/jwt授权.md","mtime":"2018-10-14T02:43:52.420Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-15T06:36:06.783Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

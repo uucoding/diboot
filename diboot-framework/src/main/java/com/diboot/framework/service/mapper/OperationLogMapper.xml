@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.framework.service.mapper.OperationLogMapper">
+
+	<!-- 通用CRUD: begin  -->
+	<!-- 指定Select需要返回的列 -->
+	<sql id="columns">
+		<trim suffixOverrides=",">
+			<if test="f == null or f.id != null">self.id,</if>
+			<if test="f == null or f.source != null">self.source,</if>
+			<if test="f == null or f.userType != null">self.user_type,</if>
+			<if test="f == null or f.userId != null">self.user_id,</if>
+			<if test="f == null or f.operation != null">self.operation,</if>
+			<if test="f == null or f.comment != null">self.comment,</if>
+			<if test="f == null or f.relObjType != null">self.rel_obj_type,</if>
+			<if test="f == null or f.relObjId != null">self.rel_obj_id,</if>
+			<if test="f == null or f.relObjData != null">self.rel_obj_data,</if>
+			<if test="f == null or f.requestUrl != null">self.request_url,</if>
+			<if test="f == null or f.extdata != null">self.extdata,</if>
+		</trim>
+	</sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.source != null">self.source=#{c.source}</if>
+		<if test="c.userType != null">AND self.user_type=#{c.userType}</if>
+        <if test="c.userId != null">AND self.user_id=#{c.userId}</if>
+        <if test="c.operation != null">AND self.operation=#{c.operation}</if>
+        <if test="c.relObjType != null">AND self.rel_obj_type=#{c.relObjType}</if>
+        <if test="c.relObjId != null">AND self.rel_obj_id=#{c.relObjId}</if>
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+        <set>
+            <if test="f == null or f.source != null"></if>
+            <if test="f == null or f.operation != null">operation=#{m.operation},</if>
+            <if test="f == null or f.comment != null">comment=#{m.comment},</if>
+			<if test="f == null or f.requestUrl != null">request_url=#{m.requestUrl},</if>
+			<if test="f == null or f.extdata != null">extdata=#{m.extdata},</if>
+        </set>
+    </sql>
+
+    <!-- 添加记录 -->
+	<insert id="create" parameterType="com.diboot.framework.model.OperationLog" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO operation_log(
+			source, user_type, user_id, operation, comment, rel_obj_type, rel_obj_id, rel_obj_data, request_url, extdata
+		)
+		VALUES(
+			#{source}, #{userType}, #{userId}, #{operation}, #{comment}, #{relObjType}, #{relObjId}, #{relObjData}, #{requestUrl}, #{extdata}
+		)
+	</insert>
+
+	<!-- 批量创建 -->
+	<insert id="batchCreate" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO operation_log(
+		source, user_type, user_id, operation, comment, rel_obj_type, rel_obj_id, rel_obj_data, request_url, extdata
+		)
+		VALUES
+		<foreach collection="list" item="m" separator=",">
+		(#{m.source}, #{m.userType}, #{m.userId}, #{m.operation}, #{m.comment}, #{m.relObjType}, #{m.relObjId}, #{m.relObjData}, #{m.requestUrl}, #{m.extdata})
+		</foreach>
+	</insert>
+
+    <!-- 更新记录 -->
+	<update id="update">
+		UPDATE operation_log
+        <include refid="setValues" />
+		WHERE id=#{m.id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="Long">
+		UPDATE operation_log SET active=0 WHERE id=#{id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="Long" resultType="com.diboot.framework.model.OperationLog">
+        SELECT self.*
+        FROM operation_log self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+		SELECT count(self.id)
+	    FROM operation_log self
+	    <where>
+            <include refid="conditions" />
+	    </where>
+	</select>
+
+    <!-- 查询符合条件的记录 -->
+	<select id="getList" resultType="com.diboot.framework.model.OperationLog">
+		SELECT self.*
+	    FROM operation_log self
+	    <where>
+	    	<include refid="conditions" />
+	    </where>
+		ORDER BY self.id DESC
+		<if test="c.COUNT != null">
+			LIMIT <if test="c.OFFSET != null">#{c.OFFSET},</if> #{c.COUNT}
+		</if>
+	</select>
+
+	<!-- 查询符合条件的记录，返回Map -->
+	<select id="getMapList" resultType="java.util.Map">
+		SELECT <include refid="columns" />
+		FROM operation_log self
+		<where>
+			<include refid="conditions" />
+		</where>
+		ORDER BY self.id DESC
+		<if test="c.COUNT != null">
+			LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+		</if>
+	</select>
+	<!-- 通用CRUD: end -->
+	
+	<!-- 扩展SQL: -->
+
+</mapper>

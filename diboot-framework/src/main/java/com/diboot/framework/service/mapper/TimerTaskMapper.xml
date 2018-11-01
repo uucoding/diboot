@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.framework.service.mapper.TimerTaskMapper">
+
+    <!-- 通用CRUD: begin  -->
+    <!-- 指定Select需要返回的列 -->
+    <sql id="columns">
+        <trim suffixOverrides=",">
+            <if test="f == null or f.id != null">self.id,</if>
+            <if test="f == null or f.business_type != null">self.business_type,</if>
+            <if test="f == null or f.business_id != null">self.business_id,</if>
+            <if test="f == null or f.type != null">self.type,</if>
+            <if test="f == null or f.executor != null">self.executor,</if>
+            <if test="f == null or f.schedule_time != null">self.schedule_time,</if>
+            <if test="f == null or f.status != null">self.status,</if>
+            <if test="f == null or f.begin_time != null">self.begin_time,</if>
+            <if test="f == null or f.end_time != null">self.end_time,</if>
+            <if test="f == null or f.progress != null">self.progress,</if>
+            <if test="f == null or f.comment != null">self.comment,</if>
+            <if test="f == null or f.active != null">self.active,</if>
+            <if test="f == null or f.create_by != null">self.create_by,</if>
+            <if test="f == null or f.create_time != null">self.create_time,</if>
+        </trim>
+    </sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.id != null">self.id=#{c.id}</if>
+        <if test="c.businessType != null"> AND self.business_type=#{c.businessType}</if>
+        <if test="c.businessId != null"> AND self.business_id=#{c.businessId}</if>
+        <if test="c.type != null"> AND self.type=#{c.type}</if>
+        <if test="c.executor != null"> AND self.executor=#{c.executor}</if>
+        <if test="c.scheduleTime != null"> AND date(self.schedule_time)=#{c.scheduleTime}</if>
+        <if test="c.status != null"> AND self.status=#{c.status}</if>
+        <if test="c.beginTime != null"> AND date(self.begin_time)=#{c.beginTime}</if>
+        <if test="c.endTime != null"> AND date(self.end_time)=#{c.endTime}</if>
+        <if test="c.progress != null"> AND self.progress=#{c.progress}</if>
+        <if test="c.comment != null"> AND self.comment=#{c.comment}</if>
+        <if test="c.createBy != null"> AND self.create_by=#{c.createBy}</if>
+        <if test="c.createTime != null"> AND date(self.create_time)=#{c.createTime}</if>
+         AND  self.active=1
+        <if test="c.scheduleTime_LTE != null"> AND self.schedule_time &lt;= #{c.scheduleTime_LTE}</if>
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+    <set>
+        <if test="(f == null or f.id != null) and m.id != null">id=#{m.id},</if>
+        <if test="(f == null or f.businessType != null)">business_type=#{m.businessType},</if>
+        <if test="(f == null or f.businessId != null)">business_id=#{m.businessId},</if>
+        <if test="(f == null or f.type != null)">type=#{m.type},</if>
+        <if test="(f == null or f.executor != null) and m.executor != null">executor=#{m.executor},</if>
+        <if test="(f == null or f.scheduleTime != null) and m.scheduleTime != null">schedule_time=#{m.scheduleTime},</if>
+        <if test="(f == null or f.status != null) and m.status != null">status=#{m.status},</if>
+        <if test="(f == null or f.beginTime != null)">begin_time=#{m.beginTime},</if>
+        <if test="(f == null or f.endTime != null)">end_time=#{m.endTime},</if>
+        <if test="(f == null or f.progress != null)">progress=#{m.progress},</if>
+        <if test="(f == null or f.comment != null)">comment=#{m.comment},</if>
+        <if test="(f == null or f.active != null) and m.active != null">active=#{m.active},</if>
+    </set>
+    </sql>
+
+    <!-- 添加记录 -->
+    <insert id="create" parameterType="com.diboot.framework.model.TimerTask" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO timer_task(
+		     business_type, business_id, type, executor, schedule_time, status, begin_time, end_time, progress, comment, active, create_by
+        )
+        VALUES(
+		     #{businessType}, #{businessId}, #{type}, #{executor}, #{scheduleTime}, #{status}, #{beginTime}, #{endTime}, #{progress}, #{comment}, #{active}, #{createBy}
+        )
+    </insert>
+
+    <!-- 批量添加记录 -->
+    <insert id="batchCreate" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO timer_task(
+            business_type, business_id, type, executor, schedule_time, status, begin_time, end_time, progress, comment, active, create_by
+        )
+        VALUES
+        <foreach collection="list" item="m" separator=",">
+        (#{m.businessType}, #{m.businessId}, #{m.type}, #{m.executor}, #{m.scheduleTime}, #{m.status}, #{m.beginTime}, #{m.endTime}, #{m.progress}, #{m.comment}, #{active}, #{createBy})
+        </foreach>
+    </insert>
+
+    <!-- 更新记录 -->
+    <update id="update" parameterType="com.diboot.framework.model.TimerTask">
+        UPDATE timer_task
+        <include refid="setValues" />
+        WHERE id=#{m.id, jdbcType=BIGINT}
+    </update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="Long">
+		UPDATE timer_task SET active=0 WHERE id=#{id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="Long" resultType="com.diboot.framework.model.TimerTask">
+        SELECT self.* 
+        FROM timer_task self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+        SELECT count(self.id)
+        FROM  timer_task self
+        <where>
+            <include refid="conditions" />
+        </where>
+    </select>
+
+    <!-- 查询符合条件的记录 -->
+    <select id="getList" resultType="com.diboot.framework.model.TimerTask">
+        SELECT self.* 
+        FROM timer_task self
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+
+    <!-- 查询符合条件的记录，返回Map -->
+    <select id="getMapList" resultType="java.util.Map">
+        SELECT <include refid="columns" />
+        FROM timer_task self
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+
+    <!-- 通用CRUD: end -->
+
+    <!-- 扩展SQL -->
+	
+</mapper>

@@ -1,0 +1,5 @@
+# Controller基类
+
+CrudController和CrudRestController的父类，提供controller相关的页面跳转、请求参数处理等相关方法的封装。
+
+如果是非CRUD类的controller，可以直接继承自该类。

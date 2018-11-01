@@ -1,0 +1,308 @@
+# 条件构造器
+
+> 提供数据库查询条件相关等处理，简化查询条件处理流程。
+
+## 添加Query实例
+
+* 新建Query实例，示例如下：
+
+```java
+String name = request.getParameter("name");
+Query query = new Query(Student.F.name, name);
+// 或
+Query query = new Query();
+query.add(Student.F.name, name);
+```
+
+* Query也支持链式调用，如下：
+
+```java
+String name = request.getParameter("name");
+String phone = request.getParameter("phone");
+Query query = new Query();
+query.add(Student.F.name, name).add(Student.F.phone, phone);
+```
+
+## 使用Query构建的条件
+
+* 将query实例调用build()方法后，传入相关的service接口中，如下：
+
+```java
+List<Student> students = studentService.getModelList(query.build());
+```
+
+## 条件支持
+
+* 当query实例调用相关添加条件的方法时，将会像条件结果中添加一条元素，添加不同类型的条件，在SQL中的变量名也将不同。
+* 在添加相关的条件后，在mapper.xml中也需要有对应的变量名的变量存在，方可生效。
+
+### add
+
+* 调用add方法如下：
+
+```java
+Query query = new Query();
+String teacherId = request.getParameter("teacherId");
+query.add(Student.F.teacherId, teacherId);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.teacherId != null"> AND self.teacher_id=#{c.teacherId}</if>
+```
+
+### addIn
+
+* 调用addIn方法如下：
+
+```java
+Query query = new Query();
+String[] names = new String[]{"张三", "李四"};
+query.addIn(Student.F.name, names);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.name_IN != null">
+    AND self.name IN
+    <foreach item="item" collection="c.name_IN" open="(" separator="," close=")">
+        #{item}
+    </foreach>
+</if>
+```
+
+### addNotIn
+
+* 调用addNotIn方法如下：
+
+```java
+Query query = new Query();
+String[] names = new String[]{"张三", "李四"};
+query.addNotIn(Student.F.name, names);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.name_NIN != null">
+    AND self.name NOT IN
+    <foreach item="item" collection="c.name_NIN" open="(" separator="," close=")">
+        #{item}
+    </foreach>
+</if>
+```
+
+### addLike
+
+* 调用addLike方法如下：
+
+```java
+Query query = new Query();
+String name = request.getParameter("name");
+query.addLike(Student.F.name, name);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.name_LIKE != null"> AND self.name like CONCAT('%',#{c.name_LIKE},'%')</if>
+```
+
+### addLeftLike
+
+* 调用addLeftLike方法如下：
+
+```java
+Query query = new Query();
+String name = request.getParameter("name");
+query.addLeftLike(Student.F.name, name);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.name_LLIKE != null"> AND self.name like CONCAT('%',#{c.name_LLIKE})</if>
+```
+
+### addRightLike
+
+* 调用addRightLike方法如下：
+
+```java
+Query query = new Query();
+String name = request.getParameter("name");
+query.addRightLike(Student.F.name, name);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.name_RLIKE != null"> AND self.name like CONCAT(#{c.name_RLIKE},'%')</if>
+```
+
+### addGT
+
+* 调用addGT方法如下：
+
+```java
+Query query = new Query();
+String score = request.getParameter("score");
+query.addGT(Student.F.score, score);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.score_GT != null"> AND self.score &gt; #{c.score_GT}</if>
+```
+
+### addGTE
+
+* 调用addGTE方法如下：
+
+```java
+Query query = new Query();
+String score = request.getParameter("score");
+query.addGTE(Student.F.score, score);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.score_GTE != null"> AND self.score &gt;= #{c.score_GTE}</if>
+```
+
+### addLT
+
+* 调用addLT方法如下：
+
+```java
+Query query = new Query();
+String score = request.getParameter("score");
+query.addLT(Student.F.score, score);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.score_LT != null"> AND self.score &lt; #{c.score_LT}</if>
+```
+
+### addLTE
+
+* 调用addLTE方法如下：
+
+```java
+Query query = new Query();
+String score = request.getParameter("score");
+query.addLTE(Student.F.score, score);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.score_LTE != null"> AND self.score &lt;= #{c.score_LTE}</if>
+```
+
+### addNotEquals
+
+* 调用addNotEquals方法如下：
+
+```java
+Query query = new Query();
+String teacherId = request.getParameter("teacherId");
+query.addNotEquals(Student.F.teacherId, teacherId);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.teacherId_NE != null"> AND self.teacher_id!=#{c.teacherId_NE}</if>
+```
+
+### addNull
+
+* 调用addNull方法如下：
+
+```java
+Query query = new Query();
+query.addNull(Student.F.teacherId);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.teacherId_N != null"> AND self.teacher_id IS NULL</if>
+```
+
+### addNotNull
+
+* 调用addNotNull方法如下：
+
+```java
+Query query = new Query();
+query.addNotNull(Student.F.teacherId);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.teacherId_NN != null"> AND self.teacher_id IS NOT NULL</if>
+```
+
+### orderByAsc
+
+* 调用orderByAsc方法如下：
+
+```java
+Query query = new Query();
+String name = request.getParameter("name");
+query.orderByAsc(Student.F.name, name);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<choose>
+    <when test="c.ORDERBY_name != null">ORDER BY self.name ${c.ORDERBY_name}</when>
+    <otherwise>ORDER BY self.id DESC</otherwise>
+</choose>
+```
+
+### orderByDesc
+
+* 调用orderByDesc方法如下：
+
+```java
+Query query = new Query();
+String name = request.getParameter("name");
+query.orderByDesc(Student.F.name, name);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<choose>
+    <when test="c.ORDERBY_name != null">ORDER BY self.name ${c.ORDERBY_name}</when>
+    <otherwise>ORDER BY self.id DESC</otherwise>
+</choose>
+```
+
+### limit
+
+* 调用addNotEquals方法如下：
+
+```java
+Query query = new Query();
+query.limit(20);
+```
+
+* mapper.xml中对应的条件行如下：
+
+```xml
+<if test="c.COUNT != null">
+    LIMIT #{c.COUNT}
+</if>
+```

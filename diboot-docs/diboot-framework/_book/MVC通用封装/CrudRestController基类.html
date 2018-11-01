@@ -1,0 +1,912 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CrudRestController基类 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../认证与安全.html" />
+    
+    
+    <link rel="prev" href="CrudController基类.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../开始使用.html">
+            
+                <a href="../开始使用.html">
+            
+                    
+                    开始使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../开始使用/搭建环境.html">
+            
+                <a href="../开始使用/搭建环境.html">
+            
+                    
+                    搭建环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../开始使用/使用framework.html">
+            
+                <a href="../开始使用/使用framework.html">
+            
+                    
+                    使用diboot-framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../CRUD通用封装.html">
+            
+                <a href="../CRUD通用封装.html">
+            
+                    
+                    CRUD通用封装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../CRUD通用封装/Model基类.html">
+            
+                <a href="../CRUD通用封装/Model基类.html">
+            
+                    
+                    Model基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../CRUD通用封装/Service基类.html">
+            
+                <a href="../CRUD通用封装/Service基类.html">
+            
+                    
+                    Service基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../CRUD通用封装/Mapper基类与SQL.html">
+            
+                <a href="../CRUD通用封装/Mapper基类与SQL.html">
+            
+                    
+                    Mapper基类与SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../MVC通用封装.html">
+            
+                <a href="../MVC通用封装.html">
+            
+                    
+                    MVC通用封装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Controller基类.html">
+            
+                <a href="Controller基类.html">
+            
+                    
+                    Controller基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="CrudController基类.html">
+            
+                <a href="CrudController基类.html">
+            
+                    
+                    CrudController基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="CrudRestController基类.html">
+            
+                <a href="CrudRestController基类.html">
+            
+                    
+                    CrudRestController基类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../认证与安全.html">
+            
+                <a href="../认证与安全.html">
+            
+                    
+                    认证与安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../认证与安全/jwt授权.html">
+            
+                <a href="../认证与安全/jwt授权.html">
+            
+                    
+                    JWT认证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../认证与安全/CSRF防护.html">
+            
+                <a href="../认证与安全/CSRF防护.html">
+            
+                    
+                    CSRF防护
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../认证与安全/XSS防护.html">
+            
+                <a href="../认证与安全/XSS防护.html">
+            
+                    
+                    XSS防护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../系统参数配置.html">
+            
+                <a href="../系统参数配置.html">
+            
+                    
+                    系统参数配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../系统参数配置/配置文件.html">
+            
+                <a href="../系统参数配置/配置文件.html">
+            
+                    
+                    参数配置在文件中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../系统参数配置/数据库表.html">
+            
+                <a href="../系统参数配置/数据库表.html">
+            
+                    
+                    参数配置在数据库表中
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../系统日志记录.html">
+            
+                <a href="../系统日志记录.html">
+            
+                    
+                    系统日志记录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../系统日志记录/操作日志.html">
+            
+                <a href="../系统日志记录/操作日志.html">
+            
+                    
+                    操作日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../系统日志记录/跟踪日志.html">
+            
+                <a href="../系统日志记录/跟踪日志.html">
+            
+                    
+                    跟踪日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../常用工具类.html">
+            
+                <a href="../常用工具类.html">
+            
+                    
+                    常用工具类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../常用工具类/D.html">
+            
+                <a href="../常用工具类/D.html">
+            
+                    
+                    日期时间类D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../常用工具类/S.html">
+            
+                <a href="../常用工具类/S.html">
+            
+                    
+                    字符串类S
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../常用工具类/V.html">
+            
+                <a href="../常用工具类/V.html">
+            
+                    
+                    数据校验类V
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../常用工具类/BeanUtils.html">
+            
+                <a href="../常用工具类/BeanUtils.html">
+            
+                    
+                    Bean工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../常用工具类/JSON.html">
+            
+                <a href="../常用工具类/JSON.html">
+            
+                    
+                    Json工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../常用工具类/Encryptor.html">
+            
+                <a href="../常用工具类/Encryptor.html">
+            
+                    
+                    加解密类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../常用工具类/IdGenerator.html">
+            
+                <a href="../常用工具类/IdGenerator.html">
+            
+                    
+                    ID生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../常用工具类/Query.html">
+            
+                <a href="../常用工具类/Query.html">
+            
+                    
+                    条件构造器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../通用基础模型.html">
+            
+                <a href="../通用基础模型.html">
+            
+                    
+                    通用基础模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../通用基础模型/用户角色权限.html">
+            
+                <a href="../通用基础模型/用户角色权限.html">
+            
+                    
+                    用户角色权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../通用基础模型/元数据.html">
+            
+                <a href="../通用基础模型/元数据.html">
+            
+                    
+                    元数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../通用基础模型/文件.html">
+            
+                <a href="../通用基础模型/文件.html">
+            
+                    
+                    文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >CrudRestController基类</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#crudrestcontroller&#x57FA;&#x7C7B;"><b>1. </b>CrudRestController&#x57FA;&#x7C7B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;controller&#x7C7B;"><b>1.1. </b>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;controller&#x7C7B;</a></li><li><span class="title-icon "></span><a href="#&#x91CD;&#x5199;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;"><b>1.2. </b>&#x91CD;&#x5199;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x529F;&#x80FD;"><b>1.3. </b>&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x529F;&#x80FD;</a></li><ul><li><span class="title-icon "></span><a href="#&#x83B7;&#x53D6;&#x5217;&#x8868;&#x6570;&#x636E;"><b>1.3.1. </b>&#x83B7;&#x53D6;&#x5217;&#x8868;&#x6570;&#x636E;</a></li><li><span class="title-icon "></span><a href="#&#x83B7;&#x53D6;&#x8BE6;&#x60C5;&#x6570;&#x636E;"><b>1.3.2. </b>&#x83B7;&#x53D6;&#x8BE6;&#x60C5;&#x6570;&#x636E;</a></li><li><span class="title-icon "></span><a href="#&#x65B0;&#x5EFA;&#x6570;&#x636E;"><b>1.3.3. </b>&#x65B0;&#x5EFA;&#x6570;&#x636E;</a></li><li><span class="title-icon "></span><a href="#&#x66F4;&#x65B0;&#x6570;&#x636E;"><b>1.3.4. </b>&#x66F4;&#x65B0;&#x6570;&#x636E;</a></li><li><span class="title-icon "></span><a href="#&#x5220;&#x9664;&#x6570;&#x636E;"><b>1.3.5. </b>&#x5220;&#x9664;&#x6570;&#x636E;</a></li></ul><li><span class="title-icon "></span><a href="#rest&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;-jsonresult"><b>1.4. </b>Rest&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7C7B;&#x578B; JsonResult</a></li><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;jsonresult&#x5B9E;&#x4F8B;"><b>1.4.1. </b>&#x521B;&#x5EFA;JsonResult&#x5B9E;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#code&#x5F15;&#x7528;status&#x4E2D;&#x76F8;&#x5E94;&#x72B6;&#x6001;&#x7801;"><b>1.4.2. </b>code&#x5F15;&#x7528;Status&#x4E2D;&#x76F8;&#x5E94;&#x72B6;&#x6001;&#x7801;</a></li></ul><li><span class="title-icon "></span><a href="#rest&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x503C;"><b>1.5. </b>Rest&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x503C;</a></li></ul></ul></div><a href="#crudrestcontroller&#x57FA;&#x7C7B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="crudrestcontroller&#x57FA;&#x7C7B;"><a name="crudrestcontroller&#x57FA;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#crudrestcontroller&#x57FA;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>1. CrudRestController&#x57FA;&#x7C7B;</h1>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x63A5;&#x53E3;&#x7684;RestController</p>
+<h2 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;controller&#x7C7B;"><a name="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;controller&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;controller&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;controller&#x7C7B;</h2>
+<p>&#x5728;&#x60A8;&#x7684;&#x9879;&#x76EE;&#x4E2D;controller&#x5305;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;controller&#x7C7B;&#xFF0C;&#x5E76;&#x7EE7;&#x627F;&#x81EA;framework&#x4E2D;&#x7684;BaseCrudRestController&#x7C7B;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;@RestController&#x4E0E;@RequestMapping(&quot;&quot;)&#x6CE8;&#x89E3;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">&quot;/user&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseCrudRestController</span> </span>{
+
+}
+</code></pre>
+<h2 id="&#x91CD;&#x5199;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;"><a name="&#x91CD;&#x5199;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x91CD;&#x5199;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x91CD;&#x5199;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;</h2>
+<ul>
+<li>&#x5728;&#x65B0;&#x5EFA;&#x7684;&#x7C7B;&#x4E2D;&#xFF0C;&#x91CD;&#x5199;getService()&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x4F60;&#x7684;&#x4E1A;&#x52A1;&#x76F8;&#x5173;Service</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@Autowired</span>
+<span class="hljs-keyword">private</span> BaseUserService baseUserService;
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> BaseService <span class="hljs-title">getService</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> baseUserService;
+}
+</code></pre>
+<h2 id="&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x529F;&#x80FD;"><a name="&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x529F;&#x80FD;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x529F;&#x80FD;</h2>
+<p>&#x5728;framework&#x4E2D;&#x7684;BaseCURDController&#x4E2D;&#xFF0C;&#x5DF2;&#x7ECF;&#x5185;&#x7F6E;&#x4E86;&#x76F8;&#x5173;&#x529F;&#x80FD;&#xFF0C;&#x6BD4;&#x5982;&#x5217;&#x8868;&#x9875;&#xFF0C;&#x8BE6;&#x60C5;&#x9875;&#xFF0C;&#x65B0;&#x5EFA;&#x66F4;&#x65B0;&#x9875;&#x7684;&#x6570;&#x636E;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x7B49;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x505A;&#x7684;&#x53EA;&#x662F;&#x5C06;&#x9700;&#x8981;&#x7684;&#x529F;&#x80FD;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x5728;&#x65B0;&#x5EFA;&#x7684;controller&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x8C03;&#x7528;&#x7236;&#x7EA7;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#x5E76;&#x8FD4;&#x56DE;&#x3002;</p>
+<h3 id="&#x83B7;&#x53D6;&#x5217;&#x8868;&#x6570;&#x636E;"><a name="&#x83B7;&#x53D6;&#x5217;&#x8868;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x83B7;&#x53D6;&#x5217;&#x8868;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. &#x83B7;&#x53D6;&#x5217;&#x8868;&#x6570;&#x636E;</h3>
+<ul>
+<li>&#x57FA;&#x672C;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/list&quot;</span>)
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> JsonResult <span class="hljs-title">getModelList</span><span class="hljs-params">(HttpServletRequest request, ModelMap modelMap)</span> <span class="hljs-keyword">throws</span> Exception</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getModelList(request, modelMap);
+}
+</code></pre>
+<ul>
+<li>&#x5206;&#x9875;&#x76F8;&#x5173;&#x5C5E;&#x6027;<ul>
+<li>page&#xFF1A;&#x5982;&#x679C;GET&#x53C2;&#x6570;&#x4E2D;&#x5E26;&#x6709;&#x6539;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x5219;&#x83B7;&#x53D6;&#x8BE5;&#x9875;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;page=2&#xFF0C;&#x5219;&#x83B7;&#x53D6;&#x7B2C;&#x4E8C;&#x9875;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BE5;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x9875;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+<li>pageSize&#xFF1A; &#x5982;&#x679C;GET&#x53C2;&#x6570;&#x4E2D;&#x5E26;&#x6709;&#x6539;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x5219;&#x6839;&#x636E;&#x8BE5;&#x6570;&#x503C;&#x83B7;&#x53D6;&#x8BE5;&#x9875;&#x7684;&#x5206;&#x9875;&#x6570;&#x636E;</li>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x5728;&#x5F53;&#x524D;&#x65B0;&#x5EFA;&#x65B9;&#x6CD5;&#x5185;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x5230;modelList&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x5230;modelMap&#x4E2D;&#x5373;&#x53EF;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/list&quot;</span>)
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> JsonResult <span class="hljs-title">getModelList</span><span class="hljs-params">(HttpServletRequest request, ModelMap modelMap)</span> <span class="hljs-keyword">throws</span> Exception</span>{
+    List&lt;BaseUser&gt; modelList = baseUserService.getModelList(<span class="hljs-keyword">null</span>);
+    modelMap.addAttribute(<span class="hljs-string">&quot;modelList&quot;</span>, modelList);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getModelList(request, modelMap);
+}
+</code></pre>
+<ul>
+<li>&#x83B7;&#x53D6;&#x5217;&#x8868;&#x6570;&#x636E;&#x5C06;&#x4F1A;&#x8C03;&#x7528;attachMore&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x589E;&#x52A0;&#x66F4;&#x591A;&#x5173;&#x8054;&#x6570;&#x636E;&#x5230;model&#x5B9E;&#x4F53;&#x4E2D;&#xFF0C;&#x5219;&#x91CD;&#x5199;&#x8BE5;&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attachMore</span><span class="hljs-params">(HttpServletRequest request, ModelMap map)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+}
+</code></pre>
+<h3 id="&#x83B7;&#x53D6;&#x8BE6;&#x60C5;&#x6570;&#x636E;"><a name="&#x83B7;&#x53D6;&#x8BE6;&#x60C5;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x83B7;&#x53D6;&#x8BE6;&#x60C5;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. &#x83B7;&#x53D6;&#x8BE6;&#x60C5;&#x6570;&#x636E;</h3>
+<ul>
+<li>&#x57FA;&#x672C;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/{id}&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> JsonResult <span class="hljs-title">getModel</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span>Long userId, HttpServletRequest request, ModelMap modelMap)
+        <span class="hljs-keyword">throws</span> Exception</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getModel(userId, request, modelMap);
+}
+</code></pre>
+<ul>
+<li>&#x5982;&#x679C;&#x5728;&#x8BE5;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x524D;&#x5C06;model&#x6DFB;&#x52A0;&#x5230;modelMap&#x4E2D;&#xFF0C;&#x5219;&#x4F1A;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x8BE5;model&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x5728;&#x7236;&#x7EA7;&#x65B9;&#x6CD5;&#x4E2D;&#x53BB;&#x91CD;&#x65B0;&#x83B7;&#x53D6;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6848;&#x9002;&#x7528;&#x4E8E;&#x9700;&#x8981;&#x5BF9;model&#x8FDB;&#x884C;&#x5904;&#x7406;&#x7684;&#x60C5;&#x51B5;&#x3002;</li>
+<li>&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x8C03;&#x7528;attachMore4View()&#xFF0C;&#x4E3A;model&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x5BF9;model&#x8FDB;&#x884C;&#x7279;&#x6B8A;&#x5904;&#x7406;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x91CD;&#x5199;&#x540E;&#x7684;&#x8BE5;&#x65B9;&#x6CD5;&#x4E2D;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5F00;&#x542F;&#x4E86;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#xFF0C;&#x8BBF;&#x95EE;&#x5230;&#x8BE5;&#x63A5;&#x53E3;&#x5219;&#x4F1A;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x8BBF;&#x95EE;&#x8BB0;&#x5F55;&#x3002;&#xFF08;&#x5173;&#x4E8E;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#xFF09;<h3 id="&#x65B0;&#x5EFA;&#x6570;&#x636E;"><a name="&#x65B0;&#x5EFA;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x65B0;&#x5EFA;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.3. &#x65B0;&#x5EFA;&#x6570;&#x636E;</h3>
+</li>
+<li>&#x57FA;&#x672C;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@PostMapping</span>(<span class="hljs-string">&quot;/&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> JsonResult <span class="hljs-title">createModel</span><span class="hljs-params">(@ModelAttribute BaseUser user, BindingResult result, HttpServletRequest request, ModelMap modelMap)</span>
+<span class="hljs-keyword">throws</span> Exception</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.createModel(user, result, request, modelMap);
+}
+</code></pre>
+<ul>
+<li>&#x8BE5;&#x63A5;&#x53E3;&#x901A;&#x8FC7;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x6765;&#x83B7;&#x53D6;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x7ED1;&#x5B9A;&#x51FA;&#x9519;&#xFF0C;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;FAIL_VALIDATION&#x7684;&#x9519;&#x8BEF;&#x7801;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x5230;&#x6D88;&#x606F;&#x5B57;&#x6BB5;&#x4E2D;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5F00;&#x542F;&#x4E86;&#x64CD;&#x4F5C;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#xFF0C;&#x8BBF;&#x95EE;&#x5230;&#x8BE5;&#x63A5;&#x53E3;&#x5219;&#x4F1A;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x65B0;&#x5EFA;&#x64CD;&#x4F5C;&#x8BB0;&#x5F55;&#x3002;&#xFF08;&#x5173;&#x4E8E;&#x64CD;&#x4F5C;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#xFF09;</li>
+<li>&#x5728;&#x65B0;&#x5EFA;&#x4E4B;&#x524D;&#x5982;&#x679C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x91CD;&#x5199;beforeCreate()&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">beforeCreate</span><span class="hljs-params">(HttpServletRequest request, BaseModel model, ModelMap modelMap)</span> <span class="hljs-keyword">throws</span> Exception</span>{
+
+}
+</code></pre>
+<ul>
+<li>&#x5728;&#x65B0;&#x5EFA;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x5982;&#x679C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x91CD;&#x5199;afterCreated()&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> String <span class="hljs-title">afterCreated</span><span class="hljs-params">(HttpServletRequest request, BaseModel model, ModelMap modelMap)</span> <span class="hljs-keyword">throws</span> Exception</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+}
+</code></pre>
+<h3 id="&#x66F4;&#x65B0;&#x6570;&#x636E;"><a name="&#x66F4;&#x65B0;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.4. &#x66F4;&#x65B0;&#x6570;&#x636E;</h3>
+<ul>
+<li>&#x57FA;&#x672C;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@PutMapping</span>(<span class="hljs-string">&quot;/{id}&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> JsonResult <span class="hljs-title">updateModel</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span>Long id, @ModelAttribute BaseUser user, BindingResult result, HttpServletRequest request, BaseModel model, ModelMap modelMap) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.updateModel(user, result, request, modelMap);
+}
+</code></pre>
+<ul>
+<li>&#x8BE5;&#x63A5;&#x53E3;&#x901A;&#x8FC7;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x6765;&#x83B7;&#x53D6;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x7ED1;&#x5B9A;&#x51FA;&#x9519;&#xFF0C;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;FAIL_VALIDATION&#x7684;&#x9519;&#x8BEF;&#x7801;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x5230;&#x6D88;&#x606F;&#x5B57;&#x6BB5;&#x4E2D;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5F00;&#x542F;&#x4E86;&#x64CD;&#x4F5C;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#xFF0C;&#x8BBF;&#x95EE;&#x5230;&#x8BE5;&#x63A5;&#x53E3;&#x5219;&#x4F1A;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x8BB0;&#x5F55;&#x3002;&#xFF08;&#x5173;&#x4E8E;&#x64CD;&#x4F5C;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#xFF09;</li>
+<li>&#x5728;&#x66F4;&#x65B0;&#x4E4B;&#x524D;&#x5982;&#x679C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x91CD;&#x5199;beforeUpdate()&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">beforeUpdate</span><span class="hljs-params">(HttpServletRequest request, BaseModel model, ModelMap modelMap)</span> <span class="hljs-keyword">throws</span> Exception</span>{
+}
+</code></pre>
+<ul>
+<li>&#x5728;&#x66F4;&#x65B0;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x5982;&#x679C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x91CD;&#x5199;afterUpdated()&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> String <span class="hljs-title">afterUpdated</span><span class="hljs-params">(HttpServletRequest request, BaseModel model, ModelMap modelMap)</span> <span class="hljs-keyword">throws</span> Exception</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;        
+}
+</code></pre>
+<h3 id="&#x5220;&#x9664;&#x6570;&#x636E;"><a name="&#x5220;&#x9664;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x5220;&#x9664;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.5. &#x5220;&#x9664;&#x6570;&#x636E;</h3>
+<ul>
+<li>&#x57FA;&#x672C;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@DeleteMapping</span>(<span class="hljs-string">&quot;/{id}&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> JsonResult <span class="hljs-title">deleteModel</span><span class="hljs-params">(@PathVariable(<span class="hljs-string">&quot;id&quot;</span>)</span>Long id, HttpServletRequest request) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.deleteModel(id, request);
+}
+</code></pre>
+<ul>
+<li>&#x8BE5;&#x63A5;&#x53E3;&#x4F1A;&#x5220;&#x9664;&#x4E3B;&#x952E;&#x4E3A;id&#x7684;&#x6570;&#x636E;&#x8BB0;&#x5F55;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5220;&#x9664;&#x5931;&#x8D25;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x76F8;&#x5E94;&#x9519;&#x8BEF;&#x7801;&#x7684;JsonResult&#x7ED3;&#x679C;&#x3002;</li>
+<li>&#x5728;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x5982;&#x679C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x91CD;&#x5199;beforeDelete()&#x65B9;&#x6CD5;&#xFF0C;&#x6539;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x7684;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x4E0B;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x5220;&#x9664;&#x6570;&#x636E;&#x3002;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> String <span class="hljs-title">beforeDelete</span><span class="hljs-params">(BaseModel model)</span> </span>{
+        <span class="hljs-keyword">return</span> Status.FAIL_NO_PERMISSION.label();
+    }
+</code></pre>
+<ul>
+<li>&#x5728;&#x5220;&#x9664;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x5982;&#x679C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x91CD;&#x5199;afterDeleted()&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterDeleted</span><span class="hljs-params">(HttpServletRequest request, BaseModel model)</span> </span>{
+}
+</code></pre>
+<h2 id="rest&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;-jsonresult"><a name="rest&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;-jsonresult" class="anchor-navigation-ex-anchor" href="#rest&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;-jsonresult"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. Rest&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7C7B;&#x578B; JsonResult</h2>
+<ul>
+<li><p>JsonResult&#x7C7B;&#xFF0C;&#x7528;&#x4E8E;&#x6784;&#x5EFA;Rest&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;</p>
+<h3 id="&#x521B;&#x5EFA;jsonresult&#x5B9E;&#x4F8B;"><a name="&#x521B;&#x5EFA;jsonresult&#x5B9E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;jsonresult&#x5B9E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.1. &#x521B;&#x5EFA;JsonResult&#x5B9E;&#x4F8B;</h3>
+</li>
+<li><p>&#x5F15;&#x7528;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">new</span> JsonResult()&#xFF0C;&#x9ED8;&#x8BA4;&#x8FD4;&#x56DE;status&#x4E3A;OK&#x7684;code&#x7801;&#x3002;
+<span class="hljs-keyword">new</span> JsonResult(code)&#xFF0C; &#x8FD4;&#x56DE;&#x6307;&#x5B9A;status&#x7684;code&#x7801;&#x3002;
+<span class="hljs-keyword">new</span> JsonResult(code, msg), &#x8FD4;&#x56DE;&#x6307;&#x5B9A;status&#x7684;code&#x7801;&#xFF0C;&#x8FD4;&#x56DE;&#x63D0;&#x793A;&#x6D88;&#x606F;&#x3002;
+<span class="hljs-keyword">new</span> JsonResult(code, data, msg), &#x8FD4;&#x56DE;&#x5236;&#x5B9A;status&#x7684;code&#x7801;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x76F8;&#x5173;&#x7684;data&#x6570;&#x636E;&#xFF0C;&#x4E14;&#x8FD4;&#x56DE;&#x63D0;&#x793A;&#x6D88;&#x606F;&#x3002;
+</code></pre>
+<h3 id="code&#x5F15;&#x7528;status&#x4E2D;&#x76F8;&#x5E94;&#x72B6;&#x6001;&#x7801;"><a name="code&#x5F15;&#x7528;status&#x4E2D;&#x76F8;&#x5E94;&#x72B6;&#x6001;&#x7801;" class="anchor-navigation-ex-anchor" href="#code&#x5F15;&#x7528;status&#x4E2D;&#x76F8;&#x5E94;&#x72B6;&#x6001;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4.2. code&#x5F15;&#x7528;Status&#x4E2D;&#x76F8;&#x5E94;&#x72B6;&#x6001;&#x7801;</h3>
+</li>
+<li>Status&#x5728;com.diboot.framework.config&#x5305;&#x4E2D;</li>
+<li><h2 id="rest&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x503C;"><a name="rest&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x503C;" class="anchor-navigation-ex-anchor" href="#rest&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. Rest&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x503C;</h2>
+</li>
+<li>Rest&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;Map&#x7C7B;&#x578B;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x6211;&#x4EEC;framework&#x4E2D;&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x6765;&#x8FD4;&#x56DE;JsonResult&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</li>
+<li><p>Status&#x72B6;&#x6001;&#x7801;&#x5B9A;&#x4E49;&#xFF08;com.diboot.framework.config.Status&#xFF09;</p>
+<pre><code class="lang-java">  OK(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;&#x64CD;&#x4F5C;&#x6210;&#x529F;&quot;</span>),  <span class="hljs-comment">// &#x8BF7;&#x6C42;&#x5904;&#x7406;&#x6210;&#x529F;</span>
+
+  WARN_PARTIAL_SUCCESS(<span class="hljs-number">1001</span>, <span class="hljs-string">&quot;&#x90E8;&#x5206;&#x6210;&#x529F;&quot;</span>), <span class="hljs-comment">// &#x90E8;&#x5206;&#x6210;&#x529F;</span>
+  WARN_PERFORMANCE_ISSUE(<span class="hljs-number">1002</span>, <span class="hljs-string">&quot;&#x6F5C;&#x5728;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&quot;</span>), <span class="hljs-comment">// &#x6709;&#x6027;&#x80FD;&#x95EE;&#x9898;</span>
+
+  FAIL_INVALID_PARAM(<span class="hljs-number">4000</span>, <span class="hljs-string">&quot;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x4E0D;&#x5339;&#x914D;&quot;</span>),       <span class="hljs-comment">// &#x4F20;&#x5165;&#x53C2;&#x6570;&#x4E0D;&#x5BF9;</span>
+  FAIL_INVALID_TOKEN(<span class="hljs-number">4001</span>, <span class="hljs-string">&quot;Token&#x65E0;&#x6548;&#x6216;&#x5DF2;&#x8FC7;&#x671F;&quot;</span>),    <span class="hljs-comment">// token&#x65E0;&#x6548;</span>
+  FAIL_NO_PERMISSION(<span class="hljs-number">4003</span>, <span class="hljs-string">&quot;&#x6CA1;&#x6709;&#x6743;&#x9650;&#x6267;&#x884C;&#x8BE5;&#x64CD;&#x4F5C;&quot;</span>),  <span class="hljs-comment">// &#x65E0;&#x6743;&#x67E5;&#x770B;</span>
+  FAIL_NOT_FOUND(<span class="hljs-number">4004</span>, <span class="hljs-string">&quot;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x4E0D;&#x5B58;&#x5728;&quot;</span>),  <span class="hljs-comment">// 404 &#x9875;&#x9762;&#x4E0D;&#x5B58;&#x5728;</span>
+  FAIL_VALIDATION(<span class="hljs-number">4005</span>, <span class="hljs-string">&quot;&#x63D0;&#x4EA4;&#x6570;&#x636E;&#x6821;&#x9A8C;&#x4E0D;&#x901A;&#x8FC7;&quot;</span>),     <span class="hljs-comment">// &#x6570;&#x636E;&#x6821;&#x9A8C;&#x4E0D;&#x901A;&#x8FC7;</span>
+  FAIL_OPERATION(<span class="hljs-number">4006</span>, <span class="hljs-string">&quot;&#x64CD;&#x4F5C;&#x6267;&#x884C;&#x5931;&#x8D25;&quot;</span>),     <span class="hljs-comment">// &#x64CD;&#x4F5C;&#x6267;&#x884C;&#x5931;&#x8D25;</span>
+  FAIL_EXCEPTION(<span class="hljs-number">5000</span>, <span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&quot;</span>);       <span class="hljs-comment">// &#x7CFB;&#x7EDF;&#x5F02;&#x5E38;</span>
+</code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="CrudController基类.html" class="navigation navigation-prev " aria-label="Previous page: CrudController基类">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../认证与安全.html" class="navigation navigation-next " aria-label="Next page: 认证与安全">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CrudRestController基类","level":"1.4.3","depth":2,"next":{"title":"认证与安全","level":"1.5","depth":1,"path":"认证与安全.md","ref":"认证与安全.md","articles":[{"title":"JWT认证","level":"1.5.1","depth":2,"path":"认证与安全/jwt授权.md","ref":"认证与安全/jwt授权.md","articles":[]},{"title":"CSRF防护","level":"1.5.2","depth":2,"path":"认证与安全/CSRF防护.md","ref":"认证与安全/CSRF防护.md","articles":[]},{"title":"XSS防护","level":"1.5.3","depth":2,"path":"认证与安全/XSS防护.md","ref":"认证与安全/XSS防护.md","articles":[]}]},"previous":{"title":"CrudController基类","level":"1.4.2","depth":2,"path":"MVC通用封装/CrudController基类.md","ref":"MVC通用封装/CrudController基类.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-sharing","sharing-plus","anchor-navigation-ex","theme-vuejs-2","livereload"],"pluginsConfig":{"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"isShowTocTitleIcon":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"sharing":{"qq":true,"all":["weibo","qq","linkedin","qzone","douban"],"douban":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"MVC通用封装/CrudRestController基类.md","mtime":"2018-10-14T02:43:52.500Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-15T06:36:06.783Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

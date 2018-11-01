@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.framework.service.mapper.BaseUserMapper">
+	<!-- 通用CRUD: begin  -->
+	<!-- 指定Select需要返回的列 -->
+	<sql id="columns">
+		<trim suffixOverrides=",">
+			<if test="f == null or f.id != null">self.id,</if>
+			<if test="f == null or f.orgId != null">self.org_id,</if>
+			<if test="f == null or f.departmentId != null">self.department_id,</if>
+			<if test="f == null or f.username != null">self.username,</if>
+			<if test="f == null or f.password != null">self.password,</if>
+			<if test="f == null or f.realname != null">self.realname,</if>
+			<if test="f == null or f.roles != null">self.roles,</if>
+			<if test="f == null or f.position != null">self.position,</if>
+			<if test="f == null or f.phone != null">self.phone,</if>
+			<if test="f == null or f.telephone != null">self.telephone,</if>
+			<if test="f == null or f.gender != null">self.gender,</if>
+			<if test="f == null or f.avatar != null">self.avatar,</if>
+			<if test="f == null or f.wechat != null">self.wechat,</if>
+			<if test="f == null or f.openid != null">self.openid,</if>
+			<if test="f == null or f.email != null">self.email,</if>
+			<if test="f == null or f.salt != null">self.salt,</if>
+			<if test="f == null or f.accessToken != null">self.access_token,</if>
+			<if test="f == null or f.expiredTime != null">self.expired_time,</if>
+			<if test="f == null or f.failCount != null">self.fail_count,</if>
+			<if test="f == null or f.extdata != null">self.extdata,</if>
+			<if test="f == null or f.enabled != null">self.enabled,</if>
+			<if test="f == null or f.createBy != null">self.create_by,</if>
+			<if test="f == null or f.createTime != null">self.create_time,</if>
+		</trim>
+	</sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.orgId != null">self.org_id=#{c.orgId}</if>
+		<if test="c.departmentId != null">self.department_id=#{c.departmentId}</if>
+        <if test="c.username != null">AND self.username=#{c.username}</if>
+        <if test="c.realname != null">AND self.realname=#{c.realname}</if>
+		<if test="c.position != null">AND self.position=#{c.position}</if>
+		<if test="c.roles != null">AND ur.role=#{c.roles}</if>
+		<if test="c.phone != null">AND self.phone=#{c.phone}</if>
+		<if test="c.telephone != null">AND self.telephone=#{c.telephone}</if>
+        <if test="c.gender != null">AND self.gender=#{c.gender}</if>
+        <if test="c.wechat != null">AND self.wechat=#{c.wechat}</if>
+        <if test="c.openid != null">AND self.openid=#{c.openid}</if>
+		<if test="c.email != null">AND self.email=#{c.email}</if>
+		<if test="c.accessToken != null">AND self.access_token=#{c.accessToken}</if>
+        <if test="c.expiredTime != null">AND self.expired_time=#{c.expiredTime}</if>
+		<if test="c.createTime != null">AND date(self.create_time)=#{c.createTime}</if>
+        <if test="c.enabled != null">AND self.enabled=#{c.enabled}</if>
+		AND self.active=1
+		<if test="c.realname_LIKE != null">AND self.realname like CONCAT('%',#{c.realname_LIKE},'%')</if>
+		<if test="c.phone_LIKE != null">AND self.phone like CONCAT('%',#{c.phone_LIKE},'%')</if>
+		<if test="c.telephone_LIKE != null">AND self.telephone like CONCAT('%',#{c.telephone_LIKE},'%')</if>
+		<if test="c.email_LIKE != null">AND self.email like CONCAT('%',#{c.email_LIKE},'%')</if>
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+        <set>
+            <if test="f == null or f.orgId != null">org_id=#{m.orgId},</if>
+			<if test="f == null or f.departmentId != null">department_id=#{m.departmentId},</if>
+            <if test="f == null or f.username != null">username=#{m.username},</if>
+            <if test="f == null or f.password != null">password=#{m.password},</if>
+            <if test="f == null or f.realname != null">realname=#{m.realname},</if>
+			<if test="f == null or f.roles != null">roles=#{m.roles},</if>
+			<if test="f == null or f.position != null">position=#{m.position},</if>
+            <if test="f == null or f.phone != null">phone=#{m.phone},</if>
+			<if test="f == null or f.telephone != null">telephone=#{m.telephone},</if>
+            <if test="f == null or f.gender != null">gender=#{m.gender},</if>
+            <if test="f == null or f.avatar != null">avatar=#{m.avatar},</if>
+            <if test="f == null or f.wechat != null">wechat=#{m.wechat},</if>
+			<if test="f == null or f.openid != null">openid=#{m.openid},</if>
+            <if test="f == null or f.email != null">email=#{m.email},</if>
+			<if test="f == null or f.salt != null">salt=#{m.salt},</if>
+			<if test="f == null or f.accessToken != null">access_token=#{m.accessToken},</if>
+			<if test="f == null or f.expiredTime != null">expired_time=#{m.expiredTime},</if>
+			<if test="f == null or f.failCount != null">fail_count=#{m.failCount},</if>
+			<if test="f == null or f.extdata != null">extdata=#{m.extdata},</if>
+			<if test="f == null or f.enabled != null">enabled=#{m.enabled},</if>
+			<if test="f == null or f.createBy != null">create_by=#{m.createBy},</if>
+        </set>
+    </sql>
+
+    <!-- 添加记录 -->
+	<insert id="create" parameterType="com.diboot.framework.model.BaseUser" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user(
+			id, org_id, department_id, username, password, salt, realname, roles, position, gender, avatar, phone, telephone, wechat, openid, email, access_token, expired_time, enabled, extdata, create_by
+		)
+		VALUES(
+			#{id}, #{orgId}, #{departmentId}, #{username}, #{password}, #{salt}, #{realname}, #{roles}, #{position}, #{gender}, #{avatar}, #{phone}, #{telephone}, #{wechat}, #{openid}, #{email}, #{accessToken}, #{expiredTime}, #{enabled}, #{extdata}, #{createBy}
+		)
+	</insert>
+
+	<!-- 批量创建 -->
+	<insert id="batchCreate" parameterType="java.util.List">
+		INSERT INTO user(
+			id, org_id, department_id, username, password, salt, realname, roles, position, gender, avatar, phone, telephone, wechat, openid, email, access_token, expired_time, enabled, extdata, create_by
+		)
+		VALUES
+		<foreach collection="list" item="m" separator=",">
+			(#{m.id}, #{m.orgId}, #{m.departmentId}, #{m.username}, #{m.password}, #{m.salt}, #{m.realname}, #{m.roles}, #{m.position}, #{m.gender}, #{m.avatar}, #{m.phone}, #{m.telephone},#{m.wechat}, #{m.openid}, #{m.email}, #{m.accessToken}, #{m.expiredTime}, #{m.enabled}, #{m.extdata}, #{m.createBy})
+		</foreach>
+	</insert>
+
+    <!-- 更新记录 -->
+	<update id="update">
+		UPDATE user
+        <include refid="setValues" />
+		WHERE id=#{m.id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="Long">
+		UPDATE user SET active=0 WHERE id=#{id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="Long" resultType="com.diboot.framework.model.BaseUser">
+        SELECT self.*
+        FROM user self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+		SELECT count(self.id)
+	    FROM user self
+		<if test="c.roles != null">
+		LEFT JOIN user_role ur ON self.id=ur.user_id
+		</if>
+	    <where>
+            <include refid="conditions" />
+	    </where>
+	</select>
+
+    <!-- 查询符合条件的记录 -->
+	<select id="getList" resultType="com.diboot.framework.model.BaseUser">
+		SELECT self.*
+	    FROM user self
+		<if test="c.roles != null">
+			LEFT JOIN user_role ur ON self.id=ur.user_id
+		</if>
+	    <where>
+	    	<include refid="conditions" />
+	    </where>
+		<choose>
+			<when test="c.ORDERBY_username != null">ORDER BY self.username ${c.ORDERBY_username}</when>
+			<otherwise>ORDER BY self.id DESC</otherwise>
+		</choose>
+		<if test="c.COUNT != null">
+			LIMIT <if test="c.OFFSET != null">#{c.OFFSET},</if> #{c.COUNT}
+		</if>
+	</select>
+
+	<!-- 查询符合条件的记录，返回Map -->
+	<select id="getMapList" resultType="java.util.Map">
+		SELECT <include refid="columns" />
+		FROM user self
+		<where>
+			<include refid="conditions" />
+		</where>
+		ORDER BY self.id DESC
+		<if test="c.COUNT != null">
+			LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+		</if>
+	</select>
+	<!-- 通用CRUD: end -->
+	
+	<!-- 扩展SQL: -->
+	<delete id="deleteUserRoles" parameterType="java.util.List">
+		DELETE FROM user_role
+		WHERE user_id IN
+		<foreach item="userId" collection="userIdList" open="(" separator="," close=")">
+			#{userId}
+		</foreach>
+	</delete>
+
+	<insert id="createUserRoles">
+		INSERT INTO user_role(
+			user_id, role
+		)
+		VALUES
+		<foreach collection="roles" item="role" separator=",">
+			(#{userId}, #{role})
+		</foreach>
+	</insert>
+
+	<insert id="batchCreateUserRoles" parameterType="java.util.List">
+		INSERT INTO user_role(
+			user_id, role
+		)
+		VALUES
+		<foreach collection="userRoleList" item="m" separator=",">
+			(#{m.userId}, #{m.role})
+		</foreach>
+	</insert>
+
+	<select id="getUserRoles" resultType="String">
+		SELECT role
+		FROM user_role
+		WHERE user_id=#{userId}
+	</select>
+
+	<select id="getUserRoleList" resultType="java.util.LinkedHashMap">
+		SELECT self.user_id, self.role
+		FROM user_role self
+		WHERE user_id IN
+		<foreach item="userId" collection="userIdList" open="(" separator="," close=")">
+			#{userId}
+		</foreach>
+	</select>
+
+	<select id="getKeyValuePairList" resultType="java.util.LinkedHashMap">
+		SELECT self.id as v, self.realname as k
+		FROM user self
+		<where>
+			<include refid="conditions"/>
+		</where>
+	</select>
+
+	<select id="getUserByUsername" parameterType="String" resultType="com.diboot.framework.model.BaseUser">
+		SELECT self.*
+		FROM user self
+		WHERE self.username=#{username} AND self.active=1
+		LIMIT 1
+	</select>
+
+	<select id="getUserByWechat" parameterType="String" resultType="com.diboot.framework.model.BaseUser">
+		SELECT self.*
+		FROM user self
+		WHERE self.wechat=#{wechat} AND self.active=1
+		LIMIT 1
+	</select>
+
+	<update id="updateUserPwd">
+		UPDATE user 
+		SET password=#{newPassword} 
+		WHERE id=#{id} AND password=#{oldPassword}
+		LIMIT 1
+	</update>
+
+	<select id="getUserIdRoles" parameterType="java.util.List" resultType="java.util.LinkedHashMap">
+		SELECT id, roles FROM user
+		WHERE username IN
+		<foreach item="username" collection="usernameList" open="(" separator="," close=")">
+			#{username}
+		</foreach>
+		AND roles IS NOT NULL
+	</select>
+
+</mapper>

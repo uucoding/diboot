@@ -1,0 +1,32 @@
+{
+    "plugins": ["-sharing", "sharing-plus", "anchor-navigation-ex", "theme-vuejs-2"],
+    "pluginsConfig": {
+        "sharing": {
+            "douban": false,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "pocket": false,
+            "qq": true,
+            "qzone": true,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": true,
+            "whatsapp": false,
+            "all": [
+                "weibo", "qq", "linkedin",
+                "qzone", "douban"
+            ]
+        },
+        "anchor-navigation-ex": {
+            "isShowTocTitleIcon": true,
+            "tocLevel1Icon": "fa fa-hand-o-right",
+            "tocLevel2Icon": "fa fa-hand-o-right",
+            "tocLevel3Icon": "fa fa-hand-o-right"
+        }
+    }
+}

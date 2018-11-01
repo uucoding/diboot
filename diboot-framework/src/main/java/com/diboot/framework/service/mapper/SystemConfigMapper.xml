@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.framework.service.mapper.SystemConfigMapper">
+
+    <!-- 通用CRUD: begin  -->
+    <!-- 指定Select需要返回的列 -->
+    <sql id="columns">
+        <trim suffixOverrides=",">
+            <if test="f == null or f.id != null">self.id,</if>
+            <if test="f == null or f.relObjType != null">self.rel_obj_type,</if>
+            <if test="f == null or f.relObjId != null">self.rel_obj_id,</if>
+            <if test="f == null or f.category != null">self.category,</if>
+            <if test="f == null or f.subcategory != null">self.subcategory,</if>
+            <if test="f == null or f.extdata != null">self.extdata,</if>
+            <if test="f == null or f.active != null">self.active,</if>
+            <if test="f == null or f.createBy != null">self.create_by,</if>
+            <if test="f == null or f.createTime != null">self.create_time,</if>
+            <if test="f == null or f.updateTime != null">self.update_time,</if>
+        </trim>
+    </sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.id != null">self.id=#{c.id}</if>
+        <if test="c.relObjType != null"> AND self.rel_obj_type=#{c.relObjType}</if>
+        <if test="c.relObjId != null"> AND self.rel_obj_id=#{c.relObjId}</if>
+        <if test="c.category != null"> AND self.category=#{c.category}</if>
+        <if test="c.category_IN != null">
+         AND self.category IN
+            <foreach item="item" collection="c.category_IN" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="c.subcategory != null"> AND self.subcategory=#{c.subcategory}</if>
+         AND self.active=1
+        <if test="c.createBy != null"> AND self.create_by=#{c.createBy}</if>
+        <if test="c.createTime != null"> AND date(self.create_time)=#{c.createTime}</if>
+        <if test="c.updateTime != null"> AND date(self.update_time)=#{c.updateTime}</if>
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+    <set>
+        <if test="(f == null or f.id != null) and m.id != null">id=#{m.id},</if>
+        <if test="(f == null or f.relObjType != null) and m.relObjType != null">rel_obj_type=#{m.relObjType},</if>
+        <if test="(f == null or f.relObjId != null) and m.relObjId != null">rel_obj_id=#{m.relObjId},</if>
+        <if test="(f == null or f.category != null) and m.category != null">category=#{m.category},</if>
+        <if test="(f == null or f.subcategory != null)">subcategory=#{m.subcategory},</if>
+        <if test="(f == null or f.extdata != null)">extdata=#{m.extdata},</if>
+        <if test="(f == null or f.active != null) and m.active != null">active=#{m.active},</if>
+    </set>
+    </sql>
+
+    <!-- 添加记录 -->
+    <insert id="create" parameterType="com.diboot.framework.model.SystemConfig" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO system_config(
+		     rel_obj_type, rel_obj_id, category, subcategory, extdata, active, create_by
+        )
+        VALUES(
+		     #{relObjType}, #{relObjId}, #{category}, #{subcategory}, #{extdata}, #{active}, #{createBy}
+        )
+    </insert>
+
+    <!-- 批量创建 -->
+    <insert id="batchCreate" parameterType="java.util.List">
+        INSERT INTO system_config(
+            rel_obj_type, rel_obj_id, category, subcategory, extdata, active, create_by
+        )
+        VALUES
+        <foreach collection="list" item="m" separator=",">
+            ( #{m.relObjType}, #{m.relObjId}, #{m.category}, #{m.subcategory}, #{m.extdata}, #{m.active}, #{m.createBy})
+        </foreach>
+    </insert>
+
+    <!-- 更新记录 -->
+    <update id="update" parameterType="com.diboot.framework.model.SystemConfig">
+        UPDATE system_config
+        <include refid="setValues" />
+        WHERE id=#{m.id, jdbcType=BIGINT}
+    </update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="long">
+		UPDATE system_config SET active=0 WHERE id=#{id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="long" resultType="com.diboot.framework.model.SystemConfig">
+        SELECT self.* 
+        FROM system_config self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+        SELECT count(self.id)
+        FROM  system_config self
+        <where>
+            <include refid="conditions" />
+        </where>
+    </select>
+
+    <!-- 查询符合条件的记录 -->
+    <select id="getList" resultType="com.diboot.framework.model.SystemConfig">
+        SELECT self.* 
+        FROM system_config self
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+
+    <!-- 查询符合条件的记录，返回Map -->
+    <select id="getMapList" resultType="java.util.Map">
+        SELECT <include refid="columns" />
+        FROM system_config self
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+    <!-- 通用CRUD: end -->
+
+    <!-- 扩展SQL -->
+	
+</mapper>

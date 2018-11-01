@@ -1,0 +1,575 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>OAuth认证 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="JSSDK初始化.html" />
+    
+    
+    <link rel="prev" href="获取Service.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../公众号组件.html">
+            
+                <a href="../公众号组件.html">
+            
+                    
+                    公众号组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../公众号组件/引入.html">
+            
+                <a href="../公众号组件/引入.html">
+            
+                    
+                    引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../公众号组件/配置.html">
+            
+                <a href="../公众号组件/配置.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../公众号组件/获取Service.html">
+            
+                <a href="../公众号组件/获取Service.html">
+            
+                    
+                    获取Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../公众号组件/OAuth认证.html">
+            
+                <a href="../公众号组件/OAuth认证.html">
+            
+                    
+                    OAuth认证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../公众号组件/JSSDK初始化.html">
+            
+                <a href="../公众号组件/JSSDK初始化.html">
+            
+                    
+                    JSSDK初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../公众号组件/其他系列接口.html">
+            
+                <a href="../公众号组件/其他系列接口.html">
+            
+                    
+                    其他系列接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../企业微信组件.html">
+            
+                <a href="../企业微信组件.html">
+            
+                    
+                    企业微信组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="组件引入.html">
+            
+                <a href="组件引入.html">
+            
+                    
+                    组件引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="配置.html">
+            
+                <a href="配置.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="获取Service.html">
+            
+                <a href="获取Service.html">
+            
+                    
+                    获取Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="OAuth认证.html">
+            
+                <a href="OAuth认证.html">
+            
+                    
+                    OAuth认证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="JSSDK初始化.html">
+            
+                <a href="JSSDK初始化.html">
+            
+                    
+                    JSSDK初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="其他系列接口.html">
+            
+                <a href="其他系列接口.html">
+            
+                    
+                    其他系列接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../微信开放平台组件.html">
+            
+                <a href="../微信开放平台组件.html">
+            
+                    
+                    微信开放平台组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../微信开放平台组件/组件引入.html">
+            
+                <a href="../微信开放平台组件/组件引入.html">
+            
+                    
+                    组件引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../微信开放平台组件/配置.html">
+            
+                <a href="../微信开放平台组件/配置.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../微信开放平台组件/初始表.html">
+            
+                <a href="../微信开放平台组件/初始表.html">
+            
+                    
+                    初始表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../微信开放平台组件/接收componentVerifyTicket.html">
+            
+                <a href="../微信开放平台组件/接收componentVerifyTicket.html">
+            
+                    
+                    接收componentVerifyTicket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../微信开放平台组件/公众号授权给第三方平台.html">
+            
+                <a href="../微信开放平台组件/公众号授权给第三方平台.html">
+            
+                    
+                    公众号授权给第三方平台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../微信开放平台组件/接收公众号消息.html">
+            
+                <a href="../微信开放平台组件/接收公众号消息.html">
+            
+                    
+                    接收公众号消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../微信开放平台组件/调用公众号接口.html">
+            
+                <a href="../微信开放平台组件/调用公众号接口.html">
+            
+                    
+                    调用公众号接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >OAuth认证</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#oauth&#x8BA4;&#x8BC1;"><b>1. </b>OAuth&#x8BA4;&#x8BC1;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x8BA4;&#x8BC1;"><b>1.1. </b>&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x8BA4;&#x8BC1;</a></li><ul><li><span class="title-icon "></span><a href="#&#x83B7;&#x53D6;oauth&#x6388;&#x6743;&#x5730;&#x5740;"><b>1.1.1. </b>&#x83B7;&#x53D6;OAuth&#x6388;&#x6743;&#x5730;&#x5740;</a></li><li><span class="title-icon "></span><a href="#oauth&#x6821;&#x9A8C;&#x63A5;&#x53E3;"><b>1.1.2. </b>OAuth&#x6821;&#x9A8C;&#x63A5;&#x53E3;</a></li></ul><li><span class="title-icon "></span><a href="#&#x81EA;&#x5B9A;&#x4E49;oauth&#x6388;&#x6743;&#x8FC7;&#x7A0B;"><b>1.2. </b>&#x81EA;&#x5B9A;&#x4E49;OAuth&#x6388;&#x6743;&#x8FC7;&#x7A0B;</a></li></ul></ul></div><a href="#oauth&#x8BA4;&#x8BC1;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="oauth&#x8BA4;&#x8BC1;"><a name="oauth&#x8BA4;&#x8BC1;" class="anchor-navigation-ex-anchor" href="#oauth&#x8BA4;&#x8BC1;"><i class="fa fa-link" aria-hidden="true"></i></a>1. OAuth&#x8BA4;&#x8BC1;</h1>
+<h2 id="&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x8BA4;&#x8BC1;"><a name="&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x8BA4;&#x8BC1;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x8BA4;&#x8BC1;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x8BA4;&#x8BC1;</h2>
+<ul>
+<li>&#x5728;&#x4F01;&#x4E1A;&#x5FAE;&#x4FE1;&#x7EC4;&#x4EF6;&#x4E2D;&#x5DF2;&#x7ECF;&#x5185;&#x7F6E;&#x4E86;&#x57FA;&#x7840;&#x7684;OAuth&#x8BA4;&#x8BC1;&#x6D41;&#x7A0B;&#x3002;</li>
+<li>&#x76F8;&#x5173;&#x7C7B;<a href="">AuthTokenController</a></li>
+</ul>
+<h3 id="&#x83B7;&#x53D6;oauth&#x6388;&#x6743;&#x5730;&#x5740;"><a name="&#x83B7;&#x53D6;oauth&#x6388;&#x6743;&#x5730;&#x5740;" class="anchor-navigation-ex-anchor" href="#&#x83B7;&#x53D6;oauth&#x6388;&#x6743;&#x5730;&#x5740;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x83B7;&#x53D6;OAuth&#x6388;&#x6743;&#x5730;&#x5740;</h3>
+<ul>
+<li>&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x5730;&#x5740;&#xFF1A;<a href="">/token/wechat/cp/buildOAuthUrl/{app}</a>&#xFF0C;{app}&#x9700;&#x66FF;&#x6362;&#x4E3A;&#x76F8;&#x5173;&#x7684;app&#x5B57;&#x6BB5;&#xFF0C;&#x6BD4;&#x5982;<a href="">MSG</a>&#x3002;</li>
+<li>&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#xFF1A;<a href="">GET</a>&#x3002;</li>
+<li>&#x4F20;&#x5165;&#x53C2;&#x6570;&#xFF1A;<a href="">url</a>&#x3002;</li>
+<li>&#x662F;&#x5426;&#x9700;&#x8981;&#x8BA4;&#x8BC1;&#x540E;&#x8C03;&#x7528;&#xFF1A;<a href="">&#x5426;</a>&#x3002;</li>
+<li>&#x83B7;&#x53D6;&#x5230;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5FAE;&#x4FE1;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x4E2D;&#x6D4B;&#x8BD5;&#xFF0C;&#x6216;&#x8005;&#x6DFB;&#x52A0;&#x5230;&#x5E94;&#x7528;&#x7684;&#x83DC;&#x5355;&#xFF0C;&#x6216;&#x9875;&#x9762;&#x5185;&#x7684;&#x6309;&#x94AE;&#x4E0A;&#x3002;</li>
+</ul>
+<h3 id="oauth&#x6821;&#x9A8C;&#x63A5;&#x53E3;"><a name="oauth&#x6821;&#x9A8C;&#x63A5;&#x53E3;" class="anchor-navigation-ex-anchor" href="#oauth&#x6821;&#x9A8C;&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. OAuth&#x6821;&#x9A8C;&#x63A5;&#x53E3;</h3>
+<ul>
+<li>&#x8BF7;&#x6C42;&#x63A5;&#x53E3;&#x5730;&#x5740;&#xFF1A;<a href="">/token/wechat/cp/apply/{app}</a>&#xFF0C;{app}&#x9700;&#x66FF;&#x6362;&#x4E3A;&#x76F8;&#x5173;&#x7684;app&#x5B57;&#x6BB5;&#xFF0C;&#x6BD4;&#x5982;<a href="">MSG</a>&#x3002;</li>
+<li>&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#xFF1A;<a href="">POST</a>&#x3002;</li>
+<li>&#x4F20;&#x5165;&#x53C2;&#x6570;&#xFF1A;<a href="">code</a>, <a href="">state</a>&#x3002;</li>
+<li>&#x5F53;&#x8BBF;&#x95EE;&#x8BE5;&#x63A5;&#x53E3;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BF7;&#x6C42;&#x5934;&#x4E2D;&#x5E26;&#x6709;&#x6709;&#x6548;&#x7684;token&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x5C06;&#x81EA;&#x52A8;&#x66F4;&#x6362;token&#xFF0C;&#x4E0D;&#x518D;&#x5BF9;code&#x548C;state&#x8FDB;&#x884C;&#x83B7;&#x53D6;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6709;&#x6548;&#x7684;token&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x6839;&#x636E;code&#x83B7;&#x53D6;&#x5230;UserId&#x53C2;&#x6570;&#xFF0C;&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x67E5;&#x8BE2;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x540E;&#xFF0C;&#x6765;&#x751F;&#x6210;&#x65B0;token&#x8FDB;&#x884C;&#x6388;&#x6743;&#x3002;</li>
+</ul>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;oauth&#x6388;&#x6743;&#x8FC7;&#x7A0B;"><a name="&#x81EA;&#x5B9A;&#x4E49;oauth&#x6388;&#x6743;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;oauth&#x6388;&#x6743;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x81EA;&#x5B9A;&#x4E49;OAuth&#x6388;&#x6743;&#x8FC7;&#x7A0B;</h2>
+<ul>
+<li><a href="&#x83B7;&#x53D6;Service.html">&#x83B7;&#x53D6;Service</a></li>
+<li><a href="https://github.com/Wechat-Group/weixin-java-tools" target="_blank">weixin-java-tools</a>&#x7684;OAuth&#x8BA4;&#x8BC1;&#x76F8;&#x5173;&#x63A5;&#x53E3;&#x8BE6;&#x89C1;<a href="https://github.com/Wechat-Group/weixin-java-tools/wiki/CP_OAuth2%E7%BD%91%E9%A1%B5%E6%8E%88%E6%9D%83" target="_blank">CP_OAuth2&#x7F51;&#x9875;&#x6388;&#x6743;&#x6587;&#x6863;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="获取Service.html" class="navigation navigation-prev " aria-label="Previous page: 获取Service">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="JSSDK初始化.html" class="navigation navigation-next " aria-label="Next page: JSSDK初始化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"OAuth认证","level":"1.3.4","depth":2,"next":{"title":"JSSDK初始化","level":"1.3.5","depth":2,"path":"企业微信组件/JSSDK初始化.md","ref":"企业微信组件/JSSDK初始化.md","articles":[]},"previous":{"title":"获取Service","level":"1.3.3","depth":2,"path":"企业微信组件/获取Service.md","ref":"企业微信组件/获取Service.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-sharing","sharing-plus","anchor-navigation-ex","theme-vuejs-2","livereload"],"pluginsConfig":{"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"isShowTocTitleIcon":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"sharing":{"qq":true,"all":["weibo","qq","linkedin","qzone","douban"],"douban":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"企业微信组件/OAuth认证.md","mtime":"2018-09-03T07:11:37.682Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-15T06:33:29.615Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

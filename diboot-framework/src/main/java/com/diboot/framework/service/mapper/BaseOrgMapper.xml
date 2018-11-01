@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.framework.service.mapper.BaseOrgMapper">
+
+	<!-- 通用CRUD: begin  -->
+	<!-- 指定Select需要返回的列 -->
+	<sql id="columns">
+		<trim suffixOverrides=",">
+			<if test="f == null or f.id != null">self.id,</if>
+			<if test="f == null or f.parentId != null">self.parent_id,</if>
+			<if test="f == null or f.name != null">self.name,</if>
+			<if test="f == null or f.shortName != null">self.short_name,</if>
+			<if test="f == null or f.logo != null">self.logo,</if>
+			<if test="f == null or f.telephone != null">self.telephone,</if>
+			<if test="f == null or f.address != null">self.address,</if>
+			<if test="f == null or f.email != null">self.email,</if>
+			<if test="f == null or f.fax != null">self.fax,</if>
+			<if test="f == null or f.website != null">self.website,</if>
+			<if test="f == null or f.active != null">self.active,</if>
+		</trim>
+	</sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.parentId != null">self.parent_id=#{c.parentId}</if>
+		<if test="c.name != null">AND self.name like CONCAT('%',#{c.name},'%')</if>
+		<if test="c.shortName != null">AND self.short_name like CONCAT('%',#{c.shortName},'%')</if>
+		<if test="c.telephone != null">AND self.telephone=#{c.telephone}</if>
+		AND self.active=1
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+        <set>
+            <if test="f == null or f.parentId != null">parent_id=#{m.parentId},</if>
+            <if test="f == null or f.name != null">name=#{m.name},</if>
+            <if test="f == null or f.shortName != null">short_name=#{m.shortName},</if>
+            <if test="f == null or f.logo != null">logo=#{m.logo},</if>
+            <if test="f == null or f.telephone != null">telephone=#{m.telephone},</if>
+            <if test="f == null or f.address != null">address=#{m.address},</if>
+			<if test="f == null or f.email != null">email=#{m.email},</if>
+			<if test="f == null or f.fax != null">fax=#{m.fax},</if>
+			<if test="f == null or f.website != null">website=#{m.website},</if>
+			<if test="f == null or f.active != null">active=#{m.active},</if>
+        </set>
+    </sql>
+
+    <!-- 添加记录 -->
+	<insert id="create" parameterType="com.diboot.framework.model.BaseOrg" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO organization(
+			parent_id, name, short_name, logo, telephone, address, email, fax, website, active, create_by
+		)
+		VALUES(
+			#{parentId}, #{name}, #{shortName}, #{logo}, #{telephone}, #{address}, #{email}, #{fax}, #{website}, #{active}, #{createBy}
+		)
+	</insert>
+
+    <!-- 更新记录 -->
+	<update id="update">
+		UPDATE organization
+        <include refid="setValues" />
+		WHERE id=#{m.id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="Long">
+		UPDATE organization SET active=0 WHERE id=#{id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="Long" resultType="com.diboot.framework.model.BaseOrg">
+        SELECT self.*
+        FROM organization self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+		SELECT count(self.id)
+	    FROM organization self
+	    <where>
+            <include refid="conditions" />
+	    </where>
+	</select>
+
+    <!-- 查询符合条件的记录 -->
+	<select id="getList" resultType="com.diboot.framework.model.BaseOrg">
+		SELECT self.*
+	    FROM organization self
+	    <where>
+	    	<include refid="conditions" />
+	    </where>
+		ORDER BY self.id DESC
+		<if test="c.COUNT != null">
+			LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+		</if>
+	</select>
+
+	<!-- 查询符合条件的记录，返回Map -->
+	<select id="getMapList" resultType="java.util.Map">
+		SELECT <include refid="columns" />
+		FROM organization self
+		<where>
+			<include refid="conditions" />
+		</where>
+		ORDER BY self.id DESC
+		<if test="c.COUNT != null">
+			LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+		</if>
+	</select>
+
+	<!-- 批量创建 -->
+	<insert id="batchCreate" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO organization(
+			parent_id, name, short_name, logo, telphone, address, email, fax, website, active, create_by
+		)
+		VALUES
+		<foreach collection="list" item="m" separator=",">
+			(#{m.parentId}, #{m.name}, #{m.shortName}, #{m.logo}, #{m.telphone}, #{m.address}, #{m.email}, #{m.fax}, #{m.website}, #{m.active}, #{m.createBy})
+		</foreach>
+	</insert>
+	<!-- 通用CRUD: end -->
+	
+	<!-- 扩展SQL: -->
+
+</mapper>

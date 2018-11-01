@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.framework.service.mapper.MetadataMapper">
+	<!--<cache type="org.mybatis.caches.redis.RedisCache" />-->
+	<!-- 通用CRUD: begin  -->
+	<!-- 指定Select需要返回的列 -->
+	<sql id="columns">
+		<trim suffixOverrides=",">
+			<if test="f == null or f.id != null">self.id,</if>
+			<if test="f == null or f.parentId != null">self.parent_id,</if>
+			<if test="f == null or f.type != null">self.type,</if>
+			<if test="f == null or f.itemName != null">self.item_name,</if>
+			<if test="f == null or f.itemValue != null">self.item_value,</if>
+			<if test="f == null or f.sortId != null">self.sort_id,</if>
+			<if test="f == null or f.comment != null">self.comment,</if>
+			<if test="f == null or f.system != null">self.system,</if>
+			<if test="f == null or f.editable != null">self.editable,</if>
+			<if test="f == null or f.active != null">self.active,</if>
+		</trim>
+	</sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+		<choose>
+			<when test="c.parentId_GT != null">
+				AND self.parent_id > #{c.parentId_GT}
+			</when>
+			<when test="c.parentId != null">
+				AND self.parent_id=#{c.parentId}
+			</when>
+		</choose>
+		<if test="c.type != null">AND self.type=#{c.type}</if>
+		<if test="c.itemValue != null">AND self.item_value=#{c.itemValue}</if>
+		<if test="c.itemName != null">AND self.item_name=#{c.itemName}</if>
+		<if test="c.system != null">AND self.system=#{c.system}</if>
+		<if test="c.editable != null">AND self.editable=#{c.editable}</if>
+        AND self.active=1
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+        <set>
+            <if test="f == null or f.parentId != null">parent_id=#{m.parentId},</if>
+            <if test="f == null or f.type != null">type=#{m.type},</if>
+            <if test="f == null or f.itemName != null">item_name=#{m.itemName},</if>
+            <if test="f == null or f.itemValue != null">item_value=#{m.itemValue},</if>
+            <if test="f == null or f.sortId != null">sort_id=#{m.sortId},</if>
+            <if test="f == null or f.comment != null">comment=#{m.comment},</if>
+			<if test="f == null or f.editable != null">editable=#{m.editable},</if>
+			<if test="f == null or f.active != null">active=#{m.active},</if>
+        </set>
+    </sql>
+
+    <!-- 添加记录 -->
+	<insert id="create" parameterType="com.diboot.framework.model.Metadata" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO metadata(
+			parent_id, type, item_name, item_value, comment, sort_id, system, editable, active, create_by
+		)
+		VALUES(
+			#{parentId}, #{type}, #{itemName}, #{itemValue}, #{comment}, #{sortId}, #{system}, #{editable}, #{active}, #{createBy}
+		)
+	</insert>
+
+    <!-- 更新记录 -->
+	<update id="update">
+		UPDATE metadata
+        <include refid="setValues" />
+		WHERE id=#{m.id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="Long">
+		UPDATE metadata SET active=0 WHERE id=#{id, jdbcType=BIGINT} OR parent_id=#{id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="Long" resultType="com.diboot.framework.model.Metadata">
+        SELECT self.*
+        FROM metadata self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+		SELECT count(self.id)
+	    FROM metadata self
+	    <where>
+            <include refid="conditions" />
+	    </where>
+	</select>
+
+    <!-- 查询符合条件的记录 -->
+	<select id="getList" resultType="com.diboot.framework.model.Metadata">
+		SELECT self.*
+	    FROM metadata self
+	    <where>
+	    	<include refid="conditions" />
+	    </where>
+		ORDER BY self.id DESC
+		<if test="c.COUNT != null">
+			LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+		</if>
+	</select>
+
+	<!-- 查询符合条件的记录，返回Map -->
+	<select id="getMapList" resultType="java.util.Map">
+		SELECT <include refid="columns" />
+		FROM metadata self
+		<where>
+			<include refid="conditions" />
+		</where>
+		ORDER BY self.id DESC
+		<if test="c.COUNT != null">
+			LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+		</if>
+	</select>
+
+	<!-- 批量创建 -->
+	<insert id="batchCreate" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO metadata(
+			parent_id, type, item_name, item_value, comment, sort_id, system, editable, active, create_by
+		)
+		VALUES
+		<foreach collection="list" item="m" separator=",">
+			(#{m.parentId}, #{m.type}, #{m.itemName}, #{m.itemValue}, #{m.comment}, #{m.sortId}, #{m.system}, #{m.editable}, #{m.active}, #{m.createBy})
+		</foreach>
+	</insert>
+
+	<!-- 通用CRUD: end -->
+	
+	<!-- 扩展SQL: -->
+	<select id="getNameTypePairList" resultType="java.util.HashMap">
+		SELECT self.type as v, self.item_name as k
+		FROM metadata self
+		WHERE self.parent_id=0 AND self.active=1
+		ORDER BY self.id ASC
+	</select>
+
+</mapper>

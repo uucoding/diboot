@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.wechat.open.service.mapper.WxAuthOpenMapper">
+
+    <!-- 通用CRUD: begin  -->
+    <!-- 指定Select需要返回的列 -->
+    <sql id="columns">
+        <trim suffixOverrides=",">
+            <if test="f == null or f.id != null">self.id,</if>
+            <if test="f == null or f.relObjType != null">self.rel_obj_type,</if>
+            <if test="f == null or f.relObjId != null">self.rel_obj_id,</if>
+            <if test="f == null or f.authType != null">self.auth_type,</if>
+            <if test="f == null or f.appid != null">self.appid,</if>
+            <if test="f == null or f.extdata != null">self.extdata,</if>
+            <if test="f == null or f.active != null">self.active,</if>
+            <if test="f == null or f.createBy != null">self.create_by,</if>
+            <if test="f == null or f.createTime != null">self.create_time,</if>
+            <if test="f == null or f.updateTime != null">self.update_time,</if>
+			<if test="f == null or f.authorizerRefreshToken != null">self.authorizer_refresh_token,</if>
+			<if test="f == null or f.nickname != null">self.nickname,</if>
+			<if test="f == null or f.principalName != null">self.principal_name,</if>
+			<if test="f == null or f.headImg != null">self.head_img,</if>
+			<if test="f == null or f.originalId != null">self.original_id,</if>
+			<if test="f == null or f.serviceTypeInfo != null">self.service_type_info,</if>
+			<if test="f == null or f.verifyTypeInfo != null">self.verify_type_info,</if>
+			<if test="f == null or f.qrcodeUrl != null">self.qrcode_url,</if>
+			<if test="f == null or f.wechatAlias != null">self.wechat_alias,</if>
+			<if test="f == null or f.enabled != null">self.enabled,</if>
+        </trim>
+    </sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.id != null"> AND self.id=#{c.id}</if>
+        <if test="c.relObjType != null"> AND self.rel_obj_type=#{c.relObjType}</if>
+        <if test="c.relObjId != null"> AND self.rel_obj_id=#{c.relObjId}</if>
+        <if test="c.authType != null"> AND self.auth_type=#{c.authType}</if>
+        <if test="c.appid != null"> AND self.appid=#{c.appid}</if>
+        <if test="c.extdata != null"> AND self.extdata=#{c.extdata}</if>
+        AND self.active=1 
+        <if test="c.createBy != null"> AND self.create_by=#{c.createBy}</if>
+        <if test="c.createTime != null"> AND (self.create_time >= CONCAT(#{c.createTime},' 00:00:00') AND self.create_time &lt; DATE_ADD(#{c.createTime}, INTERVAL 1 DAY))</if>
+        <if test="c.updateTime != null"> AND (self.update_time >= CONCAT(#{c.updateTime},' 00:00:00') AND self.update_time &lt; DATE_ADD(#{c.updateTime}, INTERVAL 1 DAY))</if>
+        <if test="c.FUZZY_SEARCH != null">
+        AND ()
+        </if>
+		<if test="c.authorizerRefreshToken != null"> AND self.authorizer_refresh_token=#{c.authorizerRefreshToken}</if>
+		<if test="c.nickname != null"> AND self.nickname=#{c.nickname}</if>
+		<if test="c.principalName != null"> AND self.principal_name=#{c.principalName}</if>
+		<if test="c.headImg != null"> AND self.head_img=#{c.headImg}</if>
+		<if test="c.originalId != null"> AND self.original_id=#{c.originalId}</if>
+		<if test="c.serviceTypeInfo != null"> AND self.service_type_info=#{c.serviceTypeInfo}</if>
+		<if test="c.verifyTypeInfo != null"> AND self.verify_type_info=#{c.verifyTypeInfo}</if>
+		<if test="c.qrcodeUrl != null"> AND self.qrcode_url=#{c.qrcodeUrl}</if>
+		<if test="c.wechatAlias != null"> AND self.wechat_alias=#{c.wechatAlias}</if>
+		<if test="c.enabled != null"> AND self.enabled=#{c.enabled}</if>
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+    <set>
+        <if test="(f == null or f.id != null) and m.id != null">id=#{m.id},</if>
+        <if test="(f == null or f.relObjType != null)">rel_obj_type=#{m.relObjType},</if>
+        <if test="(f == null or f.relObjId != null)">rel_obj_id=#{m.relObjId},</if>
+        <if test="(f == null or f.authType != null)">auth_type=#{m.authType},</if>
+        <if test="(f == null or f.appid != null) and m.appid != null">appid=#{m.appid},</if>
+        <if test="(f == null or f.extdata != null)">extdata=#{m.extdata},</if>
+        <if test="(f == null or f.active != null) and m.active != null">active=#{m.active},</if>
+		<if test="(f == null or f.authorizerRefreshToken != null)">authorizer_refresh_token=#{m.authorizerRefreshToken},</if>
+		<if test="(f == null or f.nickname != null)">nickname=#{m.nickname},</if>
+		<if test="(f == null or f.principalName != null)">principal_name=#{m.principalName},</if>
+		<if test="(f == null or f.headImg != null)">head_img=#{m.headImg},</if>
+		<if test="(f == null or f.originalId != null)">original_id=#{m.originalId},</if>
+		<if test="(f == null or f.serviceTypeInfo != null)">service_type_info=#{m.serviceTypeInfo},</if>
+		<if test="(f == null or f.verifyTypeInfo != null)">verify_type_info=#{m.verifyTypeInfo},</if>
+		<if test="(f == null or f.qrcodeUrl != null)">qrcode_url=#{m.qrcodeUrl},</if>
+		<if test="(f == null or f.wechatAlias != null)">wechat_alias=#{m.wechatAlias},</if>
+		<if test="(f == null or f.enabled != null)">enabled=#{m.enabled},</if>
+    </set>
+    </sql>
+
+    <!-- 添加记录 -->
+    <insert id="create" parameterType="com.diboot.wechat.open.model.WxAuthOpen" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO wx_auth_open(
+			id, rel_obj_type, rel_obj_id, auth_type, appid, nickname, principal_name, head_img, original_id, service_type_info, verify_type_info, qrcode_url, wechat_alias, authorizer_refresh_token, enabled, extdata, active, create_by
+		)
+		VALUES(
+			#{id}, #{relObjType}, #{relObjId}, #{authType}, #{appid}, #{nickname}, #{principalName}, #{headImg}, #{originalId}, #{serviceTypeInfo}, #{verifyTypeInfo}, #{qrcodeUrl}, #{wechatAlias}, #{authorizerRefreshToken}, #{enabled}, #{extdata}, #{active}, #{createBy}
+		)
+	</insert>
+
+    <!-- 批量创建 -->
+    <insert id="batchCreate" parameterType="java.util.List"  useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO wx_auth_open(
+			id, rel_obj_type, rel_obj_id, auth_type, appid, nickname, principal_name, head_img, original_id, service_type_info, verify_type_info, qrcode_url, wechat_alias, authorizer_refresh_token, enabled, extdata, active, create_by
+		)
+		VALUES
+		<foreach collection="list" item="m" separator=",">
+			(#{m.id}, #{m.relObjType}, #{m.relObjId}, #{m.authType}, #{m.appid}, #{m.nickname}, #{m.principalName}, #{m.headImg}, #{m.originalId}, #{m.serviceTypeInfo}, #{m.verifyTypeInfo}, #{m.qrcodeUrl}, #{m.wechatAlias}, #{m.authorizerRefreshToken}, #{m.enabled}, #{m.extdata}, #{m.active}, #{m.createBy})
+		</foreach>
+	</insert>
+
+    <!-- 更新记录 -->
+    <update id="update" parameterType="com.diboot.wechat.open.model.WxAuthOpen">
+        UPDATE wx_auth_open
+        <include refid="setValues" />
+        WHERE id=#{m.id, jdbcType=BIGINT}
+    </update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="long">
+		UPDATE wx_auth_open SET active=0 WHERE id=#{id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="long" resultType="com.diboot.wechat.open.model.WxAuthOpen">
+        SELECT self.* 
+        FROM wx_auth_open self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+        SELECT count(self.id)
+        FROM  wx_auth_open self
+        <where>
+            <include refid="conditions" />
+        </where>
+    </select>
+
+    <!-- 查询符合条件的记录 -->
+    <select id="getList" resultType="com.diboot.wechat.open.model.WxAuthOpen">
+        SELECT self.* 
+        FROM wx_auth_open self
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+
+    <!-- 查询符合条件的记录，返回Map -->
+    <select id="getMapList" resultType="java.util.Map">
+        SELECT <include refid="columns" />
+        FROM wx_auth_open self
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+    <!-- 通用CRUD: end -->
+
+    <!-- 扩展SQL -->
+    <select id="getModelByAppId" parameterType="String" resultType="com.diboot.wechat.open.model.WxAuthOpen">
+        SELECT self.*
+        FROM wx_auth_open self
+        WHERE self.appid=#{appid}
+        AND self.active=1
+        ORDER BY self.id DESC
+        LIMIT 1
+    </select>
+</mapper>

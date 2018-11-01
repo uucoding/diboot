@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.components.service.mapper.MessageTmplMapper">
+
+    <!-- 通用CRUD: begin  -->
+    <!-- 指定Select需要返回的列 -->
+    <sql id="columns">
+        <trim suffixOverrides=",">
+            <if test="f == null or f.id != null">self.id,</if>
+            <if test="f == null or f.type != null">self.type,</if>
+            <if test="f == null or f.code != null">self.code,</if>
+            <if test="f == null or f.msgType != null">self.msg_type,</if>
+            <if test="f == null or f.businessType != null">self.business_type,</if>
+            <if test="f == null or f.businessId != null">self.business_id,</if>
+            <if test="f == null or f.title != null">self.title,</if>
+            <if test="f == null or f.msgTitle != null">self.msg_title,</if>
+            <if test="f == null or f.content != null">self.content,</if>
+            <if test="f == null or f.comment != null">self.comment,</if>
+            <if test="f == null or f.extdata != null">self.extdata,</if>
+            <if test="f == null or f.system != null">self.system,</if>
+            <if test="f == null or f.active != null">self.active,</if>
+            <if test="f == null or f.creatorName != null">u.realname AS creatorName,</if>
+        </trim>
+    </sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.id != null">self.id=#{c.id}</if>
+        <if test="c.type != null"> AND self.type=#{c.type}</if>
+        <if test="c.code != null"> AND self.code=#{c.code}</if>
+        <if test="c.msgType != null"> AND self.msg_type=#{c.msgType}</if>
+        <if test="c.businessType != null"> AND self.business_type=#{c.businessType}</if>
+        <if test="c.businessId != null"> AND self.business_id=#{c.businessId}</if>
+        <if test="c.title != null"> AND self.title like CONCAT('%',#{c.title},'%')</if>
+        <if test="c.msgTitle != null"> AND self.msg_title like CONCAT('%',#{c.msgTitle},'%')</if>
+        <if test="c.content != null"> AND self.content like CONCAT('%',#{c.content},'%')</if>
+        <if test="c.system != null"> AND self.system=#{c.system}</if>
+        <if test="c.extdata != null"> AND self.extdata=#{c.extdata}</if>
+        <if test="c.createBy != null"> AND self.create_by=#{c.createBy}</if>
+        <if test="c.createTime != null"> AND date(self.create_time)=#{c.createTime}</if>
+         AND self.active=1
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+        <set>
+            <if test="f == null or f.id != null">id=#{m.id},</if>
+            <if test="f == null or f.type != null">type=#{m.type},</if>
+            <if test="f == null or f.code != null">code=#{m.code},</if>
+            <if test="f == null or f.msgType != null">msg_type=#{m.msgType},</if>
+            <if test="f == null or f.businessType != null">business_type=#{m.businessType},</if>
+            <if test="f == null or f.businessId != null">business_id=#{m.businessId},</if>
+            <if test="f == null or f.title != null">title=#{m.title},</if>
+            <if test="f == null or f.msgTitle != null">msg_title=#{m.msgTitle},</if>
+            <if test="f == null or f.content != null">content=#{m.content},</if>
+            <if test="f == null or f.comment != null">comment=#{m.comment},</if>
+            <if test="f == null or f.extdata != null">extdata=#{m.extdata},</if>
+            <if test="f == null or f.system != null">system=#{m.system},</if>
+            <if test="f == null or f.active != null">active=#{m.active},</if>
+        </set>
+    </sql>
+
+    <!-- 添加记录 -->
+    <insert id="create" parameterType="com.diboot.components.model.MessageTmpl" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO message_tmpl(
+		     type, code, msg_type, business_type, business_id, title, msg_title, content, comment, extdata, system, active, create_by
+        )
+        VALUES(
+		     #{type}, #{code}, #{msgType}, #{businessType}, #{businessId}, #{title}, #{msgTitle}, #{content}, #{comment}, #{extdata}, #{system}, #{active}, #{createBy}
+        )
+    </insert>
+
+    <!-- 更新记录 -->
+    <update id="update" parameterType="com.diboot.components.model.MessageTmpl">
+        UPDATE message_tmpl
+        <include refid="setValues" />
+        WHERE id=#{m.id, jdbcType=BIGINT}
+    </update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="Object">
+		UPDATE message_tmpl SET active=0 WHERE id=#{id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="Object" resultType="com.diboot.components.model.MessageTmpl">
+        SELECT self.*, u.realname as creatorName
+        FROM message_tmpl self
+        LEFT JOIN user u ON self.create_by=u.id
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+        SELECT count(self.id)
+        FROM  message_tmpl self
+        <where>
+            <include refid="conditions" />
+        </where>
+    </select>
+
+    <!-- 查询符合条件的记录 -->
+    <select id="getList" resultType="com.diboot.components.model.MessageTmpl">
+        SELECT self.*, u.realname as creatorName
+        FROM message_tmpl self
+        LEFT JOIN user u ON self.create_by=u.id
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+
+    <!-- 查询符合条件的记录，返回Map -->
+    <select id="getMapList" resultType="java.util.Map">
+        SELECT <include refid="columns" />
+        FROM message_tmpl self
+        LEFT JOIN user u ON self.create_by=u.id
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+    <!-- 通用CRUD: end -->
+
+    <!-- 扩展SQL -->
+    <select id="getKeyValuePairList" resultType="java.util.Map">
+        SELECT self.id as v, self.title as k
+        FROM message_tmpl self
+        <where>
+            <include refid="conditions"/>
+        </where>
+        ORDER BY self.id DESC
+    </select>
+
+</mapper>

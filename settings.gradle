@@ -1,0 +1,11 @@
+rootProject.name = 'diboot-open'
+include 'diboot-framework'
+include 'diboot-components-file'
+include 'diboot-components-msg'
+include 'diboot-rest'
+include 'diboot-wechat-cp'
+include 'diboot-wechat-mp'
+include 'diboot-wechat-open'
+include 'diboot-common'
+include 'diboot-web'
+

@@ -1,0 +1,510 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>发送邮件消息 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../文件组件.html" />
+    
+    
+    <link rel="prev" href="发送短信消息.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../基础.html">
+            
+                <a href="../基础.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../基础/组件引入.html">
+            
+                <a href="../基础/组件引入.html">
+            
+                    
+                    组件引入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../基础/SQL初始化.html">
+            
+                <a href="../基础/SQL初始化.html">
+            
+                    
+                    SQL初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../消息组件.html">
+            
+                <a href="../消息组件.html">
+            
+                    
+                    消息组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="消息模板管理.html">
+            
+                <a href="消息模板管理.html">
+            
+                    
+                    消息模板管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="消息记录管理.html">
+            
+                <a href="消息记录管理.html">
+            
+                    
+                    消息记录管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="发送短信消息.html">
+            
+                <a href="发送短信消息.html">
+            
+                    
+                    发送短信消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="发送邮件消息.html">
+            
+                <a href="发送邮件消息.html">
+            
+                    
+                    发送邮件消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../文件组件.html">
+            
+                <a href="../文件组件.html">
+            
+                    
+                    文件组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../文件组件/文件处理工具.html">
+            
+                <a href="../文件组件/文件处理工具.html">
+            
+                    
+                    文件处理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../文件组件/Excel数据导入.html">
+            
+                <a href="../文件组件/Excel数据导入.html">
+            
+                    
+                    Excel数据导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../文件组件/Excel数据导出.html">
+            
+                <a href="../文件组件/Excel数据导出.html">
+            
+                    
+                    Excel数据导出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../文件组件/音频文件处理.html">
+            
+                <a href="../文件组件/音频文件处理.html">
+            
+                    
+                    音频文件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../文件组件/图片文件处理.html">
+            
+                <a href="../文件组件/图片文件处理.html">
+            
+                    
+                    图片文件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../文件组件/压缩文件处理.html">
+            
+                <a href="../文件组件/压缩文件处理.html">
+            
+                    
+                    压缩文件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >发送邮件消息</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x6D88;&#x606F;"><b>1. </b>&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x6D88;&#x606F;</a></li><ul><li><span class="title-icon "></span><a href="#&#x914D;&#x7F6E;"><b>1.1. </b>&#x914D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#&#x53D1;&#x9001;&#x90AE;&#x4EF6;"><b>1.2. </b>&#x53D1;&#x9001;&#x90AE;&#x4EF6;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5BF9;&#x4E8E;&#x5DF2;&#x6709;&#x6D88;&#x606F;&#x90AE;&#x4EF6;&#x53D1;&#x9001;"><b>1.2.1. </b>&#x5BF9;&#x4E8E;&#x5DF2;&#x6709;&#x6D88;&#x606F;&#x90AE;&#x4EF6;&#x53D1;&#x9001;</a></li><li><span class="title-icon "></span><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x90AE;&#x4EF6;&#x53D1;&#x9001;"><b>1.2.2. </b>&#x81EA;&#x5B9A;&#x4E49;&#x90AE;&#x4EF6;&#x53D1;&#x9001;</a></li></ul></ul></ul></div><a href="#&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x6D88;&#x606F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x6D88;&#x606F;"><a name="&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x6D88;&#x606F;" class="anchor-navigation-ex-anchor" href="#&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x6D88;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x6D88;&#x606F;</h1>
+<ul>
+<li>&#x6D88;&#x606F;&#x7EC4;&#x4EF6;&#x5185;&#x63D0;&#x4F9B;&#x4E86;&#x90AE;&#x4EF6;&#x53D1;&#x9001;&#x7684;&#x76F8;&#x5173;&#x63A5;&#x53E3;&#x548C;&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<h2 id="&#x914D;&#x7F6E;"><a name="&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x914D;&#x7F6E;</h2>
+<p>&#x6D88;&#x606F;&#x7EC4;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x652F;&#x6301;&#x517C;&#x5BB9;&#x6570;&#x636E;&#x5E93;&#x914D;&#x7F6E;&#x53CA;properties&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#x4E24;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x9ED8;&#x8BA4;&#x4ECE;msg.properties&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;&#x76F8;&#x5173;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x672A;&#x80FD;&#x8BFB;&#x53D6;&#x5230;&#x5219;&#x5C1D;&#x8BD5;&#x4ECE;system_config&#x8868;&#x4E2D;&#x8BFB;&#x53D6;&#x3002;
+<a href="">msg.properties</a>&#x9700;&#x653E;&#x7F6E;&#x5728;classpath&#x4E0B;&#x786E;&#x4FDD;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x5230;&#x3002;</p>
+<ul>
+<li>&#x6587;&#x4EF6;&#x914D;&#x7F6E;: <ul>
+<li>&#x5728;<a href="">msg.properties</a>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x7684;&#x77ED;&#x4FE1;&#x914D;&#x7F6E;&#x3002;</li>
+<li><font color="red">&#x6CE8;&#x610F;&#xFF1A;</font>password&#x652F;&#x6301;&#x660E;&#x6587; &#x6216;&#x8005; &#x7ECF;&#x8FC7;framework&#x4E2D;<a href="">Encryptor.encrypt()</a>&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x540E;&#x7684;&#x5BC6;&#x6587;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-properties">#Email SMTP Host Config
+email.sender.name=&#x59D3;&#x540D;
+email.sender.address=test@126.com
+email.sender.password=
+email.sender.host=smtp.126.com
+#email.sender.sslport=
+</code></pre>
+<ul>
+<li>&#x6570;&#x636E;&#x5E93;&#x914D;&#x7F6E;: 
+&#x5C06;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x63D2;&#x5165;&#x5230;system_config&#x8868;</li>
+</ul>
+<pre><code class="lang-sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`system_config`</span> (<span class="hljs-string">`category`</span>, <span class="hljs-string">`subcategory`</span>, <span class="hljs-string">`extdata`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;MSG&apos;</span>, <span class="hljs-string">&apos;EMAIL&apos;</span>,
+ <span class="hljs-string">&apos;{\&quot;email.sender.name\&quot;:\&quot;&#x53D1;&#x9001;&#x8005;&#x540D;&#x79F0;\&quot;,\&quot;email.sender.address\&quot;:\&quot;service@126.com\&quot;,\&quot;email.sender.password\&quot;:\&quot;-\&quot;,\&quot;email.sender.host\&quot;:\&quot;smtp.126.com\&quot;,\&quot;email.sender.sslport\&quot;:\&quot;\&quot;}&apos;</span>);
+</code></pre>
+<h2 id="&#x53D1;&#x9001;&#x90AE;&#x4EF6;"><a name="&#x53D1;&#x9001;&#x90AE;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x53D1;&#x9001;&#x90AE;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x53D1;&#x9001;&#x90AE;&#x4EF6;</h2>
+<h3 id="&#x5BF9;&#x4E8E;&#x5DF2;&#x6709;&#x6D88;&#x606F;&#x90AE;&#x4EF6;&#x53D1;&#x9001;"><a name="&#x5BF9;&#x4E8E;&#x5DF2;&#x6709;&#x6D88;&#x606F;&#x90AE;&#x4EF6;&#x53D1;&#x9001;" class="anchor-navigation-ex-anchor" href="#&#x5BF9;&#x4E8E;&#x5DF2;&#x6709;&#x6D88;&#x606F;&#x90AE;&#x4EF6;&#x53D1;&#x9001;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x5BF9;&#x4E8E;&#x5DF2;&#x6709;&#x6D88;&#x606F;&#x90AE;&#x4EF6;&#x53D1;&#x9001;</h3>
+<ul>
+<li>&#x5BF9;&#x4E8E;&#x5DF2;&#x6709;&#x7684;Message&#x5B9E;&#x4F53;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#xFF0C;&#x9700;&#x5C06;Message&#x5B9E;&#x4F53;&#x7684;type&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E3A;<a href="">EMAIL</a>&#x3002;</li>
+<li>&#x8C03;&#x7528;<a href="">MessageService</a>&#x4E2D;&#x7684;<a href="">createAndSendMsg</a>&#x63A5;&#x53E3;&#x5C06;&#x65B0;&#x5EFA;&#x6D88;&#x606F;&#x8BB0;&#x5F55;&#x5E76;&#x53D1;&#x9001;&#x8BE5;&#x90AE;&#x4EF6;&#x3002;</li>
+<li>&#x8C03;&#x7528;<a href="">MessageService</a>&#x4E2D;&#x7684;<a href="">sendMsg</a>&#x63A5;&#x53E3;&#x5C06;&#x53D1;&#x9001;&#x8BE5;&#x90AE;&#x4EF6;&#x3002;</li>
+</ul>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x90AE;&#x4EF6;&#x53D1;&#x9001;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x90AE;&#x4EF6;&#x53D1;&#x9001;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x90AE;&#x4EF6;&#x53D1;&#x9001;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. &#x81EA;&#x5B9A;&#x4E49;&#x90AE;&#x4EF6;&#x53D1;&#x9001;</h3>
+<ul>
+<li>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x793A;&#x4F8B;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x90AE;&#x4EF6;&#x53D1;&#x9001;&#x3002;</li>
+</ul>
+<pre><code class="lang-java">String to = <span class="hljs-string">&quot;somebody@126.com&quot;</span>;
+String toName = <span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>;
+String title = <span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x90AE;&#x4EF6;&quot;</span>;
+String content = <span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x90AE;&#x4EF6;&#x4FE1;&#x606F;&quot;</span>;
+String[] ccEmails = <span class="hljs-string">&quot;test@126.com&quot;</span>;
+String[] filePaths = <span class="hljs-keyword">null</span>; <span class="hljs-comment">//&#x9644;&#x4EF6;&#x5217;&#x8868;</span>
+<span class="hljs-keyword">try</span>{
+    <span class="hljs-keyword">boolean</span> success = com.diboot.components.msg.email.Sender.send(to, toName, ccEmails, title, content, filePaths);
+}
+<span class="hljs-keyword">catch</span>(Exception e){
+    logger.error(<span class="hljs-string">&quot;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x5F02;&#x5E38;, to=&quot;</span>+to, e);
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="发送短信消息.html" class="navigation navigation-prev " aria-label="Previous page: 发送短信消息">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../文件组件.html" class="navigation navigation-next " aria-label="Next page: 文件组件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"发送邮件消息","level":"1.3.4","depth":2,"next":{"title":"文件组件","level":"1.4","depth":1,"path":"文件组件.md","ref":"文件组件.md","articles":[{"title":"文件处理工具","level":"1.4.1","depth":2,"path":"文件组件/文件处理工具.md","ref":"文件组件/文件处理工具.md","articles":[]},{"title":"Excel数据导入","level":"1.4.2","depth":2,"path":"文件组件/Excel数据导入.md","ref":"文件组件/Excel数据导入.md","articles":[]},{"title":"Excel数据导出","level":"1.4.3","depth":2,"path":"文件组件/Excel数据导出.md","ref":"文件组件/Excel数据导出.md","articles":[]},{"title":"音频文件处理","level":"1.4.4","depth":2,"path":"文件组件/音频文件处理.md","ref":"文件组件/音频文件处理.md","articles":[]},{"title":"图片文件处理","level":"1.4.5","depth":2,"path":"文件组件/图片文件处理.md","ref":"文件组件/图片文件处理.md","articles":[]},{"title":"压缩文件处理","level":"1.4.6","depth":2,"path":"文件组件/压缩文件处理.md","ref":"文件组件/压缩文件处理.md","articles":[]}]},"previous":{"title":"发送短信消息","level":"1.3.3","depth":2,"path":"消息组件/发送短信消息.md","ref":"消息组件/发送短信消息.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-sharing","sharing-plus","anchor-navigation-ex","theme-vuejs-2","livereload"],"pluginsConfig":{"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"isShowTocTitleIcon":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"sharing":{"qq":true,"all":["weibo","qq","linkedin","qzone","douban"],"douban":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"消息组件/发送邮件消息.md","mtime":"2018-10-16T01:41:07.768Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-16T01:23:09.507Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

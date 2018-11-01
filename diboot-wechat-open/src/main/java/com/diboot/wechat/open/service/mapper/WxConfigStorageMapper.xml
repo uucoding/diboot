@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.wechat.open.service.mapper.WxConfigStorageMapper">
+
+    <!-- 通用CRUD: begin  -->
+    <!-- 指定Select需要返回的列 -->
+    <sql id="columns">
+        <trim suffixOverrides=",">
+            <if test="f == null or f.id != null">self.id,</if>
+            <if test="f == null or f.type != null">self.type,</if>
+            <if test="f == null or f.extdata != null">self.extdata,</if>
+            <if test="f == null or f.active != null">self.active,</if>
+            <if test="f == null or f.createBy != null">self.create_by,</if>
+            <if test="f == null or f.createTime != null">self.create_time,</if>
+            <if test="f == null or f.updateTime != null">self.update_time,</if>
+        </trim>
+    </sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.id != null"> AND self.id=#{c.id}</if>
+        <if test="c.type != null"> AND self.type=#{c.type}</if>
+        <if test="c.extdata != null"> AND self.extdata=#{c.extdata}</if>
+        AND self.active=1
+        <if test="c.createBy != null"> AND self.create_by=#{c.createBy}</if>
+        <if test="c.createTime != null"> AND (self.create_time >= CONCAT(#{c.createTime},' 00:00:00') AND self.create_time &lt; DATE_ADD(#{c.createTime}, INTERVAL 1 DAY))</if>
+        <if test="c.updateTime != null"> AND (self.update_time >= CONCAT(#{c.updateTime},' 00:00:00') AND self.update_time &lt; DATE_ADD(#{c.updateTime}, INTERVAL 1 DAY))</if>
+        <if test="c.FUZZY_SEARCH != null">
+        AND ()
+        </if>
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+    <set>
+        <if test="(f == null or f.id != null) and m.id != null">id=#{m.id},</if>
+        <if test="(f == null or f.type != null)">type=#{m.type},</if>
+        <if test="(f == null or f.extdata != null)">extdata=#{m.extdata},</if>
+        <if test="(f == null or f.active != null) and m.active != null">active=#{m.active},</if>
+    </set>
+    </sql>
+
+    <!-- 添加记录 -->
+    <insert id="create" parameterType="com.diboot.wechat.open.model.WxConfigStorage" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO wx_config_storage(
+		     type, extdata, active, create_by
+        )
+        VALUES(
+		     #{type}, #{extdata}, #{active}, #{createBy}
+        )
+    </insert>
+
+    <!-- 批量创建 -->
+    <insert id="batchCreate" parameterType="java.util.List"  useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO wx_config_storage(
+        type, extdata, active, create_by
+        )
+        VALUES
+        <foreach collection="list" item="m" separator=",">
+            ( #{m.type}, #{m.extdata}, #{m.active}, #{m.createBy})
+        </foreach>
+    </insert>
+
+    <!-- 更新记录 -->
+    <update id="update" parameterType="com.diboot.wechat.open.model.WxConfigStorage">
+        UPDATE wx_config_storage
+        <include refid="setValues" />
+        WHERE id=#{m.id, jdbcType=BIGINT}
+    </update>
+
+    <!-- 删除记录 -->
+	<update id="delete" parameterType="long">
+		UPDATE wx_config_storage SET active=0 WHERE id=#{id, jdbcType=BIGINT}
+	</update>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="long" resultType="com.diboot.wechat.open.model.WxConfigStorage">
+        SELECT self.* 
+        FROM wx_config_storage self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+        SELECT count(self.id)
+        FROM  wx_config_storage self
+        <where>
+            <include refid="conditions" />
+        </where>
+    </select>
+
+    <!-- 查询符合条件的记录 -->
+    <select id="getList" resultType="com.diboot.wechat.open.model.WxConfigStorage">
+        SELECT self.* 
+        FROM wx_config_storage self
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+
+    <!-- 查询符合条件的记录，返回Map -->
+    <select id="getMapList" resultType="java.util.Map">
+        SELECT <include refid="columns" />
+        FROM wx_config_storage self
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.id DESC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+    <!-- 通用CRUD: end -->
+
+    <!-- 扩展SQL -->
+    <select id="getModelByType" parameterType="String" resultType="com.diboot.wechat.open.model.WxConfigStorage">
+        SELECT self.*
+        FROM wx_config_storage self
+        WHERE self.type=#{type}
+        AND self.active=1
+        ORDER BY self.id DESC
+        LIMIT 1
+    </select>
+</mapper>

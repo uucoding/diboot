@@ -1,0 +1,586 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>关联数据列表选择 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="列表分页组件.html" />
+    
+    
+    <link rel="prev" href="图片预览.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../开始.html">
+            
+                <a href="../开始.html">
+            
+                    
+                    开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../开始/环境准备.html">
+            
+                <a href="../开始/环境准备.html">
+            
+                    
+                    环境准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../开始/下载项目.html">
+            
+                <a href="../开始/下载项目.html">
+            
+                    
+                    下载项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../开始/项目配置.html">
+            
+                <a href="../开始/项目配置.html">
+            
+                    
+                    项目配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../开始/启动项目.html">
+            
+                <a href="../开始/启动项目.html">
+            
+                    
+                    启动项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../基础.html">
+            
+                <a href="../基础.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../基础/路由.html">
+            
+                <a href="../基础/路由.html">
+            
+                    
+                    路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../基础/过滤器.html">
+            
+                <a href="../基础/过滤器.html">
+            
+                    
+                    过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../基础/表单验证.html">
+            
+                <a href="../基础/表单验证.html">
+            
+                    
+                    表单验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../基础/接口数据格式.html">
+            
+                <a href="../基础/接口数据格式.html">
+            
+                    
+                    接口数据格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../基础/页面样式管理.html">
+            
+                <a href="../基础/页面样式管理.html">
+            
+                    
+                    页面样式管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../基础/展示列表数据.html">
+            
+                <a href="../基础/展示列表数据.html">
+            
+                    
+                    展示列表数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../基础/展示详情数据.html">
+            
+                <a href="../基础/展示详情数据.html">
+            
+                    
+                    展示详情数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../基础/添加新数据.html">
+            
+                <a href="../基础/添加新数据.html">
+            
+                    
+                    添加新数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../基础/更新数据.html">
+            
+                <a href="../基础/更新数据.html">
+            
+                    
+                    更新数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../组件.html">
+            
+                <a href="../组件.html">
+            
+                    
+                    组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="图片上传.html">
+            
+                <a href="图片上传.html">
+            
+                    
+                    图片上传
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="图片预览.html">
+            
+                <a href="图片预览.html">
+            
+                    
+                    图片预览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="关联数据列表选择.html">
+            
+                <a href="关联数据列表选择.html">
+            
+                    
+                    关联数据列表选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="列表分页组件.html">
+            
+                <a href="列表分页组件.html">
+            
+                    
+                    列表分页组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >关联数据列表选择</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5173;&#x8054;&#x6570;&#x636E;&#x5217;&#x8868;&#x9009;&#x62E9;"><b>1. </b>&#x5173;&#x8054;&#x6570;&#x636E;&#x5217;&#x8868;&#x9009;&#x62E9;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5F15;&#x5165;&#x7EC4;&#x4EF6;"><b>1.1. </b>&#x5F15;&#x5165;&#x7EC4;&#x4EF6;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8BBE;&#x7F6E;&#x7EC4;&#x4EF6;&#x76F8;&#x5173;&#x53C2;&#x6570;&#xFF1A;"><b>1.1.1. </b>&#x8BBE;&#x7F6E;&#x7EC4;&#x4EF6;&#x76F8;&#x5173;&#x53C2;&#x6570;&#xFF1A;</a></li></ul></ul></ul></div><a href="#&#x5173;&#x8054;&#x6570;&#x636E;&#x5217;&#x8868;&#x9009;&#x62E9;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5173;&#x8054;&#x6570;&#x636E;&#x5217;&#x8868;&#x9009;&#x62E9;"><a name="&#x5173;&#x8054;&#x6570;&#x636E;&#x5217;&#x8868;&#x9009;&#x62E9;" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x8054;&#x6570;&#x636E;&#x5217;&#x8868;&#x9009;&#x62E9;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5173;&#x8054;&#x6570;&#x636E;&#x5217;&#x8868;&#x9009;&#x62E9;</h1>
+<ul>
+<li><a href="">src/components/common/select/relationSelect.vue</a>&#x7EC4;&#x4EF6;&#x4E3A;&#x5173;&#x8054;&#x6570;&#x636E;&#x9009;&#x62E9;&#x6240;&#x9700;&#x8981;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x4E86;devtools&#xFF0C;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x4EE3;&#x7801;&#x5C06;&#x4F1A;&#x5728;&#x751F;&#x6210;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;&#x4E2D;&#x9700;&#x8981;&#x9009;&#x62E9;&#x5173;&#x8054;&#x6570;&#x636E;&#x5217;&#x8868;&#x7684;&#x5730;&#x65B9;&#x81EA;&#x52A8;&#x5F15;&#x5165;&#x8BE5;&#x7EC4;&#x4EF6;&#x3002;</li>
+</ul>
+<h2 id="&#x5F15;&#x5165;&#x7EC4;&#x4EF6;"><a name="&#x5F15;&#x5165;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x5F15;&#x5165;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5F15;&#x5165;&#x7EC4;&#x4EF6;</h2>
+<ul>
+<li>&#x5728;<a href="">script</a>&#x6807;&#x7B7E;&#x4E2D;&#x5F15;&#x5165;<a href="">relationSelect.vue</a>&#x7EC4;&#x4EF6;&#xFF0C;&#x5E76;&#x5728;<a href="">components</a>&#x5C5E;&#x6027;&#x4E2D;&#x6DFB;&#x52A0;&#x8BE5;&#x7EC4;&#x4EF6;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;form.js&#x7684;mixins&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> relationSelect <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@/components/common/select/relationSelect&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>{
+    name: <span class="hljs-string">&apos;studentForm&apos;</span>,
+    model: {
+        pk: <span class="hljs-literal">undefined</span>,
+        name: <span class="hljs-string">&apos;&apos;</span>,
+        teacherId: <span class="hljs-string">&apos;&apos;</span>,
+        teacherName: <span class="hljs-string">&apos;&apos;</span>
+    },
+    components: {
+        <span class="hljs-string">&apos;relation-select&apos;</span>: relationSelect
+    },
+    mixins: [form]
+}
+</code></pre>
+<ul>
+<li>&#x5728;&#x8868;&#x5355;&#x7EC4;&#x4EF6;&#x5185;&#xFF0C;&#x6700;&#x5E95;&#x90E8;&#x589E;&#x52A0;<a href="">relation-select</a>&#x6807;&#x7B7E;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code>&lt;div class=&quot;studentForm form-container&quot;&gt;
+    &lt;relation-select v-if=&quot;relationObj.name&quot; @selectValue=&quot;selectValue&quot; :name=&quot;relationObj.name&quot; :id=&quot;relationObj.id&quot; :fieldName=&quot;relationObj.fieldName&quot; :targetValue=&quot;relationObj.targetValue&quot; :targetName=&quot;relationObj.targetName&quot;&gt;&lt;/relation-select&gt;
+&lt;/div&gt;
+</code></pre><ul>
+<li>&#x5F53;&#x8C03;&#x7528;<a href="">selectRelation(&apos;teacher&apos;, &apos;id&apos;, &apos;name&apos;, &apos;teacherId&apos;, &apos;teacherName&apos;)</a>&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5C06;&#x663E;&#x793A;&#x51FA;&#x8BE5;&#x5173;&#x8054;&#x6570;&#x636E;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5E76;&#x52A0;&#x8F7D;&#x5173;&#x8054;&#x6570;&#x636E;&#x5217;&#x8868;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code>&lt;div class=&quot;studentForm form-container&quot;&gt;
+     &lt;div @click=&quot;selectRelation(&apos;teacher&apos;, &apos;id&apos;, &apos;name&apos;, &apos;teacherId&apos;, &apos;teacherName&apos;)&quot; &gt;
+        &lt;mt-cell class=&quot;select-p&quot; title=&quot;&#x73ED;&#x4E3B;&#x4EFB;&quot;&gt;{{ model.teacherName }}&lt;/mt-cell&gt;
+    &lt;/div&gt;
+    &lt;relation-select v-if=&quot;relationObj.name&quot; @selectValue=&quot;selectValue&quot; :name=&quot;relationObj.name&quot; :id=&quot;relationObj.id&quot; :fieldName=&quot;relationObj.fieldName&quot; :targetValue=&quot;relationObj.targetValue&quot; :targetName=&quot;relationObj.targetName&quot;&gt;&lt;/relation-select&gt;
+&lt;/div&gt;
+</code></pre><h3 id="&#x8BBE;&#x7F6E;&#x7EC4;&#x4EF6;&#x76F8;&#x5173;&#x53C2;&#x6570;&#xFF1A;"><a name="&#x8BBE;&#x7F6E;&#x7EC4;&#x4EF6;&#x76F8;&#x5173;&#x53C2;&#x6570;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x8BBE;&#x7F6E;&#x7EC4;&#x4EF6;&#x76F8;&#x5173;&#x53C2;&#x6570;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x8BBE;&#x7F6E;&#x7EC4;&#x4EF6;&#x76F8;&#x5173;&#x53C2;&#x6570;&#xFF1A;</h3>
+<ul>
+<li><a href="">props</a>&#x53CA;&#x76F8;&#x5173;&#x5C5E;&#x6027;&#xFF1A;<ul>
+<li><a href="">v-if</a> &#x7ED1;&#x5B9A;<a href="">relationObj.name</a>&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x5728;form.js&#x7684;mixins&#x4E2D;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x597D;&#x3002;</li>
+<li><a href="">name</a> &#x7ED1;&#x5B9A;&#x4E1A;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x56FA;&#x5B9A;&#x4F20;&#x5165;<a href="">relationObj.name</a>&#x3002;</li>
+<li><a href="">id</a> &#x7ED1;&#x5B9A;&#x9700;&#x8981;&#x590D;&#x5236;&#x7ED9;&#x8BE5;&#x8868;&#x5355;&#x7684;&#x5173;&#x8054;&#x6570;&#x636E;id&#x5B57;&#x6BB5;&#x7684;&#x5173;&#x8054;&#x8868;&#x5355;&#x5B57;&#x6BB5;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;id&#xFF0C;&#x5219;&#x56FA;&#x5B9A;&#x4F20;&#x5165;<a href="">relationObj.id</a>&#x3002;</li>
+<li><a href="">fieldName</a> &#x7ED1;&#x5B9A;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#xFF0C;&#x56FA;&#x5B9A;&#x4F20;&#x5165;<a href="">relationObj.fieldName</a>&#x3002;</li>
+<li><a href="">targetValue</a> &#x7ED1;&#x5B9A;&#x76EE;&#x6807;&#x503C;&#xFF0C;&#x56FA;&#x5B9A;&#x4F20;&#x5165;<a href="">relationObj.targetValue</a>&#x3002;</li>
+<li><a href="">targetName</a> &#x7ED1;&#x5B9A;&#x76EE;&#x6807;&#x540D;&#x79F0;&#xFF0C;&#x56FA;&#x5B9A;&#x4F20;&#x5165;<a href="">relationObj.targetName</a>&#x3002;</li>
+</ul>
+</li>
+<li><a href="">selectRelation()</a> &#x6253;&#x5F00;&#x5173;&#x8054;&#x6570;&#x636E;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x5171;&#x6709;&#x4E94;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x90FD;&#x5FC5;&#x987B;&#x4F20;&#x5165;&#x3002;<ul>
+<li><a href="">name</a> &#x5173;&#x8054;&#x5BF9;&#x8C61;&#x4E1A;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;teacher&#x3002;</li>
+<li><a href="">id</a> &#x5173;&#x8054;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x5230;&#x8868;&#x5355;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;id&#xFF0C;&#x5373;teacher.id&#x3002;</li>
+<li><a href="">fieldName</a> &#x5173;&#x8054;&#x5BF9;&#x8C61;&#x4E2D;&#x540D;&#x79F0;&#x5B57;&#x6BB5;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;name&#xFF0C;&#x5373;teacher.name&#x3002;</li>
+<li><a href="">targetValue</a> &#x8BBE;&#x7F6E;&#x5230;&#x8868;&#x5355;&#x4E2D;&#x7684;&#x76EE;&#x6807;&#x503C;&#x5B57;&#x6BB5;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;teacherId&#xFF0C;&#x5373;&#x9009;&#x5B9A;&#x7684;teacher.id&#x8BBE;&#x7F6E;&#x5230;&#x8868;&#x5355;&#x4E2D;&#x7684;this.model.teacherId&#x5B57;&#x6BB5;&#x3002;</li>
+<li><a href="">targetName</a> &#x8BBE;&#x7F6E;&#x5230;&#x8868;&#x5355;&#x4E2D;&#x7684;&#x76EE;&#x6807;&#x540D;&#x79F0;&#x5B57;&#x6BB5;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;teacherName&#xFF0C;&#x5373;&#x9009;&#x5B9A;&#x7684;teacher.name&#x8BBE;&#x7F6E;&#x5230;&#x8868;&#x5355;&#x4E2D;&#x7684;this.model.teacherName&#x5B57;&#x6BB5;&#x3002;</li>
+</ul>
+</li>
+<li>&#x76F8;&#x5173;&#x4E8B;&#x4EF6;&#xFF1A;<ul>
+<li><a href="">selectValue()</a> &#x5F53;&#x9009;&#x62E9;&#x5B8C;&#x5173;&#x8054;&#x6570;&#x636E;&#x4E4B;&#x540E;&#xFF0C;&#x5C06;&#x6267;&#x884C;&#x6B64;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x5C06;&#x9009;&#x62E9;&#x7684;&#x5173;&#x8054;&#x6570;&#x636E;id&#x8BBE;&#x7F6E;&#x5230;&#x5F00;&#x59CB;&#x8C03;&#x7528;<a href="">selectRelation()</a>&#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x5165;&#x7684;id&#x5C5E;&#x6027;&#x4E2D;&#xFF0C;&#x540D;&#x79F0;&#x4F20;&#x5165;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x4E2D;&#x3002;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="图片预览.html" class="navigation navigation-prev " aria-label="Previous page: 图片预览">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="列表分页组件.html" class="navigation navigation-next " aria-label="Next page: 列表分页组件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"关联数据列表选择","level":"1.4.3","depth":2,"next":{"title":"列表分页组件","level":"1.4.4","depth":2,"path":"组件/列表分页组件.md","ref":"组件/列表分页组件.md","articles":[]},"previous":{"title":"图片预览","level":"1.4.2","depth":2,"path":"组件/图片预览.md","ref":"组件/图片预览.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-sharing","sharing-plus","anchor-navigation-ex","theme-vuejs-2","livereload"],"pluginsConfig":{"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","isShowTocTitleIcon":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"sharing":{"qq":true,"all":["weibo","qq","linkedin","qzone","douban"],"douban":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"组件/关联数据列表选择.md","mtime":"2018-08-29T06:31:25.408Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-15T06:30:01.668Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

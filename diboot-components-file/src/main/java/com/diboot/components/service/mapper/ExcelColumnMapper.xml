@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.components.service.mapper.ExcelColumnMapper">
+
+    <!-- 通用CRUD: begin  -->
+    <!-- 指定Select需要返回的列 -->
+    <sql id="columns">
+        <trim suffixOverrides=",">
+            <if test="f == null or f.id != null">self.id,</if>
+            <if test="f == null or f.modelClass != null">self.model_class,</if>
+            <if test="f == null or f.modelField != null">self.model_field,</if>
+            <if test="f == null or f.colName != null">self.col_name,</if>
+            <if test="f == null or f.colIndex != null">self.col_index,</if>
+            <if test="f == null or f.dataType != null">self.data_type,</if>
+            <if test="f == null or f.validation != null">self.validation,</if>
+            <if test="f == null or f.active != null">self.active,</if>
+        </trim>
+    </sql>
+
+    <!-- 构建查询条件 -->
+    <sql id="conditions">
+        <if test="c.id != null">self.id=#{c.id}</if>
+        <if test="c.modelClass != null"> AND self.model_class=#{c.modelClass}</if>
+        <if test="c.modelField != null"> AND self.model_field=#{c.modelField}</if>
+        <if test="c.colName != null"> AND self.col_name=#{c.colName}</if>
+        <if test="c.colIndex != null"> AND self.col_index=#{c.colIndex}</if>
+        <if test="c.dataType != null"> AND self.data_type=#{c.dataType}</if>
+        <if test="c.validation != null"> AND self.validation=#{c.validation}</if>
+        <if test="c.createTime != null"> AND date(self.create_time)=#{c.createTime}</if>
+         AND self.active=1
+    </sql>
+
+    <!-- 构建set条件 -->
+    <sql id="setValues">
+        <set>
+            <if test="f == null or f.id != null">id=#{m.id},</if>
+            <if test="f == null or f.modelClass != null">model_class=#{m.modelClass},</if>
+            <if test="f == null or f.modelField != null">model_field=#{m.modelField},</if>
+            <if test="f == null or f.colName != null">col_name=#{m.colName},</if>
+            <if test="f == null or f.colIndex != null">col_index=#{m.colIndex},</if>
+            <if test="f == null or f.dataType != null">data_type=#{m.dataType},</if>
+            <if test="f == null or f.validation != null">validation=#{m.validation},</if>
+            <if test="f == null or f.active != null">active=#{m.active},</if>
+        </set>
+    </sql>
+
+    <!-- 添加记录 -->
+    <insert id="create" parameterType="com.diboot.components.model.ExcelColumn" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO excel_column(
+		     model_class, model_field, col_name, col_index, data_type, validation, active
+        )
+        VALUES(
+		     #{modelClass}, #{modelField}, #{colName}, #{colIndex}, #{dataType}, #{validation}, #{active}
+        )
+    </insert>
+
+    <!-- 更新记录 -->
+    <update id="update" parameterType="com.diboot.components.model.ExcelColumn">
+        UPDATE excel_column
+        <include refid="setValues" />
+        WHERE id=#{m.id, jdbcType=BIGINT}
+    </update>
+
+    <!-- 删除记录 -->
+	<delete id="delete" parameterType="Object">
+		DELETE FROM excel_column WHERE id=#{id, jdbcType=BIGINT}
+	</delete>
+
+    <!-- 删除数据 -->
+    <delete id="deleteModels" parameterType="Map">
+        DELETE FROM excel_column
+        <where>
+            <if test="c.id != null">id=#{c.id}</if>
+            <if test="c.modelClass != null"> AND model_class=#{c.modelClass}</if>
+            <if test="c.modelField != null"> AND model_field=#{c.modelField}</if>
+        </where>
+    </delete>
+
+    <!-- 查询一条记录 -->
+    <select id="get" parameterType="Object" resultType="com.diboot.components.model.ExcelColumn">
+        SELECT self.*
+        FROM excel_column self
+        WHERE self.id=#{id, jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询符合条件的记录总数 -->
+    <select id="getListCount" parameterType="Map" resultType="Integer">
+        SELECT count(self.id)
+        FROM excel_column self
+        <where>
+            <include refid="conditions" />
+        </where>
+    </select>
+
+    <!-- 查询符合条件的记录 -->
+    <select id="getList" resultType="com.diboot.components.model.ExcelColumn">
+        SELECT self.*
+        FROM excel_column self
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.col_index ASC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+
+    <!-- 查询符合条件的记录，返回Map -->
+    <select id="getMapList" resultType="java.util.Map">
+        SELECT <include refid="columns" />
+        FROM excel_column self
+        <where>
+            <include refid="conditions" />
+        </where>
+        ORDER BY self.col_index ASC
+        <if test="c.COUNT != null">
+            LIMIT <if test="c.OFFSET != null">#{c.OFFSET}, </if>#{c.COUNT}
+        </if>
+    </select>
+
+    <!-- 批量创建 -->
+    <insert id="batchCreate" parameterType="java.util.List">
+        INSERT INTO excel_column(
+            model_class, model_field, col_name, col_index, data_type, validation
+        )
+        VALUES
+        <foreach collection="list" item="m" separator=",">
+            (#{m.modelClass}, #{m.modelField}, #{m.colName}, #{m.colIndex}, #{m.dataType}, #{m.validation})
+        </foreach>
+    </insert>
+
+    <!-- 通用CRUD: end -->
+
+
+    <!-- 扩展SQL -->
+	
+</mapper>

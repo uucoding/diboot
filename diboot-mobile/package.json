@@ -1,0 +1,71 @@
+{
+  "name": "diboot-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "echarts": "^4.1.0",
+    "hammerjs": "^2.0.8",
+    "mint-ui": "^2.2.13",
+    "moment": "^2.22.1",
+    "qs": "^6.5.2",
+    "vee-validate": "^2.0.9",
+    "vue": "^2.5.13",
+    "vue-i18n": "^7.6.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "weixin-js-sdk": "^1.3.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-rc.10",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.10",
+    "@vue/cli-service": "^3.0.0-rc.10",
+    "@vue/eslint-config-airbnb": "^3.0.0-rc.10",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "rules": {
+      "no-plusplus": 0,
+      "func-names": 0,
+      "no-underscore-dangle": 0,
+      "prefer-destructuring": 0,
+      "import/extensions": 0,
+      "no-unused-expressions": 0,
+      "no-param-reassign": 0,
+      "import/first": 0,
+      "prefer-promise-reject-errors": 0,
+      "no-console": 0,
+      "camelcase": 0,
+      "radix": 0,
+      "max-len": 0
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

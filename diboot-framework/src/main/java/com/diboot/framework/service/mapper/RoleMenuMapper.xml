@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"./mybatis-3-mapper.dtd">
+<mapper namespace="com.diboot.framework.service.mapper.RoleMenuMapper">
+
+	<!-- 通用CRUD: begin  -->
+	<insert id="create" parameterType="com.diboot.framework.model.RoleMenu">
+		INSERT INTO role_menu(
+			 role, menu_id
+		)
+		VALUES(
+			 #{role}, #{menuId}
+		)
+	</insert>
+
+	<select id="getListCount" resultType="Integer">
+		SELECT count(*)
+	    FROM role_menu
+	</select>
+	
+	<select id="getList" parameterType="Long" resultType="com.diboot.framework.model.RoleMenu">
+		SELECT self.*
+	    FROM role_menu self
+	    <if test="c.role != null">
+    		WHERE self.role=#{c.role, jdbcType=BIGINT}
+    	</if>
+	    ORDER BY self.role, self.menu_id
+	</select>
+
+	<!-- 批量创建记录 -->
+	<insert id="batchCreate" parameterType="java.util.List">
+		INSERT INTO role_menu(role, menu_id)
+		VALUES
+		<foreach collection="list" item="model" separator=",">
+			(#{model.role}, #{model.menuId})
+		</foreach>
+	</insert>
+	<!-- 通用CRUD: end -->
+
+	<!-- 扩展SQL: -->
+	<select id="getMenuListByRoleList" parameterType="java.util.List" resultType="com.diboot.framework.model.BaseMenu">
+		SELECT DISTINCT m.*
+		FROM menu m
+		<where>
+			<if test="roleList != null">
+				m.id IN(
+				SELECT DISTINCT menu_id FROM role_menu
+				WHERE role IN
+				<foreach item="role" collection="roleList" open="(" separator="," close=")">
+					#{role}
+				</foreach>
+				ORDER BY menu_id ASC
+				)
+			</if>
+			<if test="c != null and c.type != null">
+				AND m.type=#{c.type}
+			</if>
+			<if test="c != null and c.application != null">
+				AND m.application=#{c.application}
+			</if>
+		</where>
+		ORDER BY m.sort_id ASC, m.id ASC
+	</select>
+
+	<select id="getAllMenus" parameterType="Map" resultType="com.diboot.framework.model.BaseMenu">
+	    SELECT *
+	    FROM menu
+		<where>
+			<if test="c != null and c.type != null">
+				AND type=#{c.type}
+			</if>
+			<if test="c != null and c.application != null">
+				AND application=#{c.application}
+			</if>
+		</where>
+        ORDER BY sort_id ASC, id ASC
+	</select>
+	
+	<delete id="deleteRoleMenus" parameterType="String">
+		DELETE FROM role_menu WHERE role=#{role, jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="createMenu" parameterType="com.diboot.framework.model.BaseMenu">
+		INSERT INTO menu(
+			parent_id, type, name, icon, link, sort_id
+		)
+		VALUES(
+			#{parentId}, #{type}, #{name}, #{icon}, #{link}, #{sortId}
+		)
+	</insert>
+
+	<update id="updateMenu" parameterType="com.diboot.framework.model.BaseMenu">
+		UPDATE menu
+		SET parent_id=#{parentId}, type=#{type}, name=#{name}, icon=#{icon}, link=#{link}, sort_id=#{sortId}
+		WHERE id=#{id}
+	</update>
+
+	<!-- 扩展SQL: -->
+</mapper>

@@ -1,0 +1,99 @@
+group 'com.diboot'
+version '1.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+}
+
+[compileJava, compileTestJava, javadoc]*.options*.encoding = "UTF-8"
+configurations { providedCompile }
+//编译配置
+sourceSets {
+    main {
+        resources {
+            srcDirs "src/main/java", "src/main/resources"
+            include '**/*.properties'
+            include '**/*.xml'
+            include '**/*.dtd'
+            include '**/*.class'
+        }
+    }
+}
+
+dependencies {
+    def springVersion = "5.0.10.RELEASE"
+    def poiVersion = "3.17"
+
+    // providedCompile在编译时提供，不会写入war
+    providedCompile(
+            "javax.servlet:javax.servlet-api:4.0.1"
+    )
+    // diboot组件
+    compile fileTree(dir:'libs', include:['*.jar'])
+
+    // Spring依赖
+    compile("org.springframework:spring-jdbc:$springVersion",
+            "org.springframework:spring-core:$springVersion",
+            "org.springframework:spring-tx:$springVersion",
+            "org.springframework:spring-web:$springVersion",
+            "org.springframework:spring-webmvc:$springVersion")
+
+    //MyBatis
+    compile("org.mybatis:mybatis:3.4.6",
+            "org.mybatis:mybatis-spring:1.3.2"
+    )
+    // 数据库连接部分依赖
+    compile("mysql:mysql-connector-java:5.1.47",
+            "com.zaxxer:HikariCP:3.2.0")
+
+    // 引入validator jar
+    compile("org.hibernate.validator:hibernate-validator:6.0.13.Final",
+            "org.glassfish:javax.el:3.0.1-b09")
+
+    // office文件相关依赖
+    compile("org.apache.poi:poi:$poiVersion",
+            "org.apache.poi:poi-ooxml:$poiVersion")
+    // 图片压缩
+    compile ("net.coobird:thumbnailator:0.4.8")
+    // 文件下载
+    compile("org.apache.httpcomponents:httpclient:4.5.6")
+
+    //Apache Commons
+    compile("commons-fileupload:commons-fileupload:1.3.3",
+            "org.apache.commons:commons-lang3:3.8.1",
+            "commons-io:commons-io:2.6",
+            "commons-codec:commons-codec:1.11",
+            "org.apache.commons:commons-compress:1.17")
+
+    // Json
+    compile ("com.alibaba:fastjson:1.2.51")
+
+    //Log4J2
+    compile("org.apache.logging.log4j:log4j-api:2.11.1",
+            "org.apache.logging.log4j:log4j-core:2.11.1",
+            "org.apache.logging.log4j:log4j-slf4j-impl:2.11.1",
+            "com.lmax:disruptor:3.4.2")
+    compile("org.slf4j:slf4j-api:1.7.25")
+    
+    // 微信开发组件，需要开发微信时引入
+    //compile("com.github.binarywang:weixin-java-mp:3.2.0")
+    //compile("com.github.binarywang:weixin-java-cp:3.2.0")
+    //compile("com.github.binarywang:weixin-java-open:3.2.0")
+
+    // 单元测试的依赖
+    testCompile("org.springframework:spring-test:$springVersion",
+            "junit:junit:4.12")
+}
+//create a single Jar with all dependencies
+jar{
+    manifest {
+        attributes('Implementation-Title': 'Diboot common project',
+                'Implementation-Version': version
+        )
+    }
+}
