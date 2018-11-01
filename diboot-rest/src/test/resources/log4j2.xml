@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">
+    <Properties>
+        <!--定义变量-->
+        <Property name="filename">D:/temp/logs/web.log</Property>
+        <Property name="filenameError">D:/temp/logs/webError.log</Property>
+    </Properties>
+
+    <Appenders>
+        <!--写入文件-->
+        <RollingFile name="RollingFile" fileName="${filename}"
+            filePattern="/webapp/logs/${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%t[%p]%d{MM-dd HH:mm:ss.SSS}(%F:%L) - %m%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <!--自动删除超过30天的日志压缩文件-->
+            <DefaultRolloverStrategy>
+                <Delete basePath="${baseDir}" maxDepth="2">
+                    <IfFileName glob="*/info-*.log"/>
+                    <IfLastModified age="30d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+        <!--错误日志入文件-->
+        <RollingFile name="RollingFileError" fileName="${filenameError}"
+                     filePattern="/webapp/logs/${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%t[%p]%d{MM-dd HH:mm:ss.SSS}(%F:%L) - %m%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <!--自动删除超过120天的日志压缩文件-->
+            <DefaultRolloverStrategy>
+                <Delete basePath="${baseDir}" maxDepth="2">
+                    <IfFileName glob="*/error-*.log"/>
+                    <IfLastModified age="30d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        <!--采用异步输出日志-->
+        <AsyncLogger name="com.xwtec.util.Transport" level="info">
+            <!--写入info级别-->
+            <AppenderRef ref="RollingFile"/>
+            <!--写入error级别-->
+            <AppenderRef ref="RollingFileError" level="error"/>
+        </AsyncLogger>
+        <Root level="debug">
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+    <Properties>
+        <Property name="CONSOLE_LOG_PATTERN">%d{MM-dd HH:mm:ss.SSS} %5p %pid - [%t] %-40.40c{1.} : %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${CONSOLE_LOG_PATTERN}" />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <logger name="org.springframework" level="info"/>
+        <Root level="debug">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>

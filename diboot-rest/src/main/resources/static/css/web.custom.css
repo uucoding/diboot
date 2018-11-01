@@ -1,0 +1,290 @@
+.toast-top-center {
+    top: 90px !important;
+    right: 0;
+    width: 100%
+}
+.box-body{
+    padding: 4px 10px;
+}
+.login-logo, .register-logo {
+    font-size: 28px;
+}
+
+.sidebar-collapse .main-sidebar, .sidebar-collapse .left-side {
+    left: -230px;
+}
+
+blockquote {
+    margin: 0 0 10px;
+    padding: 10px;
+}
+
+.form-horizontal .control-label {
+    min-width: 90px;
+}
+
+.container, .content {
+    padding: 10px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.search-field {
+    min-width: 60px;
+    max-width: 160px;
+    height: 30px;
+    line-height: 30px;
+    padding: 3px 6px;
+}
+
+.cell-label, .td-label {
+    width: 120px;
+    font-weight: bold;
+}
+
+.cell-value, .td-value {
+    width: 150px;
+}
+
+.col-label {
+    width: 20%;
+}
+
+.col-operation {
+    width: 100px;
+}
+
+label.normal {
+    font-weight: normal;
+    padding-left: 20px;
+}
+
+.box-header {
+    min-height: 30px;
+}
+
+hr.highlight {
+    border: 1px dotted #336699;
+}
+
+.form-group .alert {
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.sidebar-menu li.header {
+    padding: 0 0 10px 0;
+}
+
+.sidebar-menu li.header .input-group-addon, .sidebar-menu li.header .form-control {
+    color: #E1E1E1;
+    background: #2c3b41;
+    border-color: #2c3b41;
+}
+
+.attachment-block .attachment-img {
+    margin-right: 4px;
+}
+
+.invoice {
+    margin: 0px;
+}
+
+.datapicker {
+    padding: 6px 12px;
+}
+
+.hover-parent .hover-show {
+    display: none;
+}
+
+.hover-parent:hover .hover-show {
+    display: inline-block;
+}
+
+shak adminLTE css style
+.btn-blue {
+    background: #32c5d2 !important;
+    color: #fff !important;
+}
+
+.btn-blue.btn-outline {
+    color: #32c5d2;
+    border-color: #32c5d2;
+}
+
+.btn-blue.btn-outline:hover {
+    color: #fff;
+    background: #32c5d2;
+}
+
+.font-blue {
+    color: #3598dc !important;
+}
+
+.font-red {
+    color: #e7505a !important;
+}
+
+.font-green {
+    color: #32c5d2 !important;
+}
+
+.font-yellow {
+    color: #c49f47 !important;
+}
+
+.btn.blue:not(.btn-outline) {
+    color: #FFFFFF;
+    background-color: #3598dc;
+    border-color: #3598dc;
+}
+
+.sidebar-collapse .main-sidebar, .sidebar-collapse .left-side {
+    left: auto;
+}
+
+@media (min-width: 768px) {
+    .form-horizontal .input-label {
+        text-align: left;
+    }
+}
+
+.no-horizontal-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#editTable {
+    margin-bottom: 20px;
+}
+
+#editTable input {
+    min-width: 30px;
+    max-width: 130px;
+    border: 1px solid #E1E1E1;
+    background: #ffffff;
+    border-radius: 0;
+    padding: 2px 5px;
+}
+#editTable .allWidth input {
+    max-width: none;
+}
+
+#editTable input[readonly]{
+    background: #c3c3c3;
+}
+#editTable .col-sm {
+    max-width: 60px;
+}
+
+#editTable input:focus {
+    border-color: #2083e6;
+}
+
+.editTable_tableTool {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    display: flex;
+    width: 100%;
+    height: 52px;
+    line-height: 35px;
+    justify-content: flex-end;
+    padding: 8px 20px;
+    border-top: 1px solid #f1f1f1;
+}
+
+.editTable_tableTool button {
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+/*重新checkbox样式*/
+.checkbox-ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.label-left {
+    text-align: left !important;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    display: none
+}
+
+label.label-checkbox {
+    display: inline-flex;
+    height: 22px;
+    line-height: 22px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+label.label-checkbox input[type="checkbox"] + span {
+    width: 22px;
+    height: 22px;
+    margin-right:5px;
+    padding: 0;
+    display: inline-block;
+    background: url("../img/blue.png") no-repeat;
+    background-size: 119px 24px;
+}
+
+label.label-checkbox input[type="checkbox"]:checked + span {
+    background-position: -48px 0;
+}
+
+.bold {
+    font-weight: 700 !important;
+}
+
+.padding-b-10 {
+    padding-bottom: 10px;
+}
+
+/*拖动按钮样式*/
+.div-drag .alert{
+    width: 100px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+    cursor: move;
+}
+.div-drag button{
+    outline: none;
+}
+
+/*去除select2圆角*/
+.select2-container--default .select2-selection--single{
+    border-radius:0 !important;
+    -webkit-border-radius:0 !important;
+    -moz-border-radius:0 !important;
+}
+
+/* 富文本编辑器样式优化 */
+.editormd-toolbar{
+    top: 1px !important;
+}
+
+/* 下拉框去间距样式优化 */
+.dropdown-menu{
+   margin: 0 !important;
+}

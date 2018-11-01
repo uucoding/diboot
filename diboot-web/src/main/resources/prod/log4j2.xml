@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+    <!--定义变量-->
+    <Properties>
+        <Property name="LOG_PATH">/server/tomcat/logs</Property>
+        <Property name="LOG_FILENAME">web</Property>
+        <Property name="LOG_PATTERN">[%5p]  %t %d{MM-dd HH:mm:ss.SSS} [%F:%L] - %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- 控制台 -->
+        <Console name="STDOUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+        <!-- 默认日志记录 -->
+        <RollingFile name="DefaultRollingFile" fileName="${LOG_PATH}/${LOG_FILENAME}.log"
+                     filePattern="${LOG_PATH}/${LOG_FILENAME}_%d{MMdd}_%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="20 MB"/>
+            </Policies>
+            <!--自动删除超过15天的日志压缩文件-->
+            <DefaultRolloverStrategy>
+                <Delete basePath="${LOG_PATH}" maxDepth="2">
+                    <IfFileName glob="${LOG_FILENAME}_*_*.log"/>
+                    <IfLastModified age="15d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+        <!-- 异常日志记录
+        <RollingFile name="ErrorRollingFile" fileName="${LOG_PATH}/${LOG_FILENAME}_error.log"
+                     filePattern="${LOG_PATH}/${LOG_FILENAME}_error_%d{MMdd}.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="20 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${LOG_PATH}" maxDepth="2">
+                    <IfFileName glob="${LOG_FILENAME}_*_*.log"/>
+                    <IfLastModified age="15d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>-->
+    </Appenders>
+
+    <Loggers>
+        <!-- 开启异步输出 -->
+        <AsyncLogger name="com.yourpackage" level="info">
+            <AppenderRef ref="DefaultRollingFile" />
+            <!--<AppenderRef ref="ErrorRollingFile" level="warn"/>-->
+        </AsyncLogger>
+        <Root level="info">
+            <AppenderRef ref="DefaultRollingFile" />
+        </Root>
+    </Loggers>
+</Configuration>
